@@ -16,10 +16,8 @@ tags:
 ---
 ### 拉取远程仓库到本地并切换到存放原始文件的【分支】
 ```bash
-git clone http://github.com/user/user.github.io 【仓库目录】
-cd 【仓库目录】
-git branch 【分支】
-git checkout 【分支】
+git clone -b 【分支】 https://github.com/user/user.github.io.git 【仓库目录】
+#cd 【仓库目录】
 ```
 ### 安装hexo  
 
@@ -36,15 +34,17 @@ cp -rf 【临时目录】/* 【仓库目录】
 ```bash
 cd 【仓库目录】
 npm install
-npm install hexo-deployer-git
 ```
+初次git发布还需安装:`npm install hexo-deployer-git`
 执行`hexo server`通过浏览器即可访问博客了;
 
 ## 自定义
 打开themes/landscape中修改相关文件，具体可参考互联网;
 
 ## hexo的使用
-可参考上篇[《start-hexo》](/2018/11/19/start-hexo/)
+git部署发布:`hexo generate --deploy`  
+
+更多信息参考上篇[《start-hexo》](/2018/11/19/start-hexo/)
 
 ## 问题
 `hexo generate --deploy`报错:  
