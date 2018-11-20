@@ -14,14 +14,14 @@ tags:
 创建一个分支存放原始文件，方便跨机操作；
 
 ---
-### 拉取远程仓库到本地并切换到存放原始文件的【分支】
+### 拉取远程仓库【分支】到本地
 ```bash
 git clone -b 【分支】 https://github.com/user/user.github.io.git 【仓库目录】
-#cd 【仓库目录】
 ```
 ### 安装hexo  
-
- `npm install hexo-cli -g`  
+```bash
+npm install hexo-cli -g
+```
  
 ---
 初次搭建需初始化:  
@@ -35,7 +35,9 @@ cp -rf 【临时目录】/* 【仓库目录】
 cd 【仓库目录】
 npm install
 ```
-初次git发布还需安装:`npm install hexo-deployer-git`
+
+初次git发布还需安装:`npm install hexo-deployer-git`  
+
 执行`hexo server`通过浏览器即可访问博客了;
 
 ## 自定义
