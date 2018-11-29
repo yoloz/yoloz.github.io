@@ -17,7 +17,7 @@ Hello.class(主类)
 xxxxx.class   
 ```
 
-<escape><!-- more --></escape>
+<!-- more -->
 
 方法步骤:  
 1,定义Main-Class  

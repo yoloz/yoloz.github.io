@@ -24,7 +24,7 @@ const Loading = ({ pastDelay, timedOut, error }) => {
   return null;
 };
 ```
-<escape><!-- more --></escape>
+<!-- more -->
 
 * 分割各组件：
 ``` js
