@@ -14,6 +14,7 @@ tags:
 创建一个分支存放原始文件，方便跨机操作；
 
 ---
+<escape><!-- more --></escape>
 ### 拉取远程仓库【分支】到本地
 ```bash
 git clone -b 【分支】 https://github.com/user/user.github.io.git 【仓库目录】
@@ -22,7 +23,7 @@ git clone -b 【分支】 https://github.com/user/user.github.io.git 【仓库�
 ```bash
 npm install hexo-cli -g
 ```
- 
+
 ---
 初次搭建需初始化:  
 ``` bash 

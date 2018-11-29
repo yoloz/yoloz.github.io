@@ -1,5 +1,5 @@
 ---
-title: jar命令使用
+title: jar的使用
 comments: false
 toc: false
 date:
@@ -16,6 +16,8 @@ Tom.class
 Hello.class(主类)  
 xxxxx.class   
 ```
+
+<escape><!-- more --></escape>
 
 方法步骤:  
 1,定义Main-Class  
