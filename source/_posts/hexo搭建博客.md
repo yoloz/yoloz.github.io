@@ -2,7 +2,7 @@
 title: hexo搭建博客
 comments: false
 toc: false
-date:
+date: 2018-11-27 14:54:43
 categories: hexo
 tags:
 ---
