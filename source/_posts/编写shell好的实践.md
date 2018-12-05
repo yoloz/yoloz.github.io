@@ -157,15 +157,15 @@ script_dir=$(cd `dirname $0` && pwd)
 script_dir=$(dirname `readlink -f $0`)
 ```
 > readlink print value of a symbolic link or canonical file name(输出符号链接值或者权威文件名)
-> ``` bash
-> $ readlink /usr/bin/awk  
-> /etc/alternatives/awk  #这个还是一个符号连接 
-> $ readlink /etc/alternatives/awk  
-> /usr/bin/gawk  #这个是真正的可执行文件  
-> ########################################
-> $ readlink -f /usr/bin/awk  
-> /usr/bin/gawk 
-> ```
+``` bash
+$ readlink /usr/bin/awk  
+/etc/alternatives/awk  #这个还是一个符号连接 
+$ readlink /etc/alternatives/awk  
+/usr/bin/gawk  #这个是真正的可执行文件  
+########################################
+$ readlink -f /usr/bin/awk  
+/usr/bin/gawk 
+```
 > -f 递归符号链接,直到非符号链接的文件位置,限制是最后必须存在一个非符号链接的文件
 
 ## 简短与效率
