@@ -28,11 +28,8 @@ svn checkout -r r791 http://siphon.googlecode.com/svn/trunk/ siphon
 `svn co http://192.168.1.10/svn/project/trunk/ . /home/DSP-OPEN`
 
 ## 更换svn帐号
-* 临时更换
-* * 命令中带上--username选项；
-* * 或者`svn up --username xxx`
-* 永久更换  
-删除目录 ~/.subversion/auth/下的所有文件；
+* 临时更换,命令中带上--username选项；
+* 全局更换`svn propset --username xxx`；
 
 ## 创建branch
 ``` bash
@@ -70,3 +67,29 @@ cd /xxx/trunk
 svn merginfo http://example.com/repos/myproject/branches/xxx_xxx --show-revs eligible
 ```
 > Trunk中的更新合并到Branch情况查看同上。
+
+## 更换地址
+``` bash
+svn sw --relocate old_addr new_addr
+```
+> switch简写sw  
+查看svn信息`svn info`
+
+## 忽略文件
+
+``` bash
+svn ps svn:ignore *.class .
+svn ps svn:ignore -R -F .svnignore .
+```
+> propset PROPNAME PROPVAL PATH...  
+svn:ignore A list of file glob patterns to ignore, one per line.  
+-F [--file] ARG: read property value from file ARG  
+-R [--recursive] : descend recursively, same as --depth=infinity
+
+.svnignore文件中定义多个忽略文件及目录
+```
+*.class
+.idea
+*.impl
+```
+
