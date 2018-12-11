@@ -63,9 +63,9 @@ zooKeeper协调集群所有节点的共享信息，在master和regionserver连�
 
 ## HBase First Read or Write
 Hbase中有一个特殊的目录表META表，存储了集群的所有regions位置，zookeeper存储了这个meta表的位置。大概流程如下：  
-1. 从zooKeeper中获取存储meta表的regionserver的位置；  
-2. 从meta中查询用户table对应请求的rowkey所在的regionserver位置；  
-3. 从查询到regionServer中获取数据；  
+1, 从zooKeeper中获取存储meta表的regionserver的位置；  
+2, 从meta中查询用户table对应请求的rowkey所在的regionserver位置；  
+3, 从查询到regionServer中获取数据；  
 ![](https://bp-1252402719.cos.ap-shanghai.myqcloud.com/HBaseArch11.png)
 
 ## HBase Meta Table

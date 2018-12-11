@@ -124,7 +124,8 @@ EOF
 > * 起始的标识符前后空格会被省略；
 
 其他用法：  
-* 定义变量
+* 定义变量  
+
 ``` bash
 var1="just test"
 var2=`cat << H
@@ -134,13 +135,15 @@ $var1
 H`
 echo "$var2"
 ```
-结果
+结果  
+
 ```
 line 1
 line 2
 just test
 ```
-* 定义一段批注，单行批注(#注释)
+* 定义一段批注，单行批注(#注释)  
+
 ``` bash
 :<<HERE
 批注一
@@ -156,7 +159,7 @@ HERE
 script_dir=$(cd `dirname $0` && pwd)
 script_dir=$(dirname `readlink -f $0`)
 ```
-> readlink print value of a symbolic link or canonical file name(输出符号链接值或者权威文件名)
+> readlink print value of a symbolic link or canonical file name(输出符号链接值或者权威文件名)  
 ``` bash
 $ readlink /usr/bin/awk  
 /etc/alternatives/awk  #这个还是一个符号连接 

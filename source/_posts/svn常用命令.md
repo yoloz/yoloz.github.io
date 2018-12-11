@@ -41,9 +41,9 @@ svn cp http://example.com/repos/myproject/trunk http://example.com/repos/myproje
 
 ## 合并
 假设现在Branch上fix了一系列的bug，现在我们想把针对Branch的改变同步到Trunk上。
-1. 保证当前Branch分支是clean的，也就是说使用svn status看不到任何的本地修改。
-2. 命令行下切换到Trunk目录中`cd /xxxx/trunk`，使用`svn merge http://example.com/repos/myproject/branches/xxx_xxx`来将Branch分支上的改动merge回Trunk下。
-3. 如果出现merge冲突则进行解决，然后执行`svn ci -m 'description'`来提交变动。
+1, 保证当前Branch分支是clean的，也就是说使用svn status看不到任何的本地修改。
+2, 命令行下切换到Trunk目录中`cd /xxxx/trunk`，使用`svn merge http://example.com/repos/myproject/branches/xxx_xxx`来将Branch分支上的改动merge回Trunk下。
+3, 如果出现merge冲突则进行解决，然后执行`svn ci -m 'description'`来提交变动。
 > commit简写ci  
 
 ### 指定合并版本 
@@ -56,12 +56,12 @@ svn merge  http://example.com/repos/myproject/branches/xxx_xxx -r150:HEAD
 
 ### 查看合并情况
 使用svn mergeinfo来查看merge情况.
-* 查看当前Branch中已经有那些改动被合并到Trunk中:
+查看当前Branch中已经有那些改动被合并到Trunk中:
 ``` bash
 cd /xxx/trunk
 svn mergeinfo http://example.com/repos/myproject/branches/xxx_xxx
 ```
-* 查看Branch中那些改动还未合并
+查看Branch中那些改动还未合并
 ``` bash
 cd /xxx/trunk
 svn merginfo http://example.com/repos/myproject/branches/xxx_xxx --show-revs eligible
