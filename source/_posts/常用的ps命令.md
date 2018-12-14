@@ -42,6 +42,14 @@ Specify sorting order.Sorting syntax is [+|-]key[,[+|-]key[,...]]. Choose a mult
 The "+" is optional since default direction is increasing numerical or lexicographic order.  Identical to k.  For example: ps jax --sort=
 uid,-ppid,+pid  
 
+``` bash
+ps aux | sort -nr -k 4 | head -n 10 | awk '{total+=$4}END{print "sum="total"%"}' #占用最多内存的10个进程的内存占用总和
+```
+> sort - sort lines of text files  
+-n, --numeric-sort compare according to string numerical value 
+-r, --reverse reverse the result of comparisons 反转(从大到小)
+-k, --key=KEYDEF sort via a key; KEYDEF gives location and type 排序key的位置
+
 ## 通过进程名过滤
 
 ``` bash
