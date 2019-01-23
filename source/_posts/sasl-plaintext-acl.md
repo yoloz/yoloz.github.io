@@ -24,6 +24,8 @@ user_write="write";
 user_username=pwd;  
 The set of properties user_userName defines the passwords for all users that connect to the broker and the broker validates all client connections including those from other brokers using these properties(需要添加user_admin="admin",broker之间互相访问);
 
+<!--more-->
+
 kafka_client_jaas.conf
 ```
 KafkaClient{
