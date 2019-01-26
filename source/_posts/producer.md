@@ -6,14 +6,14 @@ date: 2019-01-26 15:55:51
 categories: kafka
 tags:
 ---
-# producer核心工作流程
+# 核心工作流程
 * Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
 * 进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到Producer程序中的一块内存缓冲区中。  
 * Producer的另一个工作线程（即Sender线程），则负责实时地从该缓冲区中提取出准备好的消息封装到一个批次的内，统一发送给对应的broker中。
 
 <!--more-->
 
-# producer主要参数设置
+# 主要参数设置
 
 ## 参数acks设置
 在消息被认为是“已提交”之前，producer需要leader确认的produce请求的应答数。该参数用于控制消息的持久性，目前提供了3个取值：  
