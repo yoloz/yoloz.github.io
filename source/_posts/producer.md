@@ -26,8 +26,8 @@ tags:
 ## 参数buffer.memory设置（吞吐量）
 该参数用于指定Producer端用于缓存消息的缓冲区大小，单位为字节，默认值为：33554432(32M)。kafka采用的是异步发送的消息架构，prducer启动时会首先创建一块内存缓冲区用于保存待发送的消息，然后由一个专属线程负责从缓冲区读取消息进行真正的发送。
 > 商业环境推荐：  
-* 消息持续发送过程中，当缓冲区被填满后，producer立即进入阻塞状态直到空闲内存被释放出来，这段时间不能超过max.blocks.ms设置的值，一旦超过，producer则会抛出TimeoutException 异常，因为Producer是线程安全的，若一直报TimeoutException，需要考虑调高buffer.memory 了。
-* 用户在使用多个线程共享kafka producer时，很容易把 buffer.memory 打满。
+消息持续发送过程中，当缓冲区被填满后，producer立即进入阻塞状态直到空闲内存被释放出来，这段时间不能超过max.blocks.ms设置的值，一旦超过，producer则会抛出TimeoutException 异常，因为Producer是线程安全的，若一直报TimeoutException，需要考虑调高buffer.memory 了。
+用户在使用多个线程共享kafka producer时，很容易把 buffer.memory 打满。
 
 ## 参数compression.type设置（lZ4）
 producer压缩器，目前支持none（不压缩），gzip，snappy和lz4。
@@ -37,8 +37,8 @@ producer压缩器，目前支持none（不压缩），gzip，snappy和lz4。
 ## 参数retries设置(注意消息乱序,EOS)
 重试时producer会重新发送之前由于瞬时原因出现失败的消息。瞬时失败的原因可能包括：元数据信息失效、副本数量不足、超时、位移越界或未知分区等。倘若设置了retries > 0，那么这些情况下producer会尝试重试
 > 商业环境推荐：  
-* max.in.flight.requests.per.connection设置大于1，设置retries就有可能造成发送消息的乱序；
-* kafka后期版本已经支持"精确到一次的语义”，因此消息的重试不会造成消息的重复发送
+max.in.flight.requests.per.connection设置大于1，设置retries就有可能造成发送消息的乱序；
+kafka后期版本已经支持"精确到一次的语义”，因此消息的重试不会造成消息的重复发送
 
 ## 参数linger.ms设置(吞吐量和延时性能)
 默认是0，表示不做停留，这种情况下，可能有的batch中没有包含足够多的produce请求就被发送出去了，造成了大量的小batch，给网络IO带来的极大的压力
@@ -53,9 +53,10 @@ Got error produce response with correlation id xxx on topic-partition xxxxx, ret
 
 ```
 暂时定位是producer压力较大，默认配置需要优化(细节可参上述说明)。  
+  
 > broker可优化参数如下：  
-*num.network.threads=cpu核数+1*  
-*num.io.threads=cpu核数*2*  
-*socket.send.buffer.bytes=1024000*  
-*socket.receive.buffer.bytes=1024000*  
+num.network.threads=cpu核数+1  
+num.io.threads=cpu核数*2  
+socket.send.buffer.bytes=1024000  
+socket.receive.buffer.bytes=1024000  
 
