@@ -8,6 +8,8 @@ tags:
 ---
 
 获取一个url对应的远程git repo,创建一个本地copy`git clone url`
+clone指定分支`git clone -b 分支名 url`,如：git clone -b v2.8.1 https://xxx.git  
+
 <!--more-->
 
 ## commit相关
