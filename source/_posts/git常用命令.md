@@ -58,3 +58,13 @@ git remote rm origin
 git remote add origin new_addr
 ```
 
+## 删除和重命名
+
+```
+git rm xxx          #将文件从索引和工作目录中都删除
+git rm --cached xxx #删除索引中的文件并把它保留在工作目录中
+git checkout xxx    #文件删除后的恢复
+git mv f1  f2       #重命名,f2不存在
+```
+
+
