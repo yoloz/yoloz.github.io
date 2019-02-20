@@ -45,7 +45,7 @@ Lucene中存储的索引主要分为三种类型：
 * __DOCS_AND_FREQS_AND_POSITIONS__：存储doc_id、词频（Term Freq）和位置。
 * __DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS__：存储doc_id、词频（Term Freq）、位置和偏移(offset)
 > org.apache.lucene.index.IndexOptions
-```
+``` java
 public enum IndexOptions { 
   NONE,
   DOCS,
@@ -77,7 +77,7 @@ public enum IndexOptions {
 
 * __创建文档Document和Field__
 
-```
+``` java
 Document doc = new Document();
 doc.add(new Filed(key,value,STORE?,INDEX?)
 ```
