@@ -101,3 +101,4 @@ When no more per thread arena will be created, reused_arena function will be cal
 参考
 [当Java虚拟机遇上Linux Arena内存池](https://blog.csdn.net/qq_36510261/article/details/78392409)  
 [Java 进程占用 VIRT 虚拟内存超高的问题研究](https://www.cnblogs.com/seasonsluo/p/java_virt.html)
+[内存优化总结:ptmalloc、tcmalloc和jemalloc](http://www.cnhalo.net/2016/06/13/memory-optimize/)
