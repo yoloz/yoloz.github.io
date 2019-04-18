@@ -141,5 +141,9 @@ Field对象还有其他几个初始化方法，允许传入除String以外的其
 ### 多值域
 
 ## 对数字、日期、时间等进行索引
-lucene为我们装备了一个处理日期的利器：DateTools。 通过它我们可以便捷的把Date型转换成String型。DateTools可以把日期和时间转换成 YYYYMMDDhhmmss 的格式，并根据指定的resolution去除相应后缀。
+lucene为我们装备了一个处理日期的利器：DateTools,通过它我们可以便捷的把Date型转换成String型。DateTools可以把日期和时间转换成 YYYYMMDDhhmmss 的格式，并根据指定的resolution去除相应后缀;  
+也可以将其转成long值处理;
 
+[样例Demo](https://github.com/yoloz/PLSamples/tree/master/java/functions/luceneSearch)
+
+[lucene开发](http://codepub.cn/tags/Lucene/)
