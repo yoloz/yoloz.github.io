@@ -67,4 +67,22 @@ git checkout xxx    #文件删除后的恢复
 git mv f1  f2       #重命名,f2不存在
 ```
 
+## 多仓库工作
+github和码云同时维护,代码在github上
+``` sh
+cd repositoriesDir
+git remote -v
+#origin	https://github.com/yoloz/abc.git (fetch)
+#origin	https://github.com/yoloz/abc.git (push)
+git remote add def https://gitee.com/user/def.git
+git remote -v
+#def	https://gitee.com/user/def.git (fetch)
+#def	https://gitee.com/user/def.git (push)
+#origin	https://github.com/yoloz/abc.git (fetch)
+#origin	https://github.com/yoloz/abc.git (push)
+git pull def master:def  #pull def中的master分支到本地def分支
+git checkout def #change branch to def
+git merge master #拷贝本地master分支到本地def分支中
+git push def def:master  #push 本地def分支到def中的master分支
+```
 
