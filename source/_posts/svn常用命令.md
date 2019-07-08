@@ -93,3 +93,5 @@ svn:ignore A list of file glob patterns to ignore, one per line.
 *.impl
 ```
 
+## svn revert
+恢复整个目录`svn revert Dir .`
