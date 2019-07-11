@@ -82,7 +82,39 @@ git remote -v
 #origin	https://github.com/yoloz/abc.git (push)
 git pull def master:def  #pull def中的master分支到本地def分支
 git checkout def #change branch to def
-git merge master #拷贝本地master分支到本地def分支中
+git merge master [--allow-unrelated-histories] #拷贝本地master分支到本地def分支中
 git push def def:master  #push 本地def分支到def中的master分支
 ```
+> fatal: refusing to merge unrelated histories添加 
+`--allow-unrelated-histories`告诉git允许不相关历史合并  
+`git pull def master:def`用于新建分支，如果更新def分支，则要先checkout到def分支
+
+## 修改commit
+合并多个commit为一个完整commit,或者多分支合并时去除被合并分支的一些commit
+``` sh
+git log
+#commit f711d30598620669a692a8115d1c798af66da311
+#Author: abc <abc@gmail.com>
+#Date:   Thu Jul 11 11:38:15 2019 +0800
+#    commit提交说明
+git rebase -i f711d30 #commit标志的前7位
+
+#pick e157f87 Initial commit
+#pick f711d30 2019-07-11 11:38:15
+#pick e04d2b0 2019-07-11 11:40:52
+
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+
+```
+> * `git rebase -i  [startpoint]  [endpoint]`其中-i的意思是--interactive，即弹出交互式的界面让用户编辑完成合并操作，[startpoint]  [endpoint]则指定了一个编辑区间，如果不指定[endpoint]，则该区间的终点默认是当前分支HEAD所指向的commit(注：该区间指定的是一个前开后闭的区间)。
+> * ^X的^表示ctrl,M-A的M表示alt
+> * 修改后(如将pick换成d),ctrl+x退出,提示是否保存修改，选择yes,然后选择alt+b(backup file),然后enter回车即可
+> * 修改conflict，然后push
 
