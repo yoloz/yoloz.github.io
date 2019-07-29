@@ -7,8 +7,9 @@ categories: web
 tags:
 ---
 
-* 安装依赖`yarn add react-loadable`
+* 安装依赖 `yarn add react-loadable`
 * 根据[react-loadable文档](https://github.com/jamiebuilds/react-loadable/blob/master/README.md)提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+
 ``` js
 import React from 'react';
 import { Icon } from 'antd';
@@ -24,9 +25,11 @@ const Loading = ({ pastDelay, timedOut, error }) => {
   return null;
 };
 ```
+
 <!-- more -->
 
 * 分割各组件：
+
 ``` js
 import React from 'react';
 import Loadable from 'react-loadable';
@@ -45,7 +48,9 @@ const EditArticle = Loadable({
 ...
 export {Home, EditArticle,...}
 ```
+
 * 更改入口文件
+
 ``` js
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
