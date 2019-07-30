@@ -35,8 +35,8 @@ public void UDateToLocalDateTime() {
     Instant instant = date.toInstant();
     ZoneId zone = ZoneId.systemDefault();
     LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
-    # LocalDate localDate = localDateTime.toLocalDate();
-    # LocalTime localTime = localDateTime.toLocalTime();
+    // LocalDate localDate = localDateTime.toLocalDate();
+    // LocalTime localTime = localDateTime.toLocalTime();
 }
 ```
 
@@ -45,21 +45,21 @@ public void UDateToLocalDateTime() {
 ```java
 
 public void LocalDateTimeToUdate(LocalDateTime localDateTime) {
-    # LocalDateTime localDateTime = LocalDateTime.now();
+    // LocalDateTime localDateTime = LocalDateTime.now();
     ZoneId zone = ZoneId.systemDefault();
     Instant instant = localDateTime.atZone(zone).toInstant();
     java.util.Date date = Date.from(instant);
 }
 
 public void LocalDateToUdate(LocalDate localDate) {
-    # LocalDate localDate = LocalDate.now();
+    // LocalDate localDate = LocalDate.now();
     ZoneId zone = ZoneId.systemDefault();
     Instant instant = localDate.atStartOfDay().atZone(zone).toInstant();
     java.util.Date date = Date.from(instant);
 }
 
 public void LocalTimeToUdate(LocalTime localTime) {
-    # LocalTime localTime = LocalTime.now();
+    // LocalTime localTime = LocalTime.now();
     LocalDate localDate = LocalDate.now();
     LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
     ZoneId zone = ZoneId.systemDefault();
