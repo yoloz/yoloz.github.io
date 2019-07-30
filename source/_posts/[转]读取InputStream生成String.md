@@ -7,26 +7,28 @@ categories: java
 tags:
 ---
 
-## 1,使用IOUtils.toString（Apache Utils）
+## 1, 使用IOUtils.toString（Apache Utils）
 
 ``` java
 String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
 ```
 
-## 2,使用CharStreams（guava）
+## 2, 使用CharStreams（guava）
 
 ``` java
 String result = CharStreams.toString(new InputStreamReader(inputStream, Charsets.UTF_8));
 ```
 
-## 3,使用Scanner（JDK）
+<!--more-->
+
+## 3, 使用Scanner（JDK）
 
 ``` java
 Scanner s = new Scanner(inputStream).useDelimiter("\A");
 String result = s.hasNext() ? s.next() : "";
 ```
 
-## 4,5 使用Stream Api（Java 8）
+## 4, 5 使用Stream Api（Java 8）
 
 ``` java
 String result = new BufferedReader(new InputStreamReader(inputStream)).lines().collect(Collectors.joining("\n"));
@@ -35,7 +37,7 @@ String result = new BufferedReader(new InputStreamReader(inputStream)).lines().p
 
 > 会将将不同的换行符（如\r\n）转换为\n
 
-## 6,使用InputStreamReader和StringBuilder（JDK）
+## 6, 使用InputStreamReader和StringBuilder（JDK）
 
 ``` java
 final int bufferSize = 1024;
@@ -50,7 +52,7 @@ for (; ;) {
 return out.toString();
 ```
 
-## 7,使用StringWriter和IOUtils.copy（Apache Commons）
+## 7, 使用StringWriter和IOUtils.copy（Apache Commons）
 
 ``` java
 StringWriter writer = new StringWriter();
@@ -58,7 +60,7 @@ IOUtils.copy(inputStream, writer, "UTF-8");
 return writer.toString();
 ```
 
-## 8,使用ByteArrayOutputStream和inputStream.read（JDK）
+## 8, 使用ByteArrayOutputStream和inputStream.read（JDK）
 
 ``` java
 ByteArrayOutputStream result = new ByteArrayOutputStream();
@@ -69,7 +71,7 @@ while ((length = inputStream.read(buffer)) != -1) result.write(buffer, 0, length
 return result.toString("UTF-8");
 ```
 
-## 9,使用BufferedReader（JDK）
+## 9, 使用BufferedReader（JDK）
 
 ``` java
 String newLine = System.getProperty("line.separator");
@@ -85,7 +87,7 @@ return result.toString();
 
 > 会将不同的换行符（如\n\r）转换为line.separator系统属性（例如，在Windows中为“\ r \ n”）
 
-## 10,使用BufferedInputStream和ByteArrayOutputStream（JDK）
+## 10, 使用BufferedInputStream和ByteArrayOutputStream（JDK）
 
 ``` java
 BufferedInputStream bis = new BufferedInputStream(inputStream);
@@ -99,7 +101,7 @@ while(result != -1) {
 return buf.toString("UTF-8");
 ```
 
-## 11,使用inputStream.read（）和StringBuilder （JDK）
+## 11, 使用inputStream.read（）和StringBuilder （JDK）
 
 ``` java
 int ch;
@@ -145,4 +147,5 @@ return sb.toString();
 10. BufferedInputStream, ByteArrayOutputStream  avgt   10   740,837 ±    5,613  us/op
  3. Scanner (JDK)                               avgt   10   751,417 ±   62,026  us/op
 11. InputStream.read() and StringBuilder (JDK)  avgt   10  2919,350 ± 1101,942  us/op
+
 ```
