@@ -8,7 +8,7 @@ tags:
 ---
 
 获取一个url对应的远程git repo, 创建一个本地copy `git clone url`
-clone指定分支 `git clone -b 分支名 url` , 如：git clone -b v2.8.1 https://xxx.git  
+clone指定分支 `git clone -b 分支名 url` , 如：git clone -b v2.8.1 <https://github.com/user/abc.git>
 
 <!--more-->
 
@@ -76,32 +76,6 @@ git checkout xxx    #文件删除后的恢复
 git mv f1  f2       #重命名,f2不存在
 ```
 
-## 多仓库工作
-
-github和码云同时维护, 代码在github上
-
-``` bash
-cd repositoriesDir
-git remote -v
-#origin https://github.com/yoloz/abc.git (fetch)
-#origin https://github.com/yoloz/abc.git (push)
-git remote add def https://gitee.com/user/def.git
-git remote -v
-#def https://gitee.com/user/def.git (fetch)
-#def https://gitee.com/user/def.git (push)
-#origin https://github.com/yoloz/abc.git (fetch)
-#origin https://github.com/yoloz/abc.git (push)
-git pull def master:def  #pull def中的master分支到本地def分支
-git checkout def #change branch to def
-git merge master [--allow-unrelated-histories] #拷贝本地master分支到本地def分支中
-git push def def:master  #push 本地def分支到def中的master分支
-```
-
-> fatal: refusing to merge unrelated histories添加
-
- `--allow-unrelated-histories` 告诉git允许不相关历史合并  
- `git pull def master:def` 用于新建分支，如果更新def分支，则要先checkout到def分支
-
 ## 修改commit
 
 合并多个commit为一个完整commit, 或者多分支合并时去除被合并分支的一些commit
@@ -133,3 +107,53 @@ git rebase -i f711d30 #commit标志的前7位
 > * ^X的^表示ctrl, M-A的M表示alt
 > * 修改后(如将pick换成d), ctrl+x退出, 提示是否保存修改，选择yes, 然后选择alt+b(backup file), 然后enter回车即可
 > * 修改conflict，然后push
+
+## 多仓库工作
+
+github和码云同时维护, 代码在github上
+
+``` bash
+cd repositoriesDir
+git remote -v
+#origin https://github.com/user/abc.git (fetch)
+#origin https://github.com/user/abc.git (push)
+###################################
+#未避免master混淆，可以创建其他名称分支代替，如下：
+#git remote add abc https://gitee.com/user/def.git
+#git pull abc master:abc
+###################################
+git remote add def https://gitee.com/user/def.git
+git remote -v
+#def https://gitee.com/user/def.git (fetch)
+#def https://gitee.com/user/def.git (push)
+#origin https://github.com/user/abc.git (fetch)
+#origin https://github.com/user/abc.git (push)
+git pull def master:def  #pull def中的master分支到本地def分支
+git checkout def #change branch to def
+git merge abc [--allow-unrelated-histories] #拷贝本地abc分支到本地def分支中
+###################################
+#merge后会产生两个commit
+# git log
+#commit c60d6c244e961de6ac68db39ec48bf6a510e83eb (HEAD -> def)
+#Merge: dff6788 b85eb67
+#Author: xxx
+# Date:   xxx
+#     Merge branch 'abc' into def
+# commit b85eb67ad4ea14c6c627df8c2bc061d200da53ac (abc)
+# Author: xxx
+# Date:   xxx
+#     add bind host
+# commit dff6788db0410497eb1bb18403059a0e45438730 (def/master)
+#................
+#剔除最上面这个‘Merge branch 'abc' into def’ commit
+#git rebase -i dff6788
+#pick b85eb67 add bind host
+#修改pick为drop,保存后会生成一个新的commit
+###################################
+git push def def:master  #push 本地def分支到def中的master分支
+```
+
+> fatal: refusing to merge unrelated histories添加
+
+ `--allow-unrelated-histories` 告诉git允许不相关历史合并  
+ `git pull def master:def` 用于新建分支，如果更新def分支，则要先checkout到def分支
