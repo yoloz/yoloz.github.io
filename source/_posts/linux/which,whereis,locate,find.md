@@ -1,0 +1,25 @@
+---
+title: which, whereis, locate, find
+comments: false
+toc: false
+date: 2019-09-18 23:54:00
+categories:
+tags:
+---
+
+## which
+
+只能寻找可执行文件, 并在PATH变量里面寻找  
+
+## whereis
+
+从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的文件, 全匹配模式
+
+## locate
+
+同上, 不过文件名是部分匹配
+
+## find
+
+是直接在硬盘上搜寻，功能强大
+
