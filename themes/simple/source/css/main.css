@@ -490,10 +490,14 @@ canvas#live2dcanvas {
 
 @media screen and (max-width: 800px) {
     aside {
-        display: none;
+        /* display: none; */
+        width: 150px;
+    }
+    aside input{
+        width: 145px;
     }
     #content {
-        padding-left: 0;
+        padding-left: 150px;
     }
     canvas#live2dcanvas {
         display: none;
@@ -505,10 +509,14 @@ canvas#live2dcanvas {
 
 @media all and (orientation: portrait) {
     aside {
-        display: none;
+        /* display: none; */
+        width: 150px;
+    }
+    aside input{
+        width: 145px;
     }
     #content {
-        padding-left: 0;
+        padding-left: 150px;
     }
     canvas#live2dcanvas {
         display: none;
