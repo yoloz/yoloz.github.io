@@ -7,7 +7,7 @@ categories:
 tags:
 ---
 
-获取一个url对应的远程git repo, 创建一个本地copy `git clone url` 
+获取一个url对应的远程git repo, 创建一个本地copy `git clone url`  
 clone指定分支 `git clone -b 分支名 url` , 如：git clone -b v2.8.1 https://xxx.git  
 
 ## commit相关
@@ -20,36 +20,51 @@ git有一个暂存区(staging area), 可以放入新添加的文件或加入新�
 
 ## diff相关
 
-`git diff` 工作目录中的文件和暂存区快照之间的差异，即修改后还没暂存起来(commit)的变化内容；
-`git diff --cached` 已经暂存起来的文件和上次提交时的快照之间的差异；
-`git diff HEAD` 工作目录中的文件和上次提交之间的改动；
-`git diff [version tag]` 查看指定版本之后的改动；
+`git diff` 工作目录中的文件和暂存区快照之间的差异，即修改后还没暂存起来(commit)的变化内容；  
+`git diff --cached` 已经暂存起来的文件和上次提交时的快照之间的差异；  
+`git diff HEAD` 工作目录中的文件和上次提交之间的改动；  
+`git diff [version tag]` 查看指定版本之后的改动；  
 
-## branch相关
+## branch,tag相关
 
-查看本地分支 `git branch` 
-查看远程分支 `git branch -r` 
-查看所有分支 `git branch -a` 
-本地创建新分支 `git branch xxxx` 
-切换到分支xx `git checkout xx` 
-创建分支的同时切换到该分支上 `git checkout -b xxx` 
-将新分支推送到远程repo上 `git push origin xxx` 
-删除本地分支 `git branch -d xxx` 
-删除远程分支 `git push origin --delete xxx` 
+查看本地分支 `git branch`  
+查看远程分支 `git branch -r`  
+查看所有分支 `git branch -a`  
+本地创建新分支 `git branch <branchName>`  
+切换到分支xx `git checkout <branchName>`  
+创建分支的同时切换到该分支上 `git checkout -b <branchName>`  
+将新分支推送到远程repo上 `git push origin <branchName>`  
+删除本地分支 `git branch -d <branchName>`  
+删除远程分支 `git push origin --delete <branchName>`  
+删除远程tag `git push origin --delete tag <tagname>`  
+把本地tag推送到远程`git push --tags`  
+获取远程tag`git fetch origin tag <tagname>`  
+**重命名远程分支:**  
+即先删除远程分支，然后重命名本地分支，再重新提交一个远程分支
+
+```sh
+git push --delete origin <branchName> #删除远程分支
+git branch -m b1 new_b  #重命名本地分支
+git push origin new_b   #推送本地分支
+```
+
+**删除不存在对应远程分支的本地分支:**  
+使用`git remote show origin`查看分支的状态，看到\<branch>是stale的，使用`git remote prune origin`可以将其从本地版本库中去除
+>更简单的方法是使用`git fetch -p`，它在fetch之后删除掉没有与远程分支对应的本地分支
 
 有时候我们需要创建一个干净的分支，其不继承任何提交没有父节点，而上文的 `git checkout xx` 创建的分支xx是有父节点的，包含了历史提交。流程如下：
 1, 创建干净的分支 `git checkout --orphan xx` ；  
-2, 删除工作目录中其他分支存在的内容 `git rm -rf .` ; 
-3, 给分支xx添加内容 `git add file1 file2...` ; 
-4, 提交到本地仓库 `git commit -m "something"` ; 
-5, 推送到远程仓库 `git push origin xx` ; 
+2, 删除工作目录中其他分支存在的内容 `git rm -rf .` ;  
+3, 给分支xx添加内容 `git add file1 file2...` ;  
+4, 提交到本地仓库 `git commit -m "something"` ;  
+5, 推送到远程仓库 `git push origin xx` ;  
 
 ## 撤销相关
 
 git撤销操作主要有如下方式:
-撤销上一次提交，并将暂存区文件重新提交 `git commit --amend` ; 
-拉取暂存区文件替换工作区文件 `git checkout file1 dir1...` ; 
-拉取版本库文件到暂存区, 不影响工作区 `git reset HEAD file1 dir1...` ; 
+撤销上一次提交，并将暂存区文件重新提交 `git commit --amend` ;  
+拉取暂存区文件替换工作区文件 `git checkout file1 dir1...` ;  
+拉取版本库文件到暂存区, 不影响工作区 `git reset HEAD file1 dir1...` ;  
 
 > 第一种情况下--amend会打开编辑文件其中快捷键^表示ctrl, M表示alt(linux)  
 
@@ -57,12 +72,14 @@ meta键是以前MIT计算机键盘上的的一个特殊键
 
 ## 更换地址
 
-查看远程仓库信息 `git remote -v` 
+查看远程仓库信息 `git remote -v`  
 本地仓库更换远程仓库地址
 
 ``` bash
 git remote rm origin
 git remote add origin new_addr
+#等价操作
+git remote set-url origin new_addr
 ```
 
 ## 删除和重命名
@@ -132,3 +149,25 @@ git rebase -i f711d30 #commit标志的前7位
 > * 修改后(如将pick换成d), ctrl+x退出, 提示是否保存修改，选择yes, 然后选择alt+b(backup file), 然后enter回车即可
 > * 修改conflict，然后push
 
+## 克隆部分文件
+
+Sparse Checkout模式:  
+1.指定远程仓库
+
+``` sh
+mkdir project_folder
+cd project_folder
+git init
+git remote add -f origin <url>
+```
+
+2,指定克隆模式`git config core.sparsecheckout true`  
+3,指定克隆的文件夹(或者文件)
+
+```sh
+echo “libs” >> .git/info/sparse-checkout
+echo “apps/register.go” >> .git/info/sparse-checkout
+echo “resource/css” >> .git/info/sparse-checkout
+```
+
+4,拉取远程文件`git pull origin master`
