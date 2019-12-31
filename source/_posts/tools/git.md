@@ -48,6 +48,15 @@ git branch -m b1 new_b  #重命名本地分支
 git push origin new_b   #推送本地分支
 ```
 
+**切换分支**
+如架构调整之类需要将先前代码以一个分支留存继续在此分支开发
+
+```sh
+git branch -m thisBranch oldBranch
+git push origin oldBranch  #留存老版到仓库
+git checkout thisBranch  #切换thisBranch继续开发
+```
+
 **删除不存在对应远程分支的本地分支:**  
 使用`git remote show origin`查看分支的状态，看到\<branch>是stale的，使用`git remote prune origin`可以将其从本地版本库中去除
 >更简单的方法是使用`git fetch -p`，它在fetch之后删除掉没有与远程分支对应的本地分支
