@@ -444,34 +444,14 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					Requirements:jdk
-tar -zxvf hadoop-2.7.3.tar.gz -C ~
-创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
-mkdir -p ~/hadoo
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vi/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/30/linux/vi/">vi</a>
-				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
-
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
@@ -493,13 +473,12 @@ impor
 		
 		<li class="article-li">
 			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
 				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
-
-如果能使用props实现，
+					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
+var obj = &#123;'0':'a','1':'b','2
 					...
 				</div>
 		</li>
