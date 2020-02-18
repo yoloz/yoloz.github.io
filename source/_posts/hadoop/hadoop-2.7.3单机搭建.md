@@ -7,13 +7,11 @@ categories:
 tags:
 ---
 
-## hadoop-2.7.3单机搭建
-
 Requirements:jdk
 
 `tar -zxvf hadoop-2.7.3.tar.gz -C ~`
 
-### 创建hadoop文件目录
+## 创建hadoop文件目录
 
 在安装目录下创建4个文件目录, 如下:
 
@@ -24,7 +22,7 @@ mkdir -p ~/hadoop-2.7.3/data/hdfs/data
 mkdir -p ~/hadoop-2.7.3/data/log
 ```
 
-### 修改配置文件
+## 修改配置文件
 
 最基本要修改3个文件：hadoop-env.sh, core-site.xml, hdfs-site.xml
 
@@ -75,7 +73,7 @@ mkdir -p ~/hadoop-2.7.3/data/log
 </configuration>
 ```
 
-### 初始化
+## 初始化
 
 `$HADOOP_HOME/bin/hdfs namenode -format`
 
@@ -83,7 +81,7 @@ mkdir -p ~/hadoop-2.7.3/data/log
 
 到这里hadoop单机版已经安装成功, 接下来就是启动hadoop
 
-### 启动
+## 启动
 
 分别启动namenode、secondarynamenode、datanode, 如下:
 
@@ -94,7 +92,7 @@ $HADOOP_HOME/sbin/hadoop-daemon.sh start datanode
 #$HADOOP_HOME/bin/hadoop fs -ls /   #没有错误说明启动成功
 ```
 
-### 配置yarn
+## 配置yarn
 
 如果使用到yarn, 配置时需要添加以下配置:
 

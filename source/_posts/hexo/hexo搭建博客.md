@@ -46,8 +46,6 @@ cd 【仓库目录】
 npm install
 ```
 
-初次git发布还需安装: `npm install hexo-deployer-git`
-
 执行 `hexo server` 通过浏览器即可访问博客了;
 
 ## 自定义
@@ -58,11 +56,19 @@ npm install
 
 git部署发布: `hexo generate --deploy`
 
+> ERROR Deployer not found: git，执行`npm install hexo-deployer-git`即可
+
 更多信息参考上篇[《start-hexo》](/2018/11/19/start-hexo/)
 
 ## 问题
 
- `hexo generate --deploy` 报错:  
+ `hexo generate --deploy` 报错: 
+
+* ERROR Deployer not found: git
+
+安装hexo-deployer-git `npm install hexo-deployer-git`
+
+* fatal: unable to auto-detect email address 
 
 ```bash
 git config --global user.email "you@example.com"

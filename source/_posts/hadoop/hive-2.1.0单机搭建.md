@@ -7,13 +7,11 @@ categories:
 tags:
 ---
 
-## hive-2.1.0单机搭建
-
 Requirements:jdk, hadoop
 
 `tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~`
 
-### 修改配置文件
+## 修改配置文件
 
 * hive-env.sh
 
@@ -56,7 +54,7 @@ Requirements:jdk, hadoop
 
 > 如果使用mysql, 需要将对应的jdbc驱动jar移到lib下
 
-### 初始化
+## 初始化
 
 ``` sh
 #hadoop已启动
@@ -64,7 +62,7 @@ export HADOOP_HOME=<hadoop-install-dir>
 $HIVE_HOME/bin/schematool -dbType <db type> -initSchema  # use "derby" as db type or "mysql"
 ```
 
-### 启动
+## 启动
 
 ``` sh
 $HIVE_HOME/bin/hiveserver2 &  #"&" 表示后台运行
