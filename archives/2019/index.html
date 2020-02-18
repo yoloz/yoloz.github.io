@@ -444,52 +444,53 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/hexo/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/hexo/start-hexo/">start-hexo</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2018-12-03</span>
+			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-19</span>
-			<a class="article-read" href="/2019/02/19/tools/yaml格式/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/19/tools/yaml格式/">yaml格式</a>
+					href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">Xms-Xmx-XX:PermSize-XX:MaxPermSize区别</a>
 				<div class="article-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
-				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+					JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：
 
-如果能使用props实现，
+堆区即为通过new的方式创建的对象（类实例）所占用的内存空间
+非堆区即为代码、常量、外部访问（如文件访问流所占资源）等
+
+java垃
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/tools/git/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/10/tools/git/">git</a>
+				<div class="article-digest">
+					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
 					...
 				</div>
 		</li>

@@ -444,31 +444,13 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/"> 阅读全文 </span>
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">Xms-Xmx-XX:PermSize-XX:MaxPermSize区别</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="article-digest">
-					JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：
-
-堆区即为通过new的方式创建的对象（类实例）所占用的内存空间
-非堆区即为代码、常量、外部访问（如文件访问流所占资源）等
-
-java垃
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-14</span>
-			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
-				<div class="article-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
-
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
 					...
 				</div>
 		</li>
@@ -487,12 +469,27 @@ alternatives 和 update-alt
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/user,group/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/user,group/">user,group</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					创建用户及组创建用户组 groupadd ，创建用户 useradd , 设置密码 passwd ，配置sudo权限 vim /etc/sudoers 并添加 userName ALL=(ALL) A
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/tools/yaml格式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/19/tools/yaml格式/">yaml格式</a>
+				<div class="article-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>

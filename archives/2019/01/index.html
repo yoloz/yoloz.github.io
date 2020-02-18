@@ -444,45 +444,57 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					Invert Index倒排索引是lucene的核心索引类型，采用链表的数据结构，倒排索引中的key就是一个term，value就是以doc_id形成的链表结构。
 
-Modify shell resource limits. Prov
+
+
+
+Term
+Doc_1
+Doc
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vi/"> 阅读全文 </span>
+			<span class="article-date">2018-12-05</span>
+			<a class="article-read" href="/2018/12/05/tools/svn/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vi/">vi</a>
+					href="/2018/12/05/tools/svn/">svn</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+				<div class="article-digest">
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+如果能使用props实现，
 					...
 				</div>
 		</li>
