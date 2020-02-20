@@ -9,7 +9,7 @@ tags:
 
 Java 8中 `java.util.Date` 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
 
-```java
+``` java
 // Obtains an instance of Date from an Instant object.
 public static Date from(Instant instant) {
     try {
@@ -28,7 +28,7 @@ public Instant toInstant() {
 
 ## java.util.Date --> java.time.LocalDateTime
 
-```java
+``` java
 public void UDateToLocalDateTime() {
     java.util.Date date = new java.util.Date();
     Instant instant = date.toInstant();
@@ -41,7 +41,7 @@ public void UDateToLocalDateTime() {
 
 ## java.time.LocalDateTime --> java.util.Date
 
-```java
+``` java
 
 public void LocalDateTimeToUdate(LocalDateTime localDateTime) {
     // LocalDateTime localDateTime = LocalDateTime.now();
@@ -69,7 +69,7 @@ public void LocalTimeToUdate(LocalTime localTime) {
 
 ## java.util.Date <--> long
 
-```java
+``` java
 public void DateToLong(Object obj){
     long l,int i;
     if(obj instanceof java.sql.Date) l = ((java.sql.Date)obj).getTime();

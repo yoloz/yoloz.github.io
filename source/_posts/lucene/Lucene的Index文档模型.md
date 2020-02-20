@@ -20,29 +20,29 @@ Lucene中存储的索引主要分为三种类型：
 * __DocValues__，即正排索引, 采用的是类似数据库的列式存储。对于一些特殊需求的字段可以选择这种索引方式。
 * __Store__，即原文, 存储整个完整Document的原始信息。
 
-<!--more-->
+<! --more-->
 
 ## Invert Index
 
-倒排索引是lucene的核心索引类型，采用链表的数据结构，倒排索引中的key就是一个term，value就是以doc_id形成的链表结构。
+倒排索引是lucene的核心索引类型，采用链表的数据结构，倒排索引中的key就是一个term，value就是以doc_id形成的链表结构。如下：
 
-> | Term  | Doc_1 | Doc_2 |
-> |-------|:-----:|------:|
-> | Quick |       |     X |
-> | The   |   X   |       |
-> | brown |   X   |     X |
-> | dog   |   X   |       |
-> | dogs  |       |     X |
->  
-> 现在，如果我们想搜索 quick brown ，我们只需要查找包含每个词条的文档：
->
-> | Term  | Doc_1 | Doc_2 |
-> |-------|:-----:|------:|
-> | brown |   X   |     X |
-> | Quick |       |     X |
-> | total |   2   |     1 |
->
-> 这里分别匹配到了doc1和doc2，但是doc1匹配度要高于doc2。
+| Term  | Doc_1 | Doc_2 |
+|-------|:-----:|------:|
+| Quick |       |     X |
+| The   |   X   |       |
+| brown |   X   |     X |
+| dog   |   X   |       |
+| dogs  |       |     X |
+ 
+现在，如果我们想搜索 quick brown ，我们只需要查找包含每个词条的文档：
+
+| Term  | Doc_1 | Doc_2 |
+|-------|:-----:|------:|
+| brown |   X   |     X |
+| Quick |       |     X |
+| total |   2   |     1 |
+
+这里分别匹配到了doc1和doc2，但是doc1匹配度要高于doc2。
 
 倒排索引中的value有四种存储类型：
 
@@ -51,7 +51,7 @@ Lucene中存储的索引主要分为三种类型：
 * __DOCS_AND_FREQS_AND_POSITIONS__：存储doc_id、词频（Term Freq）和位置。
 * __DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS__：存储doc_id、词频（Term Freq）、位置和偏移(offset)
 
-> org.apache.lucene.index. IndexOptions
+> org.apache.lucene.index.IndexOptions
 
 ``` java
 public enum IndexOptions {

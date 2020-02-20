@@ -19,13 +19,13 @@ tags:
 
 ### 拉取远程仓库【分支】到本地
 
-```bash
+``` bash
 git clone -b 【分支】 https://github.com/user/user.github.io.git 【仓库目录】
 ```
 
 ### 安装hexo  
 
-```bash
+``` bash
 npm install hexo-cli -g
 ```
 

@@ -11,7 +11,7 @@ tags:
 
 生成的jar包结构:  
 
-``` java
+``` txt
 META-INF  
 Tom.class  
 Hello.class(主类)  
@@ -22,7 +22,7 @@ xxxxx.class
 1, 定义Main-Class  
 创建文件夹META-INF, 创建文件MENIFEST. MF, 內容如下:
 
-``` java
+``` txt
 Manifest-Version: 1.0
 Main-Class: Hello
 
@@ -47,7 +47,7 @@ m表示自定义MENIFEST文件
 
 生成的jar包结构:  
 
-``` java
+``` txt
 META-INF  
 com  
    Tom.class  
@@ -89,7 +89,7 @@ jar -cvfm hello.jar META-INF\MENIFEST.MF *
 
 对于 `java -jar hello.jar` 报错ClassNotFoundException:xxxxx，可以 `java -cp xxx.jar -jar hello.jar` 或者在Main-Class中添加classPath:  
 
-``` java
+``` txt
 Manifest-Version: 1.0
 Main-Class: Hello
 Class-Path: xxx.jar #路径指向你需要的所有jar包
