@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -459,10 +488,8 @@
 <li><strong>DocValues</strong>，即正排索引, 采用的是类似数据库的列式存储。对于一些特殊需求的字段可以选择这种索引方式。</li>
 <li><strong>Store</strong>，即原文, 存储整个完整Document的原始信息。</li>
 </ul>
-<a id="more"></a>
-
-<h2 id="Invert-Index"><a href="#Invert-Index" class="headerlink" title="Invert Index"></a>Invert Index</h2><p>倒排索引是lucene的核心索引类型，采用链表的数据结构，倒排索引中的key就是一个term，value就是以doc_id形成的链表结构。</p>
-<blockquote>
+<p>&lt;! –more–&gt;</p>
+<h2 id="Invert-Index"><a href="#Invert-Index" class="headerlink" title="Invert Index"></a>Invert Index</h2><p>倒排索引是lucene的核心索引类型，采用链表的数据结构，倒排索引中的key就是一个term，value就是以doc_id形成的链表结构。如下：</p>
 <table>
 <thead>
 <tr>
@@ -523,7 +550,6 @@
 </tr>
 </tbody></table>
 <p>这里分别匹配到了doc1和doc2，但是doc1匹配度要高于doc2。</p>
-</blockquote>
 <p>倒排索引中的value有四种存储类型：</p>
 <ul>
 <li><strong>DOCS</strong>：只存储doc_id。</li>
@@ -532,7 +558,7 @@
 <li><strong>DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS</strong>：存储doc_id、词频（Term Freq）、位置和偏移(offset)</li>
 </ul>
 <blockquote>
-<p>org.apache.lucene.index. IndexOptions</p>
+<p>org.apache.lucene.index.IndexOptions</p>
 </blockquote>
 <pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">enum</span> IndexOptions &#123;
   NONE,

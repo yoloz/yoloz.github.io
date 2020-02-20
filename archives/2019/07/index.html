@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -444,51 +473,57 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
+			<span class="article-date">2018-12-03</span>
+			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/ps/">ps</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="article-digest">
-					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
-ps命令支持三种使用的语法格式
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+				<div class="article-digest">
+					Lucene中包含了四种基本数据类型，分别是：
 
-UNIX
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/tools/yaml格式/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
+					href="/2019/02/19/tools/yaml格式/">yaml格式</a>
 				<div class="article-digest">
-					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-29</span>
+			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+				<div class="article-digest">
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
 
-$ ./sc
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
-				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
-				<div class="article-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
+impor
 					...
 				</div>
 		</li>

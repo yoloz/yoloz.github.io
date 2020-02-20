@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -444,6 +473,18 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/db/概述DQL,DML,DDL,DCL/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">概述DQL,DML,DDL,DCL</a>
+				<div class="article-digest">
+					SQL(Structure Query Language)语言是数据库的核心语言。
+SQL的发展是从1974年开始的，其发展过程如下：1974年—–由Boyce和Chamberlin提出，当时称SEQ
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2019-09-18</span>
 			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
@@ -458,26 +499,26 @@ mkdir -p ~/hadoo
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
+					which只能寻找可执行文件, 并在PATH变量里面寻找  
+whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
 					...
 				</div>
 		</li>

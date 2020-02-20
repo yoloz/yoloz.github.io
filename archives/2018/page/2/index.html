@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -444,54 +473,49 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/hexo/hexo搭建博客/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/hexo/hexo搭建博客/">hexo搭建博客</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
 
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2018-12-05</span>
+			<a class="article-read" href="/2018/12/05/tools/svn/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2018/12/05/tools/svn/">svn</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/tools/git/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2018/12/10/tools/git/">git</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
-
-Modify shell resource limits. Prov
+					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-可自
+如果能使用props实现，
 					...
 				</div>
 		</li>

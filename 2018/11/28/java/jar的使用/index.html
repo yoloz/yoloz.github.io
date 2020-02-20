@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -447,13 +476,13 @@
 
 <div id="article">
 	<h2 id="简单的jar"><a href="#简单的jar" class="headerlink" title="简单的jar"></a>简单的jar</h2><p>生成的jar包结构:  </p>
-<pre><code class="highlight java">META-INF  
-Tom<span class="class">.<span class="keyword">class</span>  </span>
-<span class="class"><span class="title">Hello</span>.<span class="title">class</span>(主类)  </span>
-<span class="class"><span class="title">xxxxx</span>.<span class="title">class</span></span></code></pre>
+<pre><code class="highlight txt">META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class</code></pre>
 
 <p>方法步骤:<br>1, 定义Main-Class<br>创建文件夹META-INF, 创建文件MENIFEST. MF, 內容如下:</p>
-<pre><code class="highlight java">Manifest-Version: <span class="number">1.0</span>
+<pre><code class="highlight txt">Manifest-Version: 1.0
 Main-Class: Hello</code></pre>
 
 <blockquote>
@@ -468,11 +497,11 @@ jar -cvfm hello.jar META-INF\MENIFEST.MF Hello.class Tom.class xxx.class</code><
 </blockquote>
 <p>v表示创建的过程中在控制台输出创建过程的一些信息;<br>f表示给生成的jar包命名;<br>m表示自定义MENIFEST文件  </p>
 <h2 id="有目录结构的jar"><a href="#有目录结构的jar" class="headerlink" title="有目录结构的jar"></a>有目录结构的jar</h2><p>生成的jar包结构:  </p>
-<pre><code class="highlight java">META-INF  
+<pre><code class="highlight txt">META-INF  
 com  
-   Tom<span class="class">.<span class="keyword">class</span>  </span>
-<span class="class">   <span class="title">xxx</span>.<span class="title">class</span></span>
-<span class="class"><span class="title">Hello</span>.<span class="title">class</span>(主类)</span></code></pre>
+   Tom.class  
+   xxx.class
+Hello.class(主类)</code></pre>
 
 <p>方法步骤:<br>1, 定义Main-Class<br>略(同上)</p>
 <p>2, 编译及打包  </p>
@@ -495,7 +524,7 @@ jar -cvfm hello.jar META-INF\MENIFEST.MF *</code></pre>
 <p>-cp 表示 -classpath  </p>
 </blockquote>
 <p>对于 <code>java -jar hello.jar</code> 报错ClassNotFoundException:xxxxx，可以 <code>java -cp xxx.jar -jar hello.jar</code> 或者在Main-Class中添加classPath:  </p>
-<pre><code class="highlight java">Manifest-Version: <span class="number">1.0</span>
+<pre><code class="highlight txt">Manifest-Version: 1.0
 Main-Class: Hello
 Class-Path: xxx.jar #路径指向你需要的所有jar包</code></pre>
 

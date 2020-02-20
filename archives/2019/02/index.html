@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -458,41 +487,38 @@ mkdir -p ~/hadoo
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/hexo/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/hexo/start-hexo/">start-hexo</a>
+					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
+// Obtains an instance of Dat
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/"> 阅读全文 </span>
+			<span class="article-date">2019-01-23</span>
+			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">Xms-Xmx-XX:PermSize-XX:MaxPermSize区别</a>
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
 				<div class="article-digest">
-					JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：
-
-堆区即为通过new的方式创建的对象（类实例）所占用的内存空间
-非堆区即为代码、常量、外部访问（如文件访问流所占资源）等
-
-java垃
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
 				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
-
-如果能使用props实现，
+					which只能寻找可执行文件, 并在PATH变量里面寻找  
+whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
 					...
 				</div>
 		</li>

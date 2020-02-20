@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -455,22 +484,6 @@
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
-				<div class="article-digest">
-					Requirements:jdk, hadoop
-tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
-修改配置文件
-hive-env.sh
-
-cp $HIVE_HO
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2018-11-28</span>
 			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
@@ -488,14 +501,26 @@ xxxxx.class
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+				<div class="article-digest">
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-可自
+如果能使用props实现，
 					...
 				</div>
 		</li>

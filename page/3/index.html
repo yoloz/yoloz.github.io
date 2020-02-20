@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -444,49 +473,59 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/hexo/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/hexo/start-hexo/">start-hexo</a>
+					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
+// Obtains an instance of Dat
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-26</span>
-			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
-				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
-				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-如果能使用props实现，
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-01-23</span>
+			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+				<div class="article-digest">
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vi/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/30/linux/vi/">vi</a>
+				<div class="article-digest">
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>

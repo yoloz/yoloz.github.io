@@ -27,14 +27,43 @@
 		<aside>
 			<!-- 搜索栏 -->
 <div id="search">
-	<input class="search-input" type="text" placeholder="filter by name">
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引">
+	<input class="search-input" type="text" placeholder="filter by name"/>
+	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
 </div>
 
 <!-- 侧边目录栏 -->
 <div id="tree">
 	
 
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
+				db
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/mysql使用/">
+				<i class="fa fa-file"></i>
+				mysql使用
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+				<i class="fa fa-file"></i>
+				概述DQL,DML,DDL,DCL
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
 	
 	<ul>
 		<li class="directory">
@@ -444,56 +473,51 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-03</span>
-			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/db/mysql使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
+					href="/2020/02/20/db/mysql使用/">mysql使用</a>
 				<div class="article-digest">
-					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/user,group/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/ps/">ps</a>
+					href="/2019/09/18/linux/user,group/">user,group</a>
 				<div class="article-digest">
-					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
-ps命令支持三种使用的语法格式
-
-UNIX
+					创建用户及组创建用户组 groupadd ，创建用户 useradd , 设置密码 passwd ，配置sudo权限 vim /etc/sudoers 并添加 userName ALL=(ALL) A
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-18</span>
-			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="article-digest">
-					Invert Index倒排索引是lucene的核心索引类型，采用链表的数据结构，倒排索引中的key就是一个term，value就是以doc_id形成的链表结构。
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-
-
-
-Term
-Doc_1
-Doc
+如果能使用props实现，
 					...
 				</div>
 		</li>
