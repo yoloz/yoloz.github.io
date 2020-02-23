@@ -40,12 +40,12 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
-				db
+				database
 			</a>
 			
 	<ul>
-		<li class="file active">
-			<a href="/2020/02/20/db/mysql使用/">
+		<li class="file">
+			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
 			</a>
@@ -54,7 +54,7 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+			<a href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">
 				<i class="fa fa-file"></i>
 				概述DQL,DML,DDL,DCL
 			</a>
@@ -485,78 +485,48 @@
 
 		<!-- 引入正文 -->
 		<div id="content">
-			<div style="background: #eee">
-	<span id="post-author">yoloz</span>
-	<span id="post-date">2020-02-20 14:02:17</span>
+			<div id="articleList">
+	<ul>
+		
+		<li class="article-li">
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+				<div class="article-digest">
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+				<div class="article-digest">
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+				<div class="article-digest">
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+	</ul>
 </div>
-
-<div id="article">
-	<h2 id="limit语句"><a href="#limit语句" class="headerlink" title="limit语句"></a>limit语句</h2><pre><code class="highlight sql"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="string">"operativeLogs"</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="string">"sysTimestamp"</span> <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">5</span> <span class="keyword">OFFSET</span> <span class="number">5</span>    <span class="comment">#postgresql</span>
-<span class="keyword">select</span> * <span class="keyword">from</span> <span class="string">"operativeLogs"</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="string">"sysTimestamp"</span> <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">5</span>,<span class="number">10</span>        <span class="comment">#mysql</span></code></pre>
-
-<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><pre><code class="highlight sql"><span class="comment">#创建</span>
-mysql&gt;CREATE USER 'pig'@'192.168.1.101' IDENDIFIED BY '123456';
-mysql&gt;create user 'pig'@'%' identified by '123456';
-<span class="comment">#修改密码</span>
-mysql&gt;SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
-mysql&gt;SET PASSWORD = PASSWORD("newpassword");   #修改当前用户密码
-<span class="comment">#删除用户</span>
-mysql&gt;DROP USER 'username'@'host';</code></pre>
-
-<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><h3 id="赋权"><a href="#赋权" class="headerlink" title="赋权"></a>赋权</h3><p>GRANT privileges ON dbName.tbName TO ‘username’@’host’</p>
-<blockquote>
-<ul>
-<li>privileges(SELECT,INSERT,UPDATE…),所有权限ALL表示;</li>
-<li>所有数据库或所有表可用*表示</li>
-<li>能给其他用户授权则后面要加上WITH GRANT OPTION</li>
-</ul>
-</blockquote>
-<pre><code class="highlight sql"><span class="comment">#赋权</span>
-mysql&gt;GRANT SELECT,INSERT ON test.user TO 'pig'@'%'; #test库下user表的查询插入权限
-mysql&gt;GRANT ALL ON *.* TO 'pig'@'%'; #所有权限
-mysql&gt;GRANT ALL ON *.* TO 'pig'@'%' WITH GRANT OPTION;  #能赋权给其他用户
-<span class="comment">#查看</span>
-mysql&gt;SHOW GRANTS FOR 'pig'@'%';</code></pre>
-
-<h3 id="撤权"><a href="#撤权" class="headerlink" title="撤权"></a>撤权</h3><p>REVOKE privileges ON databasename.tablename FROM ‘username’@’host’;</p>
-<blockquote>
-<p>赋权和撤权的对象要对应，否则撤权会无效，如：</p>
-<p>授权的时候是这样的(或类似的):GRANT SELECT ON test.user TO ‘pig’@’%’, 则使用REVOKE SELECT ON <em>.</em> FROM ‘pig’@’%’;并不能撤销该用户对test数据库中user表的SELECT 操作;</p>
-<p>授权的时候是这样的:GRANT SELECT ON <em>.</em> TO ‘pig’@’%’;则REVOKE SELECT ON test.user FROM ‘pig’@’%’;也不能撤销该用户对test数据库中user表的Select权限.</p>
-</blockquote>
-<h2 id="导入导出"><a href="#导入导出" class="headerlink" title="导入导出"></a>导入导出</h2><h3 id="导入导出查询结果"><a href="#导入导出查询结果" class="headerlink" title="导入导出查询结果"></a>导入导出查询结果</h3><pre><code class="highlight sql"><span class="keyword">select</span>语句 <span class="keyword">into</span> <span class="keyword">outfile</span> <span class="string">'/opt/file'</span>;
-
-<span class="keyword">load</span> <span class="keyword">data</span> <span class="keyword">local</span> <span class="keyword">infile</span> <span class="string">'/opt/file'</span> <span class="keyword">into</span> <span class="keyword">table</span> 表名 <span class="built_in">character</span> <span class="keyword">set</span> utf8;</code></pre>
-
-<h3 id="导入导出结构和数据"><a href="#导入导出结构和数据" class="headerlink" title="导入导出结构和数据"></a>导入导出结构和数据</h3><p>mysqldump -u用户名 -p [-d|-t] db_name [tbl_name …]</p>
-<blockquote>
-<p>-d:do not write any table row information,即不导出表内容；</p>
-<p>-t: do not write create table statements that create each dumped tables,即不导出创建表结构；</p>
-<p>如果只有db_name则导出全库，否则只导出库中的指定表；</p>
-</blockquote>
-<ul>
-<li>导出</li>
-</ul>
-<pre><code class="highlight sh">mysqldump -uxxx -p -d database &gt; database.sql <span class="comment">#导出数据库表结构</span>
-mysqldump -uxxx -p database &gt; database.sql <span class="comment">#导出数据库表结构和数据</span>
-mysqldump -uxxx -p -t database tablename &gt; tablename.sql <span class="comment">#导出数据表数据</span>
-mysqldump -uxxx -p database tablename &gt; tablename.sql <span class="comment">#导出数据表结构和数据</span></code></pre>
-<ul>
-<li>导入</li>
-</ul>
-<pre><code class="highlight sql"><span class="comment">#方式一</span>
-$ mysql -u用户名 -p  
-mysql&gt; create database test;  
-mysql&gt; exit;  
-$ mysql -u用户名 -p test &lt; /home/test.sql
-<span class="comment">#方式二  </span>
-$ mysql -u用户名 -p   
-mysql&gt; create database test;  
-mysql&gt; use test;  
-mysql&gt; source /home/test.sql;  
-mysql&gt; exit;</code></pre>
-</div>
-
 		</div>
 		
 	</div>

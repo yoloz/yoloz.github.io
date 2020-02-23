@@ -40,12 +40,12 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
-				db
+				database
 			</a>
 			
 	<ul>
 		<li class="file">
-			<a href="/2020/02/20/db/mysql使用/">
+			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
 			</a>
@@ -53,8 +53,8 @@
 	</ul>
 	
 	<ul>
-		<li class="file">
-			<a href="/2020/02/20/db/概述DQL,DML,DDL,DCL/">
+		<li class="file active">
+			<a href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">
 				<i class="fa fa-file"></i>
 				概述DQL,DML,DDL,DCL
 			</a>
@@ -485,69 +485,54 @@
 
 		<!-- 引入正文 -->
 		<div id="content">
-			<div id="articleList">
-	<ul>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/db/mysql使用/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/20/db/mysql使用/">mysql使用</a>
-				<div class="article-digest">
-					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
-se
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
-				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
-
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-19</span>
-			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/19/other/yaml格式/">yaml格式</a>
-				<div class="article-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
-				<div class="article-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
-					...
-				</div>
-		</li>
-		
-	</ul>
+			<div style="background: #eee">
+	<span id="post-author">yoloz</span>
+	<span id="post-date">2020-02-20 15:34:27</span>
 </div>
+
+<div id="article">
+	<p>SQL(Structure Query Language)语言是数据库的核心语言。</p>
+<p>SQL的发展是从1974年开始的，其发展过程如下：<br>1974年—–由Boyce和Chamberlin提出，当时称SEQUEL。<br>1976年—–IBM公司的Sanjase研究所在研制RDBMS SYSTEM R 时改为SQL。<br>1979年—–ORACLE公司发表第一个基于SQL的商业化RDBMS产品。<br>1982年—–IBM公司出版第一个RDBMS语言SQL/DS。<br>1985年—–IBM公司出版第一个RDBMS语言DB2。<br>1986年—–美国国家标准化组织ANSI宣布SQL作为数据库工业标准。  </p>
+<p>SQL是一个标准的数据库语言，是面向集合的描述性非过程化语言，即大多数语句都是独立执行的，与上下文无关，而绝大部分应用都是一个完整的过程，显然用SQL完全实现这些功能是很困难的。所以大多数数据库公司为了解决此问题，作了如下两方面的工作：(1)扩充SQL，在SQL中引入过程性结构；(2)把SQL嵌入到高级语言中，以便一起完成一个完整的应用。</p>
+<p>SQL语言共分为四大类：数据查询语言DQL，数据操纵语言DML，数据定义语言DDL，数据控制语言DCL。</p>
+<h2 id="数据查询语言DQL"><a href="#数据查询语言DQL" class="headerlink" title="数据查询语言DQL"></a>数据查询语言DQL</h2><p>数据查询语言DQL基本结构是由SELECT子句，FROM子句，WHERE子句组成的查询块：</p>
+<p>SELECT &lt;字段名表&gt; FROM &lt;表或视图名&gt; WHERE &lt;查询条件&gt;</p>
+<h2 id="数据操纵语言DML"><a href="#数据操纵语言DML" class="headerlink" title="数据操纵语言DML"></a>数据操纵语言DML</h2><p>数据操纵语言DML主要有三种形式：</p>
+<ul>
+<li>插入：INSERT</li>
+<li>更新：UPDATE</li>
+<li>删除：DELETE</li>
+</ul>
+<h2 id="数据定义语言DDL"><a href="#数据定义语言DDL" class="headerlink" title="数据定义语言DDL"></a>数据定义语言DDL</h2><p>数据定义语言DDL用来创建数据库中的各种对象—–表、视图、索引、同义词、聚簇等如: CREATE TABLE/VIEW/INDEX/SYN/CLUSTER</p>
+<blockquote>
+<p>DDL操作是隐性提交的,不能rollback</p>
+</blockquote>
+<h2 id="数据控制语言DCL"><a href="#数据控制语言DCL" class="headerlink" title="数据控制语言DCL"></a>数据控制语言DCL</h2><p>数据控制语言DCL用来授予或回收访问数据库的某种特权，并控制数据库操纵事务发生的时间及效果，对数据库实行监视等。如：</p>
+<ul>
+<li>GRANT：授权</li>
+<li>ROLLBACK [WORK] TO [SAVEPOINT]：回退到某一点<blockquote>
+<p>回滚命令使数据库状态回到上次最后提交的状态</p>
+</blockquote>
+</li>
+<li>COMMIT [WORK]：提交</li>
+</ul>
+<p>在数据库的插入、删除和修改操作时，只有当事务在提交到数据库时才算完成。在事务提交前,只有操作数据库的这个人才能有权看到所做的事情，别人只有在最后提交完成后才可以看到。</p>
+<p>提交数据有三种类型：显式提交、隐式提交及自动提交。下面分别说明这三种类型:</p>
+<ul>
+<li>显式提交</li>
+</ul>
+<p>用COMMIT命令直接完成的提交为显式提交。其格式为：SQL&gt;COMMIT；</p>
+<ul>
+<li>隐式提交</li>
+</ul>
+<p>用SQL命令间接完成的提交为隐式提交。这些命令是：<br>ALTER，AUDIT，COMMENT，CONNECT，CREATE，DISCONNECT，DROP，<br>EXIT，GRANT，NOAUDIT，QUIT，REVOKE，RENAME。</p>
+<ul>
+<li>自动提交</li>
+</ul>
+<p>若把AUTOCOMMIT设置为ON，则在插入、修改、删除语句执行后，系统将自动进行提交，这就是自动提交。其格式为：SQL&gt;SET AUTOCOMMIT ON；</p>
+
+</div>
+
 		</div>
 		
 	</div>
