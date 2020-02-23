@@ -3,7 +3,7 @@ title: '概述DQL,DML,DDL,DCL'
 comments: false
 toc: false
 date: 2020-02-20 15:34:27
-categories: db
+categories: database
 tags:
 ---
 
