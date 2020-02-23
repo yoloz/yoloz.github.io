@@ -47,7 +47,7 @@ If the SYN flag is clear (0), that a packet with Congestion Experienced flag set
   * MF : More Fragments.
   * . : no flags.
   * S. : SYN-ACK .
-關於這些 Flags 的使用時機,可以參考[TCP/IP常見封包](/2020/02/23/TCPIP常見封包/)
+關於這些 Flags 的使用時機,可以參考[TCP/IP常見封包](/2020/02/23/network/TCPIP常見封包/)
 
 * seq data-seqno
 Data-seqno 標示該封包所包含的資料的順序號碼.
