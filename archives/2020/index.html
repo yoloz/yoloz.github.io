@@ -489,41 +489,50 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-26</span>
-			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/db/mysql使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
+					href="/2020/02/20/db/mysql使用/">mysql使用</a>
 				<div class="article-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/shell/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/shell/">shell</a>
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-29</span>
-			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
 				<div class="article-digest">
-					
-安装依赖 yarn add react-loadable
-根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
 
-impor
+$ ./sc
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+				<div class="article-digest">
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
 					...
 				</div>
 		</li>

@@ -489,29 +489,41 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2018-12-03</span>
+			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
-
-Modify shell resource limits. Prov
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-29</span>
-			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
 				<div class="article-digest">
-					
-安装依赖 yarn add react-loadable
-根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
 
-impor
+cp $HIVE_HO
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/01/26/kafka/producer/">producer</a>
+				<div class="article-digest">
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
@@ -523,21 +535,6 @@ impor
 					href="/2020/02/23/network/tcpdump/">tcpdump</a>
 				<div class="article-digest">
 					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-19</span>
-			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/19/other/yaml格式/">yaml格式</a>
-				<div class="article-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>
