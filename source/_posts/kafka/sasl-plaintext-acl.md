@@ -3,7 +3,7 @@ title: sasl-plaintext-acl
 comments: false
 toc: false
 date: 2019-01-23 11:17:32
-categories: 
+categories: kafka
 tags:
 ---
 

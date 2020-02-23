@@ -3,9 +3,8 @@ title: 读取InputStream生成String
 comments: false
 toc: false
 date: 2019-07-30 13:47:54
-categories: 
+categories: java
 tags:
-refer: true
 ---
 
 ## 1, 使用IOUtils.toString（Apache Utils）

@@ -3,9 +3,8 @@ title: 'Xms-Xmx-XX: PermSize-XX: MaxPermSize区别'
 comments: false
 toc: false
 date: 2019-02-15 13:31:51
-categories: 
+categories: java
 tags:
-refer: true
 ---
 
 JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：

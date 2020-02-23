@@ -3,7 +3,7 @@ title: alternatives
 comments: false
 toc: false
 date: 2019-07-24 16:10:31
-categories: 
+categories: linux
 tags:
 ---
 alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  

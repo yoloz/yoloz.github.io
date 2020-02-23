@@ -3,7 +3,7 @@ title: hadoop
 comments: false
 toc: false
 date: 2019-09-18 14:23:42
-categories:
+categories: hadoop
 tags:
 ---
 

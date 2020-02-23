@@ -3,7 +3,7 @@ title: yaml格式
 comments: false
 toc: false
 date: 2019-02-19 11:48:09
-categories: 
+categories: other
 tags:
 ---
 

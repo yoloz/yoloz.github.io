@@ -3,7 +3,7 @@ title: Lucene的Index文档模型
 comments: false
 toc: false
 date: 2019-02-18 17:06:43
-categories: 
+categories: lucene
 tags:
 ---
 

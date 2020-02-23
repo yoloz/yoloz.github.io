@@ -1,9 +1,9 @@
 ---
-title: vi
+title: vim
 comments: false
 toc: false
 date: 2018-11-30 16:06:46
-categories: 
+categories: linux
 tags:
 ---
 

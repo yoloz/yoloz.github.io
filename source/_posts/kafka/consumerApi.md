@@ -3,7 +3,7 @@ title: consumerApi
 comments: false
 toc: false
 date: 2018-12-11 16:03:11
-categories: 
+categories: kafka
 tags:
 ---
 如下是kafka消费者java api的订阅(subscribe)流程(v0.10)

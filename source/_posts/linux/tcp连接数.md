@@ -3,7 +3,7 @@ title: tcp连接数
 comments: false
 toc: false
 date: 2019-11-13 09:48:00
-categories:
+categories: linux
 tags:
 ---
 

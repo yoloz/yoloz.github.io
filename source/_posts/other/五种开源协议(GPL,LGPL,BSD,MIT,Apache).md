@@ -3,9 +3,8 @@ title: 五种开源协议(GPL, LGPL, BSD, MIT, Apache)
 comments: false
 toc: false
 date: 2019-02-15 13:55:32
-categories: 
+categories: other
 tags:
-refer: true
 ---
 
 ## 什么是许可协议

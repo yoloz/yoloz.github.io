@@ -3,7 +3,7 @@ title: hbase架构了解
 comments: false
 toc: false
 date: 2018-12-03 12:06:58
-categories: 
+categories: hadoop
 tags:
 ---
 *内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，对照官方文档梳理学习了一遍，记录备忘。*

@@ -3,9 +3,8 @@ title: java进程占用virt虚拟内存高的问题研究
 comments: false
 toc: false
 date: 2018-12-14 16:52:25
-categories: 
+categories: java
 tags:
-refer: true
 ---
 
 ## 现象

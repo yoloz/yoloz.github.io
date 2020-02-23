@@ -3,7 +3,7 @@ title: jar的使用
 comments: false
 toc: false
 date: 2018-11-28 14:54:43
-categories: 
+categories: java
 tags:
 ---
 

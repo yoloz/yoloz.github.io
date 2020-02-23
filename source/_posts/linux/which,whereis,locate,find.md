@@ -3,7 +3,7 @@ title: which, whereis, locate, find
 comments: false
 toc: false
 date: 2019-09-18 23:54:00
-categories:
+categories: linux
 tags:
 ---
 

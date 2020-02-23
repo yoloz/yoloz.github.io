@@ -3,7 +3,7 @@ title: ulimit
 comments: false
 toc: false
 date: 2019-11-13 15:29:46
-categories:
+categories: linux
 tags:
 ---
 

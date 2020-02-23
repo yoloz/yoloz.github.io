@@ -3,7 +3,7 @@ title: shell
 comments: false
 toc: false
 date: 2018-12-04 14:03:49
-categories: 
+categories: linux
 tags:
 ---
 

@@ -3,7 +3,7 @@ title: javaScript遍历对象、数组
 comments: false
 toc: false
 date: 2019-02-20 16:59:13
-categories: 
+categories: web
 tags:
 ---
 

@@ -3,7 +3,7 @@ title: ps
 comments: false
 toc: false
 date: 2018-11-30 11:11:05
-categories: 
+categories: linux
 tags:
 ---
 查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  

@@ -3,7 +3,7 @@ title: producer
 comments: false
 toc: false
 date: 2019-01-26 15:55:51
-categories: 
+categories: kafka
 tags:
 ---
 ## 核心工作流程

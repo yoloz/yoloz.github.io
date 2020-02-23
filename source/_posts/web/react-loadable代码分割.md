@@ -3,7 +3,7 @@ title: react-loadable代码分割
 comments: false
 toc: false
 date: 2018-11-29 14:54:43
-categories: 
+categories: web
 tags:
 ---
 

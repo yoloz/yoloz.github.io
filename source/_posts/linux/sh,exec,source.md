@@ -3,7 +3,7 @@ title: sh, exec, source
 comments: false
 toc: false
 date: 2019-09-18 23:50:33
-categories:
+categories: linux
 tags:
 ---
 

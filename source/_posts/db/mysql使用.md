@@ -3,7 +3,7 @@ title: mysql使用
 comments: false
 toc: false
 date: 2020-02-20 14:02:17
-categories:
+categories: db
 tags:
 ---
 

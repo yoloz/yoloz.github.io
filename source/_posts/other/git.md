@@ -3,7 +3,7 @@ title: git
 comments: false
 toc: false
 date: 2018-12-10 16:25:42
-categories: 
+categories: other
 tags:
 ---
 

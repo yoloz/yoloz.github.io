@@ -3,7 +3,7 @@ title: svn
 comments: false
 toc: false
 date: 2018-12-05 15:19:46
-categories: 
+categories: other
 tags:
 ---
 

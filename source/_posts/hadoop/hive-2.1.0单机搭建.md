@@ -3,7 +3,7 @@ title: hive
 comments: false
 toc: false
 date: 2019-09-18 16:56:50
-categories:
+categories: hadoop
 tags:
 ---
 
