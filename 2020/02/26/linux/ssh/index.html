@@ -120,7 +120,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file active">
+		<li class="file">
 			<a href="/2019/07/30/java/date与localDateTime/">
 				<i class="fa fa-file"></i>
 				date与localDateTime
@@ -241,7 +241,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file">
+		<li class="file active">
 			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
 				ssh
@@ -505,73 +505,46 @@
 		<div id="content">
 			<div style="background: #eee">
 	<span id="post-author">yoloz</span>
-	<span id="post-date">2019-07-30 10:25:59</span>
+	<span id="post-date">2020-02-26 18:38:30</span>
 </div>
 
 <div id="article">
-	<p>Java 8中 <code>java.util.Date</code> 类新增了两个方法，分别是from(Instant instant)和toInstant()方法</p>
-<pre><code class="highlight java"><span class="comment">// Obtains an instance of Date from an Instant object.</span>
-<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">from</span><span class="params">(Instant instant)</span> </span>&#123;
-    <span class="keyword">try</span> &#123;
-        <span class="keyword">return</span> <span class="keyword">new</span> Date(instant.toEpochMilli());
-    &#125; <span class="keyword">catch</span> (ArithmeticException ex) &#123;
-        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(ex);
-    &#125;
-&#125;
-<span class="comment">// Converts this Date object to an Instant.</span>
-<span class="function"><span class="keyword">public</span> Instant <span class="title">toInstant</span><span class="params">()</span> </span>&#123;
-    <span class="keyword">return</span> Instant.ofEpochMilli(getTime());
-&#125;</code></pre>
+	<h2 id="ssh免密登录"><a href="#ssh免密登录" class="headerlink" title="ssh免密登录"></a>ssh免密登录</h2><ul>
+<li>客户端生成密钥</li>
+</ul>
+<p><code>ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa</code></p>
+<blockquote>
+<p>生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.ssh目录下生成密钥文件，其中id_rsa为私钥，id_rsa.pub为公钥</p>
+</blockquote>
+<ul>
+<li>服务器配置</li>
+</ul>
+<p>服务器的~/.ssh/authorized_keys文件保存可快速连接的客户端的公钥。需要把客户端生成的id_rsa.pub文件的内容拷贝到authorized_keys文件的末尾。</p>
+<pre><code class="highlight sh">scp ~/.ssh/id_rsa.pub user@server:/home/user
+ssh user@server -p port
+cat ~/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre>
 
-<p>通过Instant当媒介，然后通过Instant来使Date与LocalDateTime互相转换</p>
-<h2 id="java-util-Date-–-gt-java-time-LocalDateTime"><a href="#java-util-Date-–-gt-java-time-LocalDateTime" class="headerlink" title="java.util.Date –&gt; java.time.LocalDateTime"></a>java.util.Date –&gt; java.time.LocalDateTime</h2><pre><code class="highlight java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UDateToLocalDateTime</span><span class="params">()</span> </span>&#123;
-    java.util.Date date = <span class="keyword">new</span> java.util.Date();
-    Instant instant = date.toInstant();
-    ZoneId zone = ZoneId.systemDefault();
-    LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
-    <span class="comment">// LocalDate localDate = localDateTime.toLocalDate();</span>
-    <span class="comment">// LocalTime localTime = localDateTime.toLocalTime();</span>
-&#125;</code></pre>
+<blockquote>
+<p>如果还是需要密码，则是由于目录及权限问题造成<br>chown username: /home/username/.ssh<br>chown username: /home/username/.ssh/*<br>chmod 700 /home/username/.ssh<br>chmod 600 /home/username/.ssh/*</p>
+</blockquote>
+<ul>
+<li>在客户端配置服务器登录相关参数</li>
+</ul>
+<p>除了密码之外，登录时，还需要配置ip地址、端口、用户等信息，也比较繁琐。可通过客户端的~/.ssh/config配置服务器的相关参数简化登录命令。</p>
+<p>config文件的配置内容如下：</p>
+<pre><code class="highlight txt">Host server
+HostName 192.168.1.1
+Port 22
+User ubuntu</code></pre>
 
-<h2 id="java-time-LocalDateTime-–-gt-java-util-Date"><a href="#java-time-LocalDateTime-–-gt-java-util-Date" class="headerlink" title="java.time.LocalDateTime –&gt; java.util.Date"></a>java.time.LocalDateTime –&gt; java.util.Date</h2><pre><code class="highlight java">
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LocalDateTimeToUdate</span><span class="params">(LocalDateTime localDateTime)</span> </span>&#123;
-    <span class="comment">// LocalDateTime localDateTime = LocalDateTime.now();</span>
-    ZoneId zone = ZoneId.systemDefault();
-    Instant instant = localDateTime.atZone(zone).toInstant();
-    java.util.Date date = Date.from(instant);
-&#125;
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LocalDateToUdate</span><span class="params">(LocalDate localDate)</span> </span>&#123;
-    <span class="comment">// LocalDate localDate = LocalDate.now();</span>
-    ZoneId zone = ZoneId.systemDefault();
-    Instant instant = localDate.atStartOfDay().atZone(zone).toInstant();
-    java.util.Date date = Date.from(instant);
-&#125;
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LocalTimeToUdate</span><span class="params">(LocalTime localTime)</span> </span>&#123;
-    <span class="comment">// LocalTime localTime = LocalTime.now();</span>
-    LocalDate localDate = LocalDate.now();
-    LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
-    ZoneId zone = ZoneId.systemDefault();
-    Instant instant = localDateTime.atZone(zone).toInstant();
-    java.util.Date date = Date.from(instant);
-&#125;</code></pre>
-
-<h2 id="java-util-Date-lt-–-gt-long"><a href="#java-util-Date-lt-–-gt-long" class="headerlink" title="java.util.Date &lt;–&gt; long"></a>java.util.Date &lt;–&gt; long</h2><pre><code class="highlight java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DateToLong</span><span class="params">(Object obj)</span></span>&#123;
-    <span class="keyword">long</span> l,<span class="keyword">int</span> i;
-    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> java.sql.Date) l = ((java.sql.Date)obj).getTime();
-    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> java.sql.Time) l = ((java.sql.Time)obj).getTime();
-    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> java.sql.Timestamp) &#123;
-        l = ((java.sql.Timestamp)obj).toInstant().getEpochSecond();
-        i = ((java.sql.Timestamp)obj).toInstant().getNano();
-    &#125;
-&#125;
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LongToDate</span><span class="params">(<span class="keyword">long</span> l,<span class="keyword">int</span> i)</span></span>&#123;
-    java.sql.Date date = <span class="keyword">new</span> java.sql.Date(l);
-    java.sql.Time time = <span class="keyword">new</span> java.sql.Time(l);
-    java.sql.Timestamp timestamp = Timestamp.from(Instant.ofEpochSecond(l, i));
-&#125;</code></pre>
+<blockquote>
+<p>Host为服务器的名称，输入登录命令时使用</p>
+<p>HostName为服务器的ip地址</p>
+<p>Port为ssh的端口</p>
+<p>User为服务器的用户名</p>
+</blockquote>
+<p><strong>从此以后，登录服务器如此<code>ssh server</code></strong></p>
+<h2 id="ssh拷贝文件"><a href="#ssh拷贝文件" class="headerlink" title="ssh拷贝文件"></a>ssh拷贝文件</h2><p>遇到ssh能连接但是scp被禁止的情形可以用如下方式拷贝文件到本地<code>ssh root@10.68.120.214 &#39;cd /root &amp;&amp; cat shandongReq2Join.tar.gz&#39; &gt; ~/shandongReq2Join.tar.gz</code></p>
 
 </div>
 

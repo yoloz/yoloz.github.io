@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,52 +507,58 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-03</span>
-			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
-				<div class="article-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
-				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
 
-Modify shell resource limits. Prov
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-18</span>
-			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+			<span class="article-date">2019-01-23</span>
+			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
 				<div class="article-digest">
-					Lucene中包含了四种基本数据类型，分别是：
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/30/linux/vim/">vim</a>
+				<div class="article-digest">
+					vi操作常用快捷方式如下, 非编辑状态下使用：
 
-Index：索引，由很多的Document组成。
-Document：由很多的Field组成，是Index和Search的最小单位。
-Field：由很多
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+				<div class="article-digest">
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>

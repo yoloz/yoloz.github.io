@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,59 +507,62 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
 
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
+			<span class="article-date">2018-11-29</span>
+			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
 				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+
+impor
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+					href="/2020/02/26/linux/ssh/">ssh</a>
 				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+					ssh免密登录
+客户端生成密钥
 
-如果能使用props实现，
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>

@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,41 +507,57 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
-				<div class="article-digest">
-					Requirements:jdk, hadoop
-tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
-修改配置文件
-hive-env.sh
-
-cp $HIVE_HO
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
-				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">Xms-Xmx-XX:PermSize-XX:MaxPermSize区别</a>
 				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：
 
-可自
+堆区即为通过new的方式创建的对象（类实例）所占用的内存空间
+非堆区即为代码、常量、外部访问（如文件访问流所占资源）等
+
+java垃
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+				<div class="article-digest">
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/10/other/git/">git</a>
+				<div class="article-digest">
+					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-29</span>
+			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+				<div class="article-digest">
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+
+impor
 					...
 				</div>
 		</li>

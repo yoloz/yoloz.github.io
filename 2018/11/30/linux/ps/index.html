@@ -214,6 +214,15 @@
 	</ul>
 	
 	<ul>
+		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
 		<li class="file active">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -546,6 +564,12 @@ ps -jL <span class="string">'pid'</span> <span class="comment"># -j Jobs format(
 </blockquote>
 <p>-a Show command line arguments.<br>-p Show PIDs.<br>-s Show parent processes of the specified process.  </p>
 <p>ps命令在不同的 UNIX、BSD、Linux 等系统中的参数不尽相同, 不要忘了通过man ps来查看参数</p>
+<h2 id="grep和kill"><a href="#grep和kill" class="headerlink" title="grep和kill"></a>grep和kill</h2><p>杀掉hello这个进程<code>ps -ef |grep hello |awk &#39;{print $2}&#39;|xargs kill -9</code></p>
+<blockquote>
+<p>输出ps -ef |grep hello结果的第二列的内容然后通过xargs传递给kill -9,其实第二列内容就是hello的进程号</p>
+<p>awk是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk的处理文本和数据的方式是这样的，它逐行扫描文件，从第一行到最后一行，寻找匹配的特定模式的行，并在这些行上进行你想要的操作。如果没有指定处理动作，则把匹配的行显示到标准输出(屏幕)，如果没有指定模式，则所有被操作所指定的行都被处理。awk分别代表其作者姓氏的第一个字母。因为它的作者是三个人，分别是Alfred Aho、Brian Kernighan、Peter Weinberger。gawk是awk的GNU版本，它提供了Bell实验室和GNU的一些扩展</p>
+<p>xargs是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。它把一个数据流分割为一些足够小的块，以方便过滤器和命令进行处理。通常情况下，xargs从管道或者stdin中读取数据，但是它也能够从文件的输出中读取数据。xargs的默认命令是echo，这意味着通过管道传递给xargs的输入将会包含换行和空白，不过通过xargs的处理，换行和空白将被空格取代。xargs 是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令</p>
+</blockquote>
 
 </div>
 

@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -495,6 +513,55 @@
 <h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h2><p>从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的文件, 全匹配模式</p>
 <h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><p>同上, 不过文件名是部分匹配</p>
 <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>是直接在硬盘上搜寻，功能强大</p>
+<pre><code class="highlight sh">find .  <span class="comment">#列出当前目录及子目录下所有文件和文件夹</span>
+
+find /home -name <span class="string">"*.txt"</span> <span class="comment">#在/home目录下查找以.txt结尾的文件名</span>
+
+find /home -iname <span class="string">"*.txt"</span> <span class="comment">#同上，但忽略大小写</span>
+
+<span class="comment">#当前目录及子目录下查找所有以.txt和.pdf结尾的文件</span>
+find . \( -name <span class="string">"*.txt"</span> -o -name <span class="string">"*.pdf"</span> \)
+<span class="comment">#或</span>
+find . -name <span class="string">"*.txt"</span> -o -name <span class="string">"*.pdf"</span>  
+
+find /home ! -name <span class="string">"*.txt"</span> <span class="comment">#找出/home下不是以.txt结尾的文件</span>
+
+find . -<span class="built_in">type</span> f -name <span class="string">"*.txt"</span> -delete <span class="comment">#删除当前目录下所有.txt文件</span>
+
+find . -empty  <span class="comment">#要列出所有长度为零的文件</span></code></pre>
+
+<ul>
+<li>根据文件类型进行搜索</li>
+</ul>
+<p><code>find . -type 类型参数</code></p>
+<p>类型参数列表：</p>
+<ul>
+<li>f 普通文件</li>
+<li>l 符号连接</li>
+<li>d 目录</li>
+<li>c 字符设备</li>
+<li>b 块设备</li>
+<li>s 套接字</li>
+<li>p Fifo</li>
+</ul>
+<pre><code class="highlight sh">find . -maxdepth 3 -<span class="built_in">type</span> f  <span class="comment">#向下最大深度限制为3</span>
+find . -mindepth 2 -<span class="built_in">type</span> f  <span class="comment">#搜索出深度距离当前目录至少2个子目录的所有文件</span></code></pre>
+
+<ul>
+<li>根据文件时间戳进行搜索</li>
+</ul>
+<p><code>find . -type f 时间戳</code></p>
+<p>UNIX/Linux文件系统每个文件都有三种时间戳：</p>
+<ul>
+<li>访问时间（-atime/天，-amin/分钟）：用户最近一次访问时间</li>
+<li>修改时间（-mtime/天，-mmin/分钟）：文件最后一次修改时间</li>
+<li>变化时间（-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间</li>
+</ul>
+<pre><code class="highlight sh">find . -<span class="built_in">type</span> f -atime -7  <span class="comment">#搜索最近七天内被访问过的所有文件</span>
+find . -<span class="built_in">type</span> f -atime 7   <span class="comment">#搜索恰好在七天前被访问过的所有文件</span>
+find . -<span class="built_in">type</span> f -atime +7  <span class="comment">#搜索超过七天内被访问过的所有文件</span>
+find . -<span class="built_in">type</span> f -amin +10  <span class="comment">#搜索访问时间超过10分钟的所有文件</span>
+find . -<span class="built_in">type</span> f -newer file.log  <span class="comment">#找出比file.log修改时间更长的所有文件</span></code></pre>
 
 </div>
 

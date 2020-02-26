@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,35 +507,24 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/shell/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/shell/">shell</a>
+					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
-				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+					測試環境為 CentOS x86_64 (虛擬機)
+04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
 					...
 				</div>
 		</li>
@@ -533,6 +540,18 @@ $ ca
 根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
 
 impor
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+				<div class="article-digest">
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>

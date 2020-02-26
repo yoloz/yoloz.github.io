@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,29 +507,14 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					Requirements:jdk, hadoop
-tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
-修改配置文件
-hive-env.sh
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
 
-cp $HIVE_HO
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
-				<div class="article-digest">
-					which只能寻找可执行文件, 并在PATH变量里面寻找  
-whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
@@ -539,6 +542,22 @@ whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可�
 				<div class="article-digest">
 					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
 var obj = &#123;'0':'a','1':'b','2
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/26/linux/ssh/">ssh</a>
+				<div class="article-digest">
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>

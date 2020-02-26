@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,54 +507,54 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
+					href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">Xms-Xmx-XX:PermSize-XX:MaxPermSize区别</a>
 				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+					JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：
 
-alternatives 和 update-alt
+堆区即为通过new的方式创建的对象（类实例）所占用的内存空间
+非堆区即为代码、常量、外部访问（如文件访问流所占资源）等
+
+java垃
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/01/26/kafka/producer/">producer</a>
+				<div class="article-digest">
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
 			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
 				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2018/12/10/other/git/">git</a>
 				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
-
-$ useradd -m u
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
-				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
-
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
 					...
 				</div>
 		</li>

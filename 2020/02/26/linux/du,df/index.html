@@ -120,7 +120,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file active">
+		<li class="file">
 			<a href="/2019/07/30/java/date与localDateTime/">
 				<i class="fa fa-file"></i>
 				date与localDateTime
@@ -214,7 +214,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file">
+		<li class="file active">
 			<a href="/2020/02/26/linux/du,df/">
 				<i class="fa fa-file"></i>
 				du,df
@@ -505,73 +505,31 @@
 		<div id="content">
 			<div style="background: #eee">
 	<span id="post-author">yoloz</span>
-	<span id="post-date">2019-07-30 10:25:59</span>
+	<span id="post-date">2020-02-26 18:17:56</span>
 </div>
 
 <div id="article">
-	<p>Java 8中 <code>java.util.Date</code> 类新增了两个方法，分别是from(Instant instant)和toInstant()方法</p>
-<pre><code class="highlight java"><span class="comment">// Obtains an instance of Date from an Instant object.</span>
-<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">from</span><span class="params">(Instant instant)</span> </span>&#123;
-    <span class="keyword">try</span> &#123;
-        <span class="keyword">return</span> <span class="keyword">new</span> Date(instant.toEpochMilli());
-    &#125; <span class="keyword">catch</span> (ArithmeticException ex) &#123;
-        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(ex);
-    &#125;
-&#125;
-<span class="comment">// Converts this Date object to an Instant.</span>
-<span class="function"><span class="keyword">public</span> Instant <span class="title">toInstant</span><span class="params">()</span> </span>&#123;
-    <span class="keyword">return</span> Instant.ofEpochMilli(getTime());
-&#125;</code></pre>
+	<h2 id="du"><a href="#du" class="headerlink" title="du"></a>du</h2><p>disk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。</p>
+<pre><code class="highlight sh">du -sh  <span class="comment">#查看当前目录总共占的容量，不单独列出各子项占用的容量</span>
+du -sh file  <span class="comment">#查看文件file的大小</span>
+du -ah --max-depth=1  <span class="comment">#查看当前目录下一级子文件和子目录占用的磁盘容量</span></code></pre>
+<blockquote>
+<p>a表示显示目录下所有的文件和文件夹（不含子目录）<br>h表示以以K，M，G为单位，提高信息的可读性<br>max-depth表示目录的深度。 </p>
+</blockquote>
+<ul>
+<li>按照空间大小排序<br><code>du|sort -nr|more</code></li>
+</ul>
+<blockquote>
+<p>sort:</p>
+<p>-n, –numeric-sort          compare according to string numerical value</p>
+<p>-h, –human-numeric-sort    compare human readable numbers (e.g., 2K 1G)</p>
+</blockquote>
+<h2 id="df"><a href="#df" class="headerlink" title="df"></a>df</h2><p>disk free，通过文件系统来快速获取空间大小的信息，当我们删除一个文件的时候，这个文件不是马上就在文件系统当中消失了，而是暂时消失了，当所有程序都不用时，才会根据OS的规则释放掉已经删除的文件， df记录的是通过文件系统获取到的文件的大小，他比du强的地方就是能够看到已经删除的文件，而且计算大小的时候，把这一部分的空间也加上了，更精确了。</p>
+<pre><code class="highlight sh">df <span class="comment">#显示磁盘使用情况</span>
+df -T <span class="comment">#列出文件系统的类型</span>
+df -h <span class="comment">#以更易读的方式显示目前磁盘空间和使用情况</span></code></pre>
 
-<p>通过Instant当媒介，然后通过Instant来使Date与LocalDateTime互相转换</p>
-<h2 id="java-util-Date-–-gt-java-time-LocalDateTime"><a href="#java-util-Date-–-gt-java-time-LocalDateTime" class="headerlink" title="java.util.Date –&gt; java.time.LocalDateTime"></a>java.util.Date –&gt; java.time.LocalDateTime</h2><pre><code class="highlight java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UDateToLocalDateTime</span><span class="params">()</span> </span>&#123;
-    java.util.Date date = <span class="keyword">new</span> java.util.Date();
-    Instant instant = date.toInstant();
-    ZoneId zone = ZoneId.systemDefault();
-    LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
-    <span class="comment">// LocalDate localDate = localDateTime.toLocalDate();</span>
-    <span class="comment">// LocalTime localTime = localDateTime.toLocalTime();</span>
-&#125;</code></pre>
-
-<h2 id="java-time-LocalDateTime-–-gt-java-util-Date"><a href="#java-time-LocalDateTime-–-gt-java-util-Date" class="headerlink" title="java.time.LocalDateTime –&gt; java.util.Date"></a>java.time.LocalDateTime –&gt; java.util.Date</h2><pre><code class="highlight java">
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LocalDateTimeToUdate</span><span class="params">(LocalDateTime localDateTime)</span> </span>&#123;
-    <span class="comment">// LocalDateTime localDateTime = LocalDateTime.now();</span>
-    ZoneId zone = ZoneId.systemDefault();
-    Instant instant = localDateTime.atZone(zone).toInstant();
-    java.util.Date date = Date.from(instant);
-&#125;
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LocalDateToUdate</span><span class="params">(LocalDate localDate)</span> </span>&#123;
-    <span class="comment">// LocalDate localDate = LocalDate.now();</span>
-    ZoneId zone = ZoneId.systemDefault();
-    Instant instant = localDate.atStartOfDay().atZone(zone).toInstant();
-    java.util.Date date = Date.from(instant);
-&#125;
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LocalTimeToUdate</span><span class="params">(LocalTime localTime)</span> </span>&#123;
-    <span class="comment">// LocalTime localTime = LocalTime.now();</span>
-    LocalDate localDate = LocalDate.now();
-    LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
-    ZoneId zone = ZoneId.systemDefault();
-    Instant instant = localDateTime.atZone(zone).toInstant();
-    java.util.Date date = Date.from(instant);
-&#125;</code></pre>
-
-<h2 id="java-util-Date-lt-–-gt-long"><a href="#java-util-Date-lt-–-gt-long" class="headerlink" title="java.util.Date &lt;–&gt; long"></a>java.util.Date &lt;–&gt; long</h2><pre><code class="highlight java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DateToLong</span><span class="params">(Object obj)</span></span>&#123;
-    <span class="keyword">long</span> l,<span class="keyword">int</span> i;
-    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> java.sql.Date) l = ((java.sql.Date)obj).getTime();
-    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> java.sql.Time) l = ((java.sql.Time)obj).getTime();
-    <span class="keyword">if</span>(obj <span class="keyword">instanceof</span> java.sql.Timestamp) &#123;
-        l = ((java.sql.Timestamp)obj).toInstant().getEpochSecond();
-        i = ((java.sql.Timestamp)obj).toInstant().getNano();
-    &#125;
-&#125;
-
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LongToDate</span><span class="params">(<span class="keyword">long</span> l,<span class="keyword">int</span> i)</span></span>&#123;
-    java.sql.Date date = <span class="keyword">new</span> java.sql.Date(l);
-    java.sql.Time time = <span class="keyword">new</span> java.sql.Time(l);
-    java.sql.Timestamp timestamp = Timestamp.from(Instant.ofEpochSecond(l, i));
-&#125;</code></pre>
+<p><strong>当文件系统也确定删除了该文件后，这时候du与df就一致了</strong></p>
 
 </div>
 

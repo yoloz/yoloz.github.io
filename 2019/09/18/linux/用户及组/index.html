@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -509,7 +527,24 @@ $ gpasswd -d uname gname                 <span class="comment">#从组gname里�
 <p>修改/etc/sudoers添加 <code>uname ALL=(ALL) ALL</code></p>
 <p>删除用户时携带-r表示完全删除，不添加则home及相关数据保留仅删除用户</p>
 </blockquote>
-<h2 id="查看用户及组"><a href="#查看用户及组" class="headerlink" title="查看用户及组"></a>查看用户及组</h2><p>用户列表文件 <code>/etc/passwd</code> , 用户组列表文件 <code>/etc/group</code> </p>
+<h2 id="查看用户及组"><a href="#查看用户及组" class="headerlink" title="查看用户及组"></a>查看用户及组</h2><ul>
+<li><p>用户列表文件：/etc/passwd</p>
+</li>
+<li><p>用户组列表文件：/etc/group</p>
+</li>
+<li><p>查看系统中有哪些用户：<code>cut -d : -f 1 /etc/passwd</code></p>
+</li>
+<li><p>查看可以登录系统的用户：<code>cat /etc/passwd | grep -v /sbin/nologin | cut -d : -f 1</code></p>
+</li>
+<li><p>查看用户：<code>w</code></p>
+</li>
+<li><p>查看某一用户：<code>w userName</code></p>
+</li>
+<li><p>查看登录用户：<code>who</code></p>
+</li>
+<li><p>查看用户登录历史记录：<code>last</code></p>
+</li>
+</ul>
 
 </div>
 

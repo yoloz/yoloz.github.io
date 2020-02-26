@@ -215,6 +215,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/26/linux/du,df/">
+				<i class="fa fa-file"></i>
+				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
 				ps
@@ -233,9 +242,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2018/12/04/linux/shell/">
+			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
-				shell
+				ssh
 			</a>
 		</li>
 	</ul>
@@ -281,6 +290,15 @@
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2018/12/04/linux/编写shell/">
+				<i class="fa fa-file"></i>
+				编写shell
 			</a>
 		</li>
 	</ul>
@@ -489,38 +507,46 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
+					href="/2018/11/30/linux/vim/">vim</a>
 				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+					vi操作常用快捷方式如下, 非编辑状态下使用：
 
-alternatives 和 update-alt
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2018/12/10/other/git/">git</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
+					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>
