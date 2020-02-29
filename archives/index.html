@@ -215,6 +215,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/DNS/">
+				<i class="fa fa-file"></i>
+				DNS
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
 				alternatives
@@ -296,6 +305,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/服务自启动/">
+				<i class="fa fa-file"></i>
+				服务自启动
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
@@ -308,6 +326,15 @@
 			<a href="/2018/12/04/linux/编写shell/">
 				<i class="fa fa-file"></i>
 				编写shell
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/29/linux/静态ip地址/">
+				<i class="fa fa-file"></i>
+				静态ip地址
 			</a>
 		</li>
 	</ul>
@@ -457,6 +484,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">
+				<i class="fa fa-file"></i>
+				npm,nvm,nrm,npx,cnpm
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/29/web/react-loadable代码分割/">
 				<i class="fa fa-file"></i>
 				react-loadable代码分割
@@ -517,6 +553,18 @@
 		
 		<li class="article-li">
 			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
+				<div class="article-digest">
+					測試環境 CentOS7 x86_64
+TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-23</span>
 			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
 				<a class="article-title"
 					href="/2020/02/23/network/tcpdump/">tcpdump</a>
@@ -527,39 +575,29 @@
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
+					href="/2020/02/26/linux/du,df/">du,df</a>
 				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
+					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
+du -sh  #查看当
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/26/linux/ssh/">ssh</a>
+				<div class="article-digest">
+					ssh免密登录
+客户端生成密钥
 
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
-				<div class="article-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
-				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>

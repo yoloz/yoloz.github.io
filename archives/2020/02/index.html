@@ -215,6 +215,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/DNS/">
+				<i class="fa fa-file"></i>
+				DNS
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
 				alternatives
@@ -296,6 +305,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/服务自启动/">
+				<i class="fa fa-file"></i>
+				服务自启动
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
@@ -308,6 +326,15 @@
 			<a href="/2018/12/04/linux/编写shell/">
 				<i class="fa fa-file"></i>
 				编写shell
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/29/linux/静态ip地址/">
+				<i class="fa fa-file"></i>
+				静态ip地址
 			</a>
 		</li>
 	</ul>
@@ -457,6 +484,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">
+				<i class="fa fa-file"></i>
+				npm,nvm,nrm,npx,cnpm
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/29/web/react-loadable代码分割/">
 				<i class="fa fa-file"></i>
 				react-loadable代码分割
@@ -516,54 +552,55 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/30/linux/vim/">vim</a>
+				<div class="article-digest">
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
 				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
-
-$ useradd -m u
+					which只能寻找可执行文件, 并在PATH变量里面寻找  
+whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					測試環境 CentOS7 x86_64
+TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/database/概述DQL,DML,DDL,DCL/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">概述DQL,DML,DDL,DCL</a>
+					href="/2020/02/23/network/tcpdump/">tcpdump</a>
 				<div class="article-digest">
-					SQL(Structure Query Language)语言是数据库的核心语言。
-SQL的发展是从1974年开始的，其发展过程如下：1974年—–由Boyce和Chamberlin提出，当时称SEQ
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-26</span>
-			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/26/linux/ssh/">ssh</a>
-				<div class="article-digest">
-					ssh免密登录
-客户端生成密钥
-
-ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
-
-生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
 					...
 				</div>
 		</li>

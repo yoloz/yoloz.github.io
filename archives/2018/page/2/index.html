@@ -215,6 +215,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/DNS/">
+				<i class="fa fa-file"></i>
+				DNS
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
 				alternatives
@@ -296,6 +305,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/服务自启动/">
+				<i class="fa fa-file"></i>
+				服务自启动
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
@@ -308,6 +326,15 @@
 			<a href="/2018/12/04/linux/编写shell/">
 				<i class="fa fa-file"></i>
 				编写shell
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/29/linux/静态ip地址/">
+				<i class="fa fa-file"></i>
+				静态ip地址
 			</a>
 		</li>
 	</ul>
@@ -457,6 +484,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">
+				<i class="fa fa-file"></i>
+				npm,nvm,nrm,npx,cnpm
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/29/web/react-loadable代码分割/">
 				<i class="fa fa-file"></i>
 				react-loadable代码分割
@@ -516,56 +552,53 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
 				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
+
+$ useradd -m u
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-29</span>
-			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+					href="/2020/02/23/network/tcpdump/">tcpdump</a>
 				<div class="article-digest">
-					
-安装依赖 yarn add react-loadable
-根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
-
-impor
+					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
 			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
 				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
-
-如果能使用props实现，
+					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
+var obj = &#123;'0':'a','1':'b','2
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-26</span>
-			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/26/linux/ssh/">ssh</a>
+					href="/2020/02/29/linux/DNS/">DNS</a>
 				<div class="article-digest">
-					ssh免密登录
-客户端生成密钥
+					unknown host error
+确定设置了域名服务器(dns) cat /etc/resolv.conf 
 
-ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
-
-生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+nameserver 119.29.29.29  
+nameserver 182.2
 					...
 				</div>
 		</li>

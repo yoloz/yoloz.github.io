@@ -215,6 +215,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/DNS/">
+				<i class="fa fa-file"></i>
+				DNS
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
 				alternatives
@@ -296,6 +305,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/linux/服务自启动/">
+				<i class="fa fa-file"></i>
+				服务自启动
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
 				用户及组
@@ -308,6 +326,15 @@
 			<a href="/2018/12/04/linux/编写shell/">
 				<i class="fa fa-file"></i>
 				编写shell
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/02/29/linux/静态ip地址/">
+				<i class="fa fa-file"></i>
+				静态ip地址
 			</a>
 		</li>
 	</ul>
@@ -457,6 +484,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">
+				<i class="fa fa-file"></i>
+				npm,nvm,nrm,npx,cnpm
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/11/29/web/react-loadable代码分割/">
 				<i class="fa fa-file"></i>
 				react-loadable代码分割
@@ -516,52 +552,50 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2018-12-03</span>
+			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
+					href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">Xms-Xmx-XX:PermSize-XX:MaxPermSize区别</a>
 				<div class="article-digest">
-					測試環境 CentOS7 x86_64
-TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-29</span>
-			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
-				<div class="article-digest">
-					
-安装依赖 yarn add react-loadable
-根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+					JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：
 
-impor
+堆区即为通过new的方式创建的对象（类实例）所占用的内存空间
+非堆区即为代码、常量、外部访问（如文件访问流所占资源）等
+
+java垃
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-28</span>
+			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+				<div class="article-digest">
+					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
 					...
 				</div>
 		</li>
