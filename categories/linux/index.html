@@ -588,53 +588,58 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2018/11/30/linux/ps/">ps</a>
 				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-01-26</span>
-			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
-				<div class="article-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
-				<div class="article-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
+					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
+ps命令支持三种使用的语法格式
 
-nameserver 119.29.29.29  
-nameserver 182.2
+UNIX
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
 
-Modify shell resource limits. Prov
+$ ./sc
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+				<div class="article-digest">
+					Lucene中包含了四种基本数据类型，分别是：
+
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
+				<div class="article-digest">
+					环境准备搭建nodejs环境
+初次需要创建仓库【username】.github.io;
+创建一个分支存放原始文件，方便跨机操作；
+
+拉取远程仓库【分支】到本地git clone -b 【分支】 ht
 					...
 				</div>
 		</li>

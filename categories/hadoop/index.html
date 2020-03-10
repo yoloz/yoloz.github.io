@@ -588,57 +588,53 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="article-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
-
-nameserver 119.29.29.29  
-nameserver 182.2
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-26</span>
-			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/26/linux/ssh/">ssh</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					ssh免密登录
-客户端生成密钥
-
-ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
-
-生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
+					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
 				<div class="article-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
+					环境准备搭建nodejs环境
+初次需要创建仓库【username】.github.io;
+创建一个分支存放原始文件，方便跨机操作；
+
+拉取远程仓库【分支】到本地git clone -b 【分支】 ht
 					...
 				</div>
 		</li>

@@ -608,60 +608,60 @@
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th align="center">Doc_1</th>
-<th align="right">Doc_2</th>
+<th align="left">Term</th>
+<th align="left">Doc_1</th>
+<th align="left">Doc_2</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Quick</td>
-<td align="center"></td>
-<td align="right">X</td>
+<td align="left">Quick</td>
+<td align="left"></td>
+<td align="left">X</td>
 </tr>
 <tr>
-<td>The</td>
-<td align="center">X</td>
-<td align="right"></td>
+<td align="left">The</td>
+<td align="left">X</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td>brown</td>
-<td align="center">X</td>
-<td align="right">X</td>
+<td align="left">brown</td>
+<td align="left">X</td>
+<td align="left">X</td>
 </tr>
 <tr>
-<td>dog</td>
-<td align="center">X</td>
-<td align="right"></td>
+<td align="left">dog</td>
+<td align="left">X</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td>dogs</td>
-<td align="center"></td>
-<td align="right">X</td>
+<td align="left">dogs</td>
+<td align="left"></td>
+<td align="left">X</td>
 </tr>
 </tbody></table>
 <p>现在，如果我们想搜索 quick brown ，我们只需要查找包含每个词条的文档：</p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th align="center">Doc_1</th>
-<th align="right">Doc_2</th>
+<th align="left">Term</th>
+<th align="left">Doc_1</th>
+<th align="left">Doc_2</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>brown</td>
-<td align="center">X</td>
-<td align="right">X</td>
+<td align="left">brown</td>
+<td align="left">X</td>
+<td align="left">X</td>
 </tr>
 <tr>
-<td>Quick</td>
-<td align="center"></td>
-<td align="right">X</td>
+<td align="left">Quick</td>
+<td align="left"></td>
+<td align="left">X</td>
 </tr>
 <tr>
-<td>total</td>
-<td align="center">2</td>
-<td align="right">1</td>
+<td align="left">total</td>
+<td align="left">2</td>
+<td align="left">1</td>
 </tr>
 </tbody></table>
 <p>这里分别匹配到了doc1和doc2，但是doc1匹配度要高于doc2。</p>
@@ -756,41 +756,41 @@ doc.add(<span class="keyword">new</span> Filed(key,value,STORE?,INDEX?)</code></
 <table>
 <thead>
 <tr>
-<th>索引选项</th>
-<th align="center">存储选项</th>
-<th align="center">项向量</th>
-<th align="right">使用范例</th>
+<th align="left">索引选项</th>
+<th align="left">存储选项</th>
+<th align="left">项向量</th>
+<th align="left">使用范例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>NOT_ANALYZED_NO_NORMS</td>
-<td align="center">YES</td>
-<td align="center">NO</td>
-<td align="right">标识符(文件名、主键)，电话号码和社会安全号码、URL、姓名、日期、用于排序的文本域</td>
+<td align="left">NOT_ANALYZED_NO_NORMS</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+<td align="left">标识符(文件名、主键)，电话号码和社会安全号码、URL、姓名、日期、用于排序的文本域</td>
 </tr>
 <tr>
-<td>ANALYZED</td>
-<td align="center">YES</td>
-<td align="center">WITH_POSITIONS_OFFSETS</td>
-<td align="right">文档标题、摘要</td>
+<td align="left">ANALYZED</td>
+<td align="left">YES</td>
+<td align="left">WITH_POSITIONS_OFFSETS</td>
+<td align="left">文档标题、摘要</td>
 </tr>
 <tr>
-<td>ANALYZED</td>
-<td align="center">NO</td>
-<td align="center">WITH_POSITIONS_OFFSETS</td>
-<td align="right">文档正文</td>
+<td align="left">ANALYZED</td>
+<td align="left">NO</td>
+<td align="left">WITH_POSITIONS_OFFSETS</td>
+<td align="left">文档正文</td>
 </tr>
 <tr>
-<td>NO</td>
-<td align="center">YES</td>
-<td align="center">NO</td>
-<td align="right">文档类型、数据库主键(如果没有用于搜索)</td>
+<td align="left">NO</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+<td align="left">文档类型、数据库主键(如果没有用于搜索)</td>
 </tr>
 <tr>
-<td>NOT_ANALYZED</td>
-<td align="center">NO</td>
-<td align="center">NO</td>
-<td align="right">隐藏的关键词</td>
+<td align="left">NOT_ANALYZED</td>
+<td align="left">NO</td>
+<td align="left">NO</td>
+<td align="left">隐藏的关键词</td>
 </tr>
 </tbody></table>
 <h3 id="域排序选项"><a href="#域排序选项" class="headerlink" title="域排序选项"></a>域排序选项</h3><p>用于排序的域是必须进行索引的，而且每个对应文档必须包含一个词汇单元。通常这意味着使用 <code>Field.Index.NOT_ANALYZED</code> 或 <code>Field.Index.NOT_ANALYZED_NO_NORMS</code> 。</p>
