@@ -121,15 +121,6 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">
-				<i class="fa fa-file"></i>
-				Xms-Xmx-XX:PermSize-XX:MaxPermSize区别
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
 			<a href="/2019/07/30/java/date与localDateTime/">
 				<i class="fa fa-file"></i>
 				date与localDateTime
@@ -160,6 +151,15 @@
 			<a href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">
 				<i class="fa fa-file"></i>
 				java进程占用virt虚拟内存高的问题研究
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2019/02/15/java/jvm启动参数/">
+				<i class="fa fa-file"></i>
+				jvm启动参数
 			</a>
 		</li>
 	</ul>
@@ -588,43 +588,6 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-03</span>
-			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
-				<div class="article-digest">
-					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-14</span>
-			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
-				<div class="article-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
-
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
-				<div class="article-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
 			<a class="article-read" href="/2020/03/10/java/查看占用cpu较高的线程/"> 阅读全文 </span>
 				<a class="article-title"
@@ -632,6 +595,39 @@
 				<div class="article-digest">
 					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
 tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+				<div class="article-digest">
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+				<div class="article-digest">
+					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-05</span>
+			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/05/other/svn/">svn</a>
+				<div class="article-digest">
+					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
 					...
 				</div>
 		</li>

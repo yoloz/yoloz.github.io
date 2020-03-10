@@ -120,15 +120,6 @@
 	</ul>
 	
 	<ul>
-		<li class="file active">
-			<a href="/2019/02/15/java/Xms-Xmx-XX:PermSize-XX:MaxPermSize区别/">
-				<i class="fa fa-file"></i>
-				Xms-Xmx-XX:PermSize-XX:MaxPermSize区别
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
 		<li class="file">
 			<a href="/2019/07/30/java/date与localDateTime/">
 				<i class="fa fa-file"></i>
@@ -160,6 +151,15 @@
 			<a href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">
 				<i class="fa fa-file"></i>
 				java进程占用virt虚拟内存高的问题研究
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file active">
+			<a href="/2019/02/15/java/jvm启动参数/">
+				<i class="fa fa-file"></i>
+				jvm启动参数
 			</a>
 		</li>
 	</ul>
@@ -590,20 +590,240 @@
 </div>
 
 <div id="article">
-	<p>JVM按照其存储数据的内容将所需内存分配为堆区与非堆区两个部分：</p>
+	<p>java启动参数共分为三类</p>
 <ul>
-<li><strong>堆区</strong>即为通过new的方式创建的对象（类实例）所占用的内存空间</li>
-<li><strong>非堆区</strong>即为代码、常量、外部访问（如文件访问流所占资源）等</li>
+<li>其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；</li>
+<li>其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，且不保证向后兼容；</li>
+<li>其三是非Stable参数（-XX），此类参数各个jvm实现会有所不同，将来可能会随时取消，需要慎重使用；<blockquote>
+<p>非标准参数又称为扩展参数</p>
+</blockquote>
+</li>
 </ul>
-<p>java垃圾回收机制针对的是堆区资源。</p>
-<h2 id="常见参数种类（配置内存）"><a href="#常见参数种类（配置内存）" class="headerlink" title="常见参数种类（配置内存）"></a>常见参数种类（配置内存）</h2><ul>
-<li><strong>配置堆区</strong>：-Xms 、-Xmx、-XX:newSize、-XX: MaxnewSize、-Xmn</li>
-<li><strong>配置非堆区</strong>：-XX: PermSize、-XX: MaxPermSize</li>
+<h2 id="verbose"><a href="#verbose" class="headerlink" title="verbose"></a>verbose</h2><ul>
+<li><p>-verbose:class </p>
+<p>输出jvm载入类的相关信息，当jvm报告说找不到类或者类冲突时可此进行诊断。</p>
+</li>
+<li><p>-verbose:gc </p>
+<p>输出每次GC的相关情况。</p>
+</li>
+<li><p>-verbose:jni </p>
+<p>输出native方法调用的相关情况，一般用于诊断jni调用错误信息。</p>
+</li>
 </ul>
-<p><strong>-Xms</strong> ：表示java虚拟机堆区内存初始内存分配的大小，通常为操作系统可用内存的1/64大小即可，但仍需按照实际情况进行分配。有可能真的按照这样的一个规则分配时，设计出的软件还没有能够运行得起来就挂了。</p>
-<p><strong>-Xmx</strong>： 表示java虚拟机堆区内存可被分配的最大上限，通常为操作系统可用内存的1/4大小。但是开发过程中，通常会将 -Xms 与 -Xmx两个参数的配置相同的值，其目的是为了能够在java垃圾回收机制清理完堆区后不需要重新分隔计算堆区的大小而浪费资源。</p>
-<p><strong>-XX: PermSize</strong>：表示非堆区初始内存分配大小，其缩写为permanent size（持久化内存）。</p>
-<p><strong>-XX: MaxPermSize</strong>：表示对非堆区分配的内存的最大上限。</p>
+<h2 id="扩展参数"><a href="#扩展参数" class="headerlink" title="扩展参数"></a>扩展参数</h2><ul>
+<li>-Xms512m</li>
+</ul>
+<p>设置JVM促使内存为512m。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。</p>
+<ul>
+<li>-Xmx512m</li>
+</ul>
+<p>设置JVM最大可用内存为512M</p>
+<ul>
+<li>-Xmn200m</li>
+</ul>
+<p>设置年轻代大小为200M。整个堆大小=年轻代大小 + 年老代大小 + 持久代大小。持久代一般固定大小为64m，所以增大年轻代后，将会减小年老代大小。此值对系统性能影响较大，Sun官方推荐配置为整个堆的3/8。</p>
+<ul>
+<li>-Xss128k</li>
+</ul>
+<p>设置每个线程的堆栈大小。JDK5.0以后每个线程堆栈大小为1M，以前每个线程堆栈大小为256K。更具应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。</p>
+<ul>
+<li><p>-Xloggc:file</p>
+<p>与-verbose:gc功能类似，只是将每次GC事件的相关情况记录到一个文件中，文件的位置最好在本地，以避免网络的潜在问题。</p>
+<blockquote>
+<p>若与verbose命令同时出现在命令行中，则以-Xloggc为准。</p>
+</blockquote>
+<ul>
+<li>-Xprof</li>
+</ul>
+<p>跟踪正运行的程序，并将跟踪数据在标准输出输出；适合于开发环境调试。</p>
+<h2 id="非Stable参数"><a href="#非Stable参数" class="headerlink" title="非Stable参数"></a>非Stable参数</h2><p>用-XX作为前缀的参数列表在jvm中可能是不健壮的，SUN也不推荐使用，后续可能会在没有通知的情况下就直接取消了；但是由于这些参数中的确有很多是对我们很有用的，比如我们经常会见到的-XX:PermSize、-XX:MaxPermSize等等；</p>
+<h3 id="行为参数列表"><a href="#行为参数列表" class="headerlink" title="行为参数列表"></a>行为参数列表</h3><table>
+<thead>
+<tr>
+<th align="center">参数及其默认值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-XX:-DisableExplicitGC</td>
+<td align="center">禁止调用System.gc()；但jvm的gc仍然有效</td>
+</tr>
+<tr>
+<td align="center">-XX:+MaxFDLimit</td>
+<td align="center">最大化文件描述符的数量限制</td>
+</tr>
+<tr>
+<td align="center">-XX:+ScavengeBeforeFullGC</td>
+<td align="center">新生代GC优先于Full GC执行</td>
+</tr>
+<tr>
+<td align="center">-XX:+UseGCOverheadLimit</td>
+<td align="center">在抛出OOM之前限制jvm耗费在GC上的时间比例</td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:-UseConcMarkSweepGC</strong></td>
+<td align="center"><strong>对老生代采用并发标记交换算法进行GC</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:-UseParallelGC</strong></td>
+<td align="center"><strong>启用并行GC</strong></td>
+</tr>
+<tr>
+<td align="center">-XX:-UseParallelOldGC</td>
+<td align="center">对Full GC启用并行，当-XX:-UseParallelGC启用时该项自动启用</td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:-UseSerialGC</strong></td>
+<td align="center"><strong>启用串行GC</strong></td>
+</tr>
+<tr>
+<td align="center">-XX:+UseThreadPriorities</td>
+<td align="center">启用本地线程优先级</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p>上面表格中黑体的三个参数代表着jvm中GC执行的三种方式，即串行、并行、并发；</p>
+<p>串行（SerialGC）是jvm的默认GC方式，一般适用于小型应用和单处理器，算法比较简单，GC效率也较高，但可能会给应用带来停顿；</p>
+<p>并行（ParallelGC）是指GC运行时，对应用程序运行没有影响，GC和app两者的线程在并发执行，这样可以最大限度不影响app的运行；</p>
+<p>并发（ConcMarkSweepGC）是指多个线程并发执行GC，一般适用于多处理器系统中，可以提高GC的效率，但算法复杂，系统消耗较大；</p>
+</blockquote>
+<h3 id="性能调优参数列表"><a href="#性能调优参数列表" class="headerlink" title="性能调优参数列表"></a>性能调优参数列表</h3><table>
+<thead>
+<tr>
+<th align="center">参数及其默认值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-XX:LargePageSizeInBytes=4m</td>
+<td align="center">设置用于Java堆的大页面尺寸</td>
+</tr>
+<tr>
+<td align="center">-XX:MaxHeapFreeRatio=70</td>
+<td align="center">GC后java堆中空闲量占的最大比例</td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:MaxNewSize=size</strong></td>
+<td align="center"><strong>新生成对象能占用内存的最大值</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:MaxPermSize=64m</strong></td>
+<td align="center"><strong>老生代对象能占用内存的最大值</strong></td>
+</tr>
+<tr>
+<td align="center">-XX:MinHeapFreeRatio=40</td>
+<td align="center">GC后java堆中空闲量占的最小比例</td>
+</tr>
+<tr>
+<td align="center">-XX:NewRatio=2</td>
+<td align="center">新生代内存容量与老生代内存容量的比例</td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:NewSize=2.125m</strong></td>
+<td align="center"><strong>新生代对象生成时占用内存的默认值</strong></td>
+</tr>
+<tr>
+<td align="center">-XX:ReservedCodeCacheSize=32m</td>
+<td align="center">保留代码占用的内存容量</td>
+</tr>
+<tr>
+<td align="center">-XX:ThreadStackSize=512</td>
+<td align="center">设置线程栈大小，若为0则使用系统默认值</td>
+</tr>
+<tr>
+<td align="center">-XX:+UseLargePages</td>
+<td align="center">使用大页面内存</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>我们在日常性能调优中基本上都会用到以上黑体的这几个属性</p>
+</blockquote>
+<h2 id="调试参数列表"><a href="#调试参数列表" class="headerlink" title="调试参数列表"></a>调试参数列表</h2><table>
+<thead>
+<tr>
+<th align="center">参数及其默认值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-XX:-CITime</td>
+<td align="center">打印消耗在JIT编译的时间</td>
+</tr>
+<tr>
+<td align="center">-XX:ErrorFile=./hs_err_pid&lt;pid&gt;.log</td>
+<td align="center">保存错误日志或者数据到文件中</td>
+</tr>
+<tr>
+<td align="center">-XX:-ExtendedDTraceProbes</td>
+<td align="center">开启solaris特有的dtrace探针</td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:HeapDumpPath=./java_pid&lt;pid&gt;.hprof</strong></td>
+<td align="center"><strong>指定导出堆信息时的路径或文件名</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:-HeapDumpOnOutOfMemoryError</strong></td>
+<td align="center"><strong>当首次遭遇OOM时导出此时堆中相关信息</strong></td>
+</tr>
+<tr>
+<td align="center">-XX:OnError=”&lt;cmd args&gt;;&lt;cmd args&gt;“</td>
+<td align="center">出现致命ERROR之后运行自定义命令</td>
+</tr>
+<tr>
+<td align="center">-XX:OnOutOfMemoryError=”&lt;cmd args&gt;;&lt;cmd args&gt;“</td>
+<td align="center">当首次遭遇OOM时执行自定义命令</td>
+</tr>
+<tr>
+<td align="center">-XX:-PrintClassHistogram</td>
+<td align="center">遇到Ctrl-Break后打印类实例的柱状信息，与jmap -histo功能相同</td>
+</tr>
+<tr>
+<td align="center"><strong>-XX:-PrintConcurrentLocks</strong></td>
+<td align="center"><strong>遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同</strong></td>
+</tr>
+<tr>
+<td align="center">-XX:-PrintCommandLineFlags</td>
+<td align="center">打印在命令行中出现过的标记</td>
+</tr>
+<tr>
+<td align="center">-XX:-PrintCompilation</td>
+<td align="center">当一个方法被编译时打印相关信息</td>
+</tr>
+<tr>
+<td align="center">-XX:-PrintGC</td>
+<td align="center">每次GC时打印相关信息</td>
+</tr>
+<tr>
+<td align="center">-XX:-PrintGC Details</td>
+<td align="center">每次GC时打印详细信息</td>
+</tr>
+<tr>
+<td align="center">-XX:-PrintGCTimeStamps</td>
+<td align="center">打印每次GC的时间戳</td>
+</tr>
+<tr>
+<td align="center">-XX:-TraceClassLoading</td>
+<td align="center">跟踪类的加载信息</td>
+</tr>
+<tr>
+<td align="center">-XX:-TraceClassLoadingPreorder</td>
+<td align="center">跟踪被引用到的所有类的加载信息</td>
+</tr>
+<tr>
+<td align="center">-XX:-TraceClassResolution</td>
+<td align="center">跟踪常量池</td>
+</tr>
+<tr>
+<td align="center">-XX:-TraceClassUnloading</td>
+<td align="center">跟踪类的卸载信息</td>
+</tr>
+<tr>
+<td align="center">-XX:-TraceLoaderConstraints</td>
+<td align="center">跟踪类加载器约束的相关信息</td>
+</tr>
+</tbody></table>
 
 </div>
 
