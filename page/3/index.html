@@ -148,9 +148,27 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/javaThreadDump日志分析/">
+				<i class="fa fa-file"></i>
+				javaThreadDump日志分析
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">
 				<i class="fa fa-file"></i>
 				java进程占用virt虚拟内存高的问题研究
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
+				<i class="fa fa-file"></i>
+				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -236,6 +254,15 @@
 			<a href="/2020/02/26/linux/du,df/">
 				<i class="fa fa-file"></i>
 				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/linux/ncat(nc)/">
+				<i class="fa fa-file"></i>
+				ncat(nc)
 			</a>
 		</li>
 	</ul>
@@ -384,6 +411,15 @@
 			<a href="/2020/02/23/network/cksum(checksum)incorrect/">
 				<i class="fa fa-file"></i>
 				cksum(checksum)incorrect
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/network/tcp_timestamps/">
+				<i class="fa fa-file"></i>
+				tcp_timestamps
 			</a>
 		</li>
 	</ul>
@@ -552,45 +588,26 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
-
-Modify shell resource limits. Prov
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
-
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
-				<div class="article-digest">
-					which只能寻找可执行文件, 并在PATH变量里面寻找  
-whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
+					測試環境為 CentOS x86_64 (虛擬機)
+04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
 					...
 				</div>
 		</li>
@@ -606,6 +623,18 @@ whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可�
 YAML大小写敏感；
 使用缩进代表层级关系；
 缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
+				<div class="article-digest">
+					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
+npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
 					...
 				</div>
 		</li>

@@ -148,9 +148,27 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/javaThreadDump日志分析/">
+				<i class="fa fa-file"></i>
+				javaThreadDump日志分析
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">
 				<i class="fa fa-file"></i>
 				java进程占用virt虚拟内存高的问题研究
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
+				<i class="fa fa-file"></i>
+				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -236,6 +254,15 @@
 			<a href="/2020/02/26/linux/du,df/">
 				<i class="fa fa-file"></i>
 				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/linux/ncat(nc)/">
+				<i class="fa fa-file"></i>
+				ncat(nc)
 			</a>
 		</li>
 	</ul>
@@ -384,6 +411,15 @@
 			<a href="/2020/02/23/network/cksum(checksum)incorrect/">
 				<i class="fa fa-file"></i>
 				cksum(checksum)incorrect
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/network/tcp_timestamps/">
+				<i class="fa fa-file"></i>
+				tcp_timestamps
 			</a>
 		</li>
 	</ul>
@@ -552,36 +588,41 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
 				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
-				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
 
-Modify shell resource limits. Prov
+$ ./sc
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
+			<span class="article-date">2018-12-04</span>
+			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/tcpdump/">tcpdump</a>
+					href="/2018/12/04/linux/编写shell/">编写shell</a>
 				<div class="article-digest">
-					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
+					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
+$ ca
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+				<div class="article-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>

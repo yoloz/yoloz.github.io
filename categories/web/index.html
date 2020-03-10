@@ -148,9 +148,27 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/javaThreadDump日志分析/">
+				<i class="fa fa-file"></i>
+				javaThreadDump日志分析
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">
 				<i class="fa fa-file"></i>
 				java进程占用virt虚拟内存高的问题研究
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
+				<i class="fa fa-file"></i>
+				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -236,6 +254,15 @@
 			<a href="/2020/02/26/linux/du,df/">
 				<i class="fa fa-file"></i>
 				du,df
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/linux/ncat(nc)/">
+				<i class="fa fa-file"></i>
+				ncat(nc)
 			</a>
 		</li>
 	</ul>
@@ -384,6 +411,15 @@
 			<a href="/2020/02/23/network/cksum(checksum)incorrect/">
 				<i class="fa fa-file"></i>
 				cksum(checksum)incorrect
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
+			<a href="/2020/03/10/network/tcp_timestamps/">
+				<i class="fa fa-file"></i>
+				tcp_timestamps
 			</a>
 		</li>
 	</ul>
@@ -552,6 +588,49 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+				<div class="article-digest">
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
+				<div class="article-digest">
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+
+alternatives 和 update-alt
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/26/linux/ssh/">ssh</a>
+				<div class="article-digest">
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2020-02-23</span>
 			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
 				<a class="article-title"
@@ -559,28 +638,6 @@
 				<div class="article-digest">
 					測試環境 CentOS7 x86_64
 TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
-				<div class="article-digest">
-					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
-				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
 					...
 				</div>
 		</li>
