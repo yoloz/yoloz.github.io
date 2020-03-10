@@ -588,39 +588,15 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
-				<div class="article-digest">
-					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-$ ./sc
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
-				<div class="article-digest">
-					ubuntu该方法ubuntu 18.04失效
-修改配置文件 /etc/network/interfaces
-auto eth0                  #设置自动启动eth0接口
-ifac
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
@@ -635,6 +611,32 @@ ifac
 
 其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
 其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-01-23</span>
+			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+				<div class="article-digest">
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+				<div class="article-digest">
+					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+
+可自
 					...
 				</div>
 		</li>

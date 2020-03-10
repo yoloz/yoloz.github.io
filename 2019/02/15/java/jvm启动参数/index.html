@@ -632,57 +632,56 @@
 <blockquote>
 <p>若与verbose命令同时出现在命令行中，则以-Xloggc为准。</p>
 </blockquote>
-<ul>
-<li>-Xprof</li>
-</ul>
+</li>
+<li><p>-Xprof</p>
 <p>跟踪正运行的程序，并将跟踪数据在标准输出输出；适合于开发环境调试。</p>
-<h2 id="非Stable参数"><a href="#非Stable参数" class="headerlink" title="非Stable参数"></a>非Stable参数</h2><p>用-XX作为前缀的参数列表在jvm中可能是不健壮的，SUN也不推荐使用，后续可能会在没有通知的情况下就直接取消了；但是由于这些参数中的确有很多是对我们很有用的，比如我们经常会见到的-XX:PermSize、-XX:MaxPermSize等等；</p>
+</li>
+</ul>
+<h2 id="非Stable参数"><a href="#非Stable参数" class="headerlink" title="非Stable参数"></a>非Stable参数</h2><p> 用-XX作为前缀的参数列表在jvm中可能是不健壮的，SUN也不推荐使用，后续可能会在没有通知的情况下就直接取消了；但是由于这些参数中的确有很多是对我们很有用的，比如我们经常会见到的-XX:PermSize、-XX:MaxPermSize等等；</p>
 <h3 id="行为参数列表"><a href="#行为参数列表" class="headerlink" title="行为参数列表"></a>行为参数列表</h3><table>
 <thead>
 <tr>
-<th align="center">参数及其默认值</th>
-<th align="center">描述</th>
+<th align="left">参数及其默认值</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">-XX:-DisableExplicitGC</td>
-<td align="center">禁止调用System.gc()；但jvm的gc仍然有效</td>
+<td align="left">-XX:-DisableExplicitGC</td>
+<td align="left">禁止调用System.gc()；但jvm的gc仍然有效</td>
 </tr>
 <tr>
-<td align="center">-XX:+MaxFDLimit</td>
-<td align="center">最大化文件描述符的数量限制</td>
+<td align="left">-XX:+MaxFDLimit</td>
+<td align="left">最大化文件描述符的数量限制</td>
 </tr>
 <tr>
-<td align="center">-XX:+ScavengeBeforeFullGC</td>
-<td align="center">新生代GC优先于Full GC执行</td>
+<td align="left">-XX:+ScavengeBeforeFullGC</td>
+<td align="left">新生代GC优先于Full GC执行</td>
 </tr>
 <tr>
-<td align="center">-XX:+UseGCOverheadLimit</td>
-<td align="center">在抛出OOM之前限制jvm耗费在GC上的时间比例</td>
+<td align="left">-XX:+UseGCOverheadLimit</td>
+<td align="left">在抛出OOM之前限制jvm耗费在GC上的时间比例</td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:-UseConcMarkSweepGC</strong></td>
-<td align="center"><strong>对老生代采用并发标记交换算法进行GC</strong></td>
+<td align="left"><strong>-XX:-UseConcMarkSweepGC</strong></td>
+<td align="left"><strong>对老生代采用并发标记交换算法进行GC</strong></td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:-UseParallelGC</strong></td>
-<td align="center"><strong>启用并行GC</strong></td>
+<td align="left"><strong>-XX:-UseParallelGC</strong></td>
+<td align="left"><strong>启用并行GC</strong></td>
 </tr>
 <tr>
-<td align="center">-XX:-UseParallelOldGC</td>
-<td align="center">对Full GC启用并行，当-XX:-UseParallelGC启用时该项自动启用</td>
+<td align="left">-XX:-UseParallelOldGC</td>
+<td align="left">对Full GC启用并行，当-XX:-UseParallelGC启用时该项自动启用</td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:-UseSerialGC</strong></td>
-<td align="center"><strong>启用串行GC</strong></td>
+<td align="left"><strong>-XX:-UseSerialGC</strong></td>
+<td align="left"><strong>启用串行GC</strong></td>
 </tr>
 <tr>
-<td align="center">-XX:+UseThreadPriorities</td>
-<td align="center">启用本地线程优先级</td>
+<td align="left">-XX:+UseThreadPriorities</td>
+<td align="left">启用本地线程优先级</td>
 </tr>
 </tbody></table>
-</li>
-</ul>
 <blockquote>
 <p>上面表格中黑体的三个参数代表着jvm中GC执行的三种方式，即串行、并行、并发；</p>
 <p>串行（SerialGC）是jvm的默认GC方式，一般适用于小型应用和单处理器，算法比较简单，GC效率也较高，但可能会给应用带来停顿；</p>
@@ -692,49 +691,49 @@
 <h3 id="性能调优参数列表"><a href="#性能调优参数列表" class="headerlink" title="性能调优参数列表"></a>性能调优参数列表</h3><table>
 <thead>
 <tr>
-<th align="center">参数及其默认值</th>
-<th align="center">描述</th>
+<th align="left">参数及其默认值</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">-XX:LargePageSizeInBytes=4m</td>
-<td align="center">设置用于Java堆的大页面尺寸</td>
+<td align="left">-XX:LargePageSizeInBytes=4m</td>
+<td align="left">设置用于Java堆的大页面尺寸</td>
 </tr>
 <tr>
-<td align="center">-XX:MaxHeapFreeRatio=70</td>
-<td align="center">GC后java堆中空闲量占的最大比例</td>
+<td align="left">-XX:MaxHeapFreeRatio=70</td>
+<td align="left">GC后java堆中空闲量占的最大比例</td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:MaxNewSize=size</strong></td>
-<td align="center"><strong>新生成对象能占用内存的最大值</strong></td>
+<td align="left"><strong>-XX:MaxNewSize=size</strong></td>
+<td align="left"><strong>新生成对象能占用内存的最大值</strong></td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:MaxPermSize=64m</strong></td>
-<td align="center"><strong>老生代对象能占用内存的最大值</strong></td>
+<td align="left"><strong>-XX:MaxPermSize=64m</strong></td>
+<td align="left"><strong>老生代对象能占用内存的最大值</strong></td>
 </tr>
 <tr>
-<td align="center">-XX:MinHeapFreeRatio=40</td>
-<td align="center">GC后java堆中空闲量占的最小比例</td>
+<td align="left">-XX:MinHeapFreeRatio=40</td>
+<td align="left">GC后java堆中空闲量占的最小比例</td>
 </tr>
 <tr>
-<td align="center">-XX:NewRatio=2</td>
-<td align="center">新生代内存容量与老生代内存容量的比例</td>
+<td align="left">-XX:NewRatio=2</td>
+<td align="left">新生代内存容量与老生代内存容量的比例</td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:NewSize=2.125m</strong></td>
-<td align="center"><strong>新生代对象生成时占用内存的默认值</strong></td>
+<td align="left"><strong>-XX:NewSize=2.125m</strong></td>
+<td align="left"><strong>新生代对象生成时占用内存的默认值</strong></td>
 </tr>
 <tr>
-<td align="center">-XX:ReservedCodeCacheSize=32m</td>
-<td align="center">保留代码占用的内存容量</td>
+<td align="left">-XX:ReservedCodeCacheSize=32m</td>
+<td align="left">保留代码占用的内存容量</td>
 </tr>
 <tr>
-<td align="center">-XX:ThreadStackSize=512</td>
-<td align="center">设置线程栈大小，若为0则使用系统默认值</td>
+<td align="left">-XX:ThreadStackSize=512</td>
+<td align="left">设置线程栈大小，若为0则使用系统默认值</td>
 </tr>
 <tr>
-<td align="center">-XX:+UseLargePages</td>
-<td align="center">使用大页面内存</td>
+<td align="left">-XX:+UseLargePages</td>
+<td align="left">使用大页面内存</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -743,85 +742,85 @@
 <h2 id="调试参数列表"><a href="#调试参数列表" class="headerlink" title="调试参数列表"></a>调试参数列表</h2><table>
 <thead>
 <tr>
-<th align="center">参数及其默认值</th>
-<th align="center">描述</th>
+<th align="left">参数及其默认值</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">-XX:-CITime</td>
-<td align="center">打印消耗在JIT编译的时间</td>
+<td align="left">-XX:-CITime</td>
+<td align="left">打印消耗在JIT编译的时间</td>
 </tr>
 <tr>
-<td align="center">-XX:ErrorFile=./hs_err_pid&lt;pid&gt;.log</td>
-<td align="center">保存错误日志或者数据到文件中</td>
+<td align="left">-XX:ErrorFile=./hs_err_pid&lt;pid&gt;.log</td>
+<td align="left">保存错误日志或者数据到文件中</td>
 </tr>
 <tr>
-<td align="center">-XX:-ExtendedDTraceProbes</td>
-<td align="center">开启solaris特有的dtrace探针</td>
+<td align="left">-XX:-ExtendedDTraceProbes</td>
+<td align="left">开启solaris特有的dtrace探针</td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:HeapDumpPath=./java_pid&lt;pid&gt;.hprof</strong></td>
-<td align="center"><strong>指定导出堆信息时的路径或文件名</strong></td>
+<td align="left"><strong>-XX:HeapDumpPath=./java_pid&lt;pid&gt;.hprof</strong></td>
+<td align="left"><strong>指定导出堆信息时的路径或文件名</strong></td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:-HeapDumpOnOutOfMemoryError</strong></td>
-<td align="center"><strong>当首次遭遇OOM时导出此时堆中相关信息</strong></td>
+<td align="left"><strong>-XX:-HeapDumpOnOutOfMemoryError</strong></td>
+<td align="left"><strong>当首次遭遇OOM时导出此时堆中相关信息</strong></td>
 </tr>
 <tr>
-<td align="center">-XX:OnError=”&lt;cmd args&gt;;&lt;cmd args&gt;“</td>
-<td align="center">出现致命ERROR之后运行自定义命令</td>
+<td align="left">-XX:OnError=”&lt;cmd args&gt;;&lt;cmd args&gt;“</td>
+<td align="left">出现致命ERROR之后运行自定义命令</td>
 </tr>
 <tr>
-<td align="center">-XX:OnOutOfMemoryError=”&lt;cmd args&gt;;&lt;cmd args&gt;“</td>
-<td align="center">当首次遭遇OOM时执行自定义命令</td>
+<td align="left">-XX:OnOutOfMemoryError=”&lt;cmd args&gt;;&lt;cmd args&gt;“</td>
+<td align="left">当首次遭遇OOM时执行自定义命令</td>
 </tr>
 <tr>
-<td align="center">-XX:-PrintClassHistogram</td>
-<td align="center">遇到Ctrl-Break后打印类实例的柱状信息，与jmap -histo功能相同</td>
+<td align="left">-XX:-PrintClassHistogram</td>
+<td align="left">遇到Ctrl-Break后打印类实例的柱状信息，与jmap -histo功能相同</td>
 </tr>
 <tr>
-<td align="center"><strong>-XX:-PrintConcurrentLocks</strong></td>
-<td align="center"><strong>遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同</strong></td>
+<td align="left"><strong>-XX:-PrintConcurrentLocks</strong></td>
+<td align="left"><strong>遇到Ctrl-Break后打印并发锁的相关信息，与jstack -l功能相同</strong></td>
 </tr>
 <tr>
-<td align="center">-XX:-PrintCommandLineFlags</td>
-<td align="center">打印在命令行中出现过的标记</td>
+<td align="left">-XX:-PrintCommandLineFlags</td>
+<td align="left">打印在命令行中出现过的标记</td>
 </tr>
 <tr>
-<td align="center">-XX:-PrintCompilation</td>
-<td align="center">当一个方法被编译时打印相关信息</td>
+<td align="left">-XX:-PrintCompilation</td>
+<td align="left">当一个方法被编译时打印相关信息</td>
 </tr>
 <tr>
-<td align="center">-XX:-PrintGC</td>
-<td align="center">每次GC时打印相关信息</td>
+<td align="left">-XX:-PrintGC</td>
+<td align="left">每次GC时打印相关信息</td>
 </tr>
 <tr>
-<td align="center">-XX:-PrintGC Details</td>
-<td align="center">每次GC时打印详细信息</td>
+<td align="left">-XX:-PrintGC Details</td>
+<td align="left">每次GC时打印详细信息</td>
 </tr>
 <tr>
-<td align="center">-XX:-PrintGCTimeStamps</td>
-<td align="center">打印每次GC的时间戳</td>
+<td align="left">-XX:-PrintGCTimeStamps</td>
+<td align="left">打印每次GC的时间戳</td>
 </tr>
 <tr>
-<td align="center">-XX:-TraceClassLoading</td>
-<td align="center">跟踪类的加载信息</td>
+<td align="left">-XX:-TraceClassLoading</td>
+<td align="left">跟踪类的加载信息</td>
 </tr>
 <tr>
-<td align="center">-XX:-TraceClassLoadingPreorder</td>
-<td align="center">跟踪被引用到的所有类的加载信息</td>
+<td align="left">-XX:-TraceClassLoadingPreorder</td>
+<td align="left">跟踪被引用到的所有类的加载信息</td>
 </tr>
 <tr>
-<td align="center">-XX:-TraceClassResolution</td>
-<td align="center">跟踪常量池</td>
+<td align="left">-XX:-TraceClassResolution</td>
+<td align="left">跟踪常量池</td>
 </tr>
 <tr>
-<td align="center">-XX:-TraceClassUnloading</td>
-<td align="center">跟踪类的卸载信息</td>
+<td align="left">-XX:-TraceClassUnloading</td>
+<td align="left">跟踪类的卸载信息</td>
 </tr>
 <tr>
-<td align="center">-XX:-TraceLoaderConstraints</td>
-<td align="center">跟踪类加载器约束的相关信息</td>
+<td align="left">-XX:-TraceLoaderConstraints</td>
+<td align="left">跟踪类加载器约束的相关信息</td>
 </tr>
 </tbody></table>
 

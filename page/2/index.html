@@ -588,13 +588,39 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/查看占用cpu较高的线程/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/查看占用cpu较高的线程/">查看占用cpu较高的线程</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="article-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
+					java启动参数共分为三类
+
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/linux/ncat(nc)/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/linux/ncat(nc)/">ncat(nc)</a>
+				<div class="article-digest">
+					ncat 或者说 nc 是一款功能类似 cat 的工具，但是是用于网络的。它是一款拥有多种功能的 CLI 工具，可以用来在网络上读、写以及重定向数据。 它被设计成可以被脚本或其他程序调用的可靠的后端工
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
+				<div class="article-digest">
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
@@ -606,28 +632,6 @@ tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况
 					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
 				<div class="article-digest">
 					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
-				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
-				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
 					...
 				</div>
 		</li>

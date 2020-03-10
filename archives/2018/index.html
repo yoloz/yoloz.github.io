@@ -588,39 +588,35 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					Requirements:jdk
-tar -zxvf hadoop-2.7.3.tar.gz -C ~
-创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
-mkdir -p ~/hadoo
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
 				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
+					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
 				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
-
-alternatives 和 update-alt
+					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
+npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
 					...
 				</div>
 		</li>

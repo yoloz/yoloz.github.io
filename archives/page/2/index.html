@@ -589,51 +589,59 @@
 		
 		<li class="article-li">
 			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
 				<div class="article-digest">
-					Requirements:jdk
-tar -zxvf hadoop-2.7.3.tar.gz -C ~
-创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
-mkdir -p ~/hadoo
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
-				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
-				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
-				<div class="article-digest">
-					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
 
-$ ./sc
+cp $HIVE_HO
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+				<div class="article-digest">
+					jstack dump文件中值得关注的线程状态有：
+
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
+				<div class="article-digest">
+					測試環境 CentOS7 x86_64
+TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+				<div class="article-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>
