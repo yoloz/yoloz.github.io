@@ -52,18 +52,18 @@ java启动参数共分为三类
 
  > 若与verbose命令同时出现在命令行中，则以-Xloggc为准。
 
- * -Xprof
+* -Xprof
 
  跟踪正运行的程序，并将跟踪数据在标准输出输出；适合于开发环境调试。
 
- ## 非Stable参数
+## 非Stable参数
 
  用-XX作为前缀的参数列表在jvm中可能是不健壮的，SUN也不推荐使用，后续可能会在没有通知的情况下就直接取消了；但是由于这些参数中的确有很多是对我们很有用的，比如我们经常会见到的-XX:PermSize、-XX:MaxPermSize等等；
 
- ### 行为参数列表
+### 行为参数列表
 
  |  参数及其默认值   | 描述  |
-|  :----:  | :----:  |
+|  :----  | :----  |
 | -XX:-DisableExplicitGC | 禁止调用System.gc()；但jvm的gc仍然有效 |
 | -XX:+MaxFDLimit | 最大化文件描述符的数量限制 |
 | -XX:+ScavengeBeforeFullGC | 新生代GC优先于Full GC执行 |
@@ -85,7 +85,7 @@ java启动参数共分为三类
 ### 性能调优参数列表
 
  |  参数及其默认值   | 描述  |
-|  :----:  | :----:  |
+|  :----  | :----  |
 | -XX:LargePageSizeInBytes=4m | 设置用于Java堆的大页面尺寸 |
 | -XX:MaxHeapFreeRatio=70 | GC后java堆中空闲量占的最大比例 |
 | **-XX:MaxNewSize=size** | **新生成对象能占用内存的最大值** |
@@ -102,7 +102,7 @@ java启动参数共分为三类
 ## 调试参数列表
 
  |  参数及其默认值   | 描述  |
-|  :----:  | :----:  |
+|  :----  | :----  |
 | -XX:-CITime | 打印消耗在JIT编译的时间 |
 | -XX:ErrorFile=./hs_err_pid\<pid\>.log | 保存错误日志或者数据到文件中 |
 | -XX:-ExtendedDTraceProbes | 开启solaris特有的dtrace探针 |
