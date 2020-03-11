@@ -260,6 +260,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/11/linux/killall,kill,pkill/">
+				<i class="fa fa-file"></i>
+				killall,kill,pkill
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
 				ncat(nc)
@@ -588,40 +597,60 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
 				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+cp $HIVE_HO
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2018/11/30/linux/vim/">vim</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					測試環境為 CentOS x86_64 (虛擬機)
+04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
+				<div class="article-digest">
+					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
+var obj = &#123;'0':'a','1':'b','2
 					...
 				</div>
 		</li>

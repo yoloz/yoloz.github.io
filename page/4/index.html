@@ -260,6 +260,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/11/linux/killall,kill,pkill/">
+				<i class="fa fa-file"></i>
+				killall,kill,pkill
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
 				ncat(nc)
@@ -589,52 +598,56 @@
 		
 		<li class="article-li">
 			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/database/概述DQL,DML,DDL,DCL/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">概述DQL,DML,DDL,DCL</a>
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
 				<div class="article-digest">
-					SQL(Structure Query Language)语言是数据库的核心语言。
-SQL的发展是从1974年开始的，其发展过程如下：1974年—–由Boyce和Chamberlin提出，当时称SEQ
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
-				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
-
-alternatives 和 update-alt
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
+				<div class="article-digest">
+					ubuntu该方法ubuntu 18.04失效
+修改配置文件 /etc/network/interfaces
+auto eth0                  #设置自动启动eth0接口
+ifac
 					...
 				</div>
 		</li>

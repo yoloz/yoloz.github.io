@@ -260,6 +260,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/11/linux/killall,kill,pkill/">
+				<i class="fa fa-file"></i>
+				killall,kill,pkill
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
 				ncat(nc)
@@ -588,15 +597,26 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					Requirements:jdk
-tar -zxvf hadoop-2.7.3.tar.gz -C ~
-创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
-mkdir -p ~/hadoo
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+
+alternatives 和 update-alt
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/26/linux/du,df/">du,df</a>
+				<div class="article-digest">
+					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
+du -sh  #查看当
 					...
 				</div>
 		</li>
@@ -615,26 +635,16 @@ Modify shell resource limits. Prov
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
+					Lucene中包含了四种基本数据类型，分别是：
 
-$ useradd -m u
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
-				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>

@@ -259,7 +259,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file">
+		<li class="file active">
 			<a href="/2020/03/11/linux/killall,kill,pkill/">
 				<i class="fa fa-file"></i>
 				killall,kill,pkill
@@ -595,11 +595,86 @@
 		<div id="content">
 			<div style="background: #eee">
 	<span id="post-author">yoloz</span>
-	<span id="post-date">2020-02-23 17:46:46</span>
+	<span id="post-date">2020-03-11 12:08:15</span>
 </div>
 
 <div id="article">
-	<p>about</p>
+	<h2 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h2><p>killall[参数][进程名]</p>
+<blockquote>
+<p>-Z 只杀死拥有scontext 的进程<br>-e 要求匹配进程名称<br>-I 忽略小写<br>-g 杀死进程组而不是进程<br>-i 交互模式，杀死进程前先询问用户<br>-l 列出所有的已知信号名称<br>-q 不输出警告信息<br>-s 发送指定的信号<br>-v 报告信号是否成功发送<br>-w 等待进程死亡<br>–help 显示帮助信息<br>–version 显示版本显示  </p>
+</blockquote>
+<p>killall命令用于杀死指定名字的进程（kill processes by name）</p>
+<p>我们可以使用kill命令杀死指定进程PID的进程，如果要找到我们需要杀死的进程，我们还需要在之前使用ps等命令再配合grep来查找进程，而killall把这两个过程合二为一，是一个很好用的命令。</p>
+<pre><code class="highlight sh"><span class="comment">#杀死所有同名进程</span>
+$ killall nginx
+$ killall -9 bash
+<span class="comment">#向进程发送指定信号</span>
+killall -TERM nginx
+killall -KILL nginx</code></pre>
+
+<h2 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h2><p>pkill 和killall 应用方法差不多，也是直接杀死运行中的程式,pkill后的进程名可以不完整，而killall的进程名必须完整的</p>
+<h2 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h2><p>kill[参数][进程id]</p>
+<blockquote>
+<p>-l  信号，若果不加信号的编号参数，则使用“-l”参数会列出全部的信号名称<br>-a  当处理当前进程时，不限制命令名和进程号的对应关系<br>-p  指定kill 命令只打印相关进程的进程号，而不发送任何信号<br>-s  指定发送信号<br>-u  指定用户  </p>
+</blockquote>
+<p>kill命令用来终止指定的进程（terminate a process）的运行，是Linux下进程管理的常用命令</p>
+<p>通常，终止一个前台进程可以使用Ctrl+C键，但是，对于一个后台进程就须用kill命令来终止，我们需要先使用ps/pidof/pstree/top等工具获取进程PID，然后使用kill命令来杀掉该进程。</p>
+<p>kill命令是通过向进程发送指定的信号来结束相应进程的。在默认情况下，采用编号为15的TERM信号。TERM信号将终止所有不能捕获该信号的进程。对于那些可以捕获该信号的进程就要用编号为9的kill信号，强行“杀掉”该进程。</p>
+<p>kill命令可以带信号号码选项，也可以不带。如果没有信号号码，kill命令就会发出终止信号(15)，这个信号可以被进程捕获，使得进程在退出之前可以清理并释放资源。也可以用kill向进程发送特定的信号。</p>
+<p>例如：<code>kill -2 123</code>它的效果等同于在前台运行PID为123的进程时按下Ctrl+C键。但是，普通用户只能使用不带signal参数的kill命令或最多使用-9信号。</p>
+<blockquote>
+<p>应注意，信号使进程强行终止，这常会带来一些副作用，如数据丢失或者终端无法恢复到正常状态。</p>
+<p>要撤销所有的后台作业，可以输入<code>kill 0</code>。因为有些在后台运行的命令会启动多个进程，跟踪并找到所有要杀掉的进程的PID是件很麻烦的事。这时，使用<code>kill 0</code>来终止所有由当前shell启动的进程，是个有效的方法。</p>
+</blockquote>
+<pre><code class="highlight sh"><span class="comment">#列出所有信号名称</span>
+[root@localhost test6]<span class="comment"># kill -l</span>
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
+ 5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
+ 9) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2
+13) SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGSTKFLT
+17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU
+25) SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH
+29) SIGIO       30) SIGPWR      31) SIGSYS      34) SIGRTMIN
+35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3  38) SIGRTMIN+4
+39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12
+47) SIGRTMIN+13 48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14
+51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10
+55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7  58) SIGRTMAX-6
+59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX
+
+<span class="comment">#只有第9种信号(SIGKILL)才可以无条件终止进程，其他信号进程都有权利忽略,下面是常用的信号：</span>
+<span class="comment">#HUP    1    终端断线</span>
+<span class="comment">#INT     2    中断（同 Ctrl + C）</span>
+<span class="comment">#QUIT    3    退出（同 Ctrl + \）</span>
+<span class="comment">#TERM   15    终止</span>
+<span class="comment">#KILL    9    强制终止</span>
+<span class="comment">#CONT   18    继续（与STOP相反， fg/bg命令）</span>
+<span class="comment">#STOP    19    暂停（同 Ctrl + Z）</span>
+
+
+<span class="comment">#得到指定信号的数值</span>
+[root@localhost test6]<span class="comment"># kill -l KILL</span>
+[root@localhost test6]<span class="comment"># kill -l SIGKILL</span>
+[root@localhost test6]<span class="comment"># kill -l TERM</span>
+[root@localhost test6]<span class="comment"># kill -l SIGTERM</span>
+[root@localhost test6]<span class="comment">#</span>
+
+<span class="comment">#先用ps查找进程，然后用kill杀掉</span>
+[root@localhost test6]<span class="comment"># ps -ef|grep vim </span>
+root      3268  2884  0 16:21 pts/1    00:00:00 vim install.log
+root      3370  2822  0 16:21 pts/0    00:00:00 grep vim
+[root@localhost test6]<span class="comment"># kill 3268 </span>
+
+<span class="comment">#彻底杀死进程</span>
+命令：<span class="built_in">kill</span> –9 3268   <span class="comment">#-9 强制杀掉进程</span></code></pre>
+
+
+
+
+
 
 </div>
 

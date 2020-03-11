@@ -260,6 +260,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/11/linux/killall,kill,pkill/">
+				<i class="fa fa-file"></i>
+				killall,kill,pkill
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
 				ncat(nc)
@@ -588,55 +597,50 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+			<span class="article-date">2020-02-28</span>
+			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
 				<div class="article-digest">
-					Requirements:jdk
-tar -zxvf hadoop-2.7.3.tar.gz -C ~
-创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
-mkdir -p ~/hadoo
+					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="article-digest">
-					測試環境為 CentOS x86_64 (虛擬機)
-04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
+				<div class="article-digest">
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
 
-可自
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-29</span>
-			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
-				<div class="article-digest">
-					
-安装依赖 yarn add react-loadable
-根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
-
-impor
+alternatives 和 update-alt
 					...
 				</div>
 		</li>

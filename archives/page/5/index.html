@@ -260,6 +260,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/11/linux/killall,kill,pkill/">
+				<i class="fa fa-file"></i>
+				killall,kill,pkill
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
 				ncat(nc)
@@ -588,53 +597,59 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+				<div class="article-digest">
+					java启动参数共分为三类
+
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
 				<div class="article-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
-
-nameserver 119.29.29.29  
-nameserver 182.2
+					ubuntu该方法ubuntu 18.04失效
+修改配置文件 /etc/network/interfaces
+auto eth0                  #设置自动启动eth0接口
+ifac
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="article-digest">
-					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
+					Lucene中包含了四种基本数据类型，分别是：
 
-$ ./sc
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2018-11-29</span>
+			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
 
-Modify shell resource limits. Prov
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/23/network/tcpdump/">tcpdump</a>
-				<div class="article-digest">
-					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
+impor
 					...
 				</div>
 		</li>

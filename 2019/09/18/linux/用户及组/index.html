@@ -260,6 +260,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/11/linux/killall,kill,pkill/">
+				<i class="fa fa-file"></i>
+				killall,kill,pkill
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
 				ncat(nc)
@@ -624,6 +633,14 @@ $ gpasswd -d uname gname                 <span class="comment">#从组gname里�
 <li><p>查看登录用户：<code>who</code></p>
 </li>
 <li><p>查看用户登录历史记录：<code>last</code></p>
+</li>
+</ul>
+<h2 id="桌面环境卡死"><a href="#桌面环境卡死" class="headerlink" title="桌面环境卡死"></a>桌面环境卡死</h2><ul>
+<li>ctrl+alt+f1进入shell环境</li>
+<li>查看登录用户<code>who</code></li>
+<li>踢出桌面环境用户<code>sudo pkill -kill -t tty7</code><blockquote>
+<p>如果踢出失败则强制踢出<code>sudo pkill -9 -t tty7</code></p>
+</blockquote>
 </li>
 </ul>
 
