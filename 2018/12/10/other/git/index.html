@@ -607,7 +607,7 @@
 <p><code>git commit -am &quot;something&quot;</code> 只能提交已跟踪过的改动文件, 新文件是untracking file；</p>
 <h2 id="diff相关"><a href="#diff相关" class="headerlink" title="diff相关"></a>diff相关</h2><p><code>git diff</code> 工作目录中的文件和暂存区快照之间的差异，即修改后还没暂存起来(commit)的变化内容；<br><code>git diff --cached</code> 已经暂存起来的文件和上次提交时的快照之间的差异；<br><code>git diff HEAD</code> 工作目录中的文件和上次提交之间的改动；<br><code>git diff [version tag]</code> 查看指定版本之后的改动；  </p>
 <h2 id="branch-tag相关"><a href="#branch-tag相关" class="headerlink" title="branch,tag相关"></a>branch,tag相关</h2><p>查看本地分支 <code>git branch</code><br>查看远程分支 <code>git branch -r</code><br>查看所有分支 <code>git branch -a</code>  </p>
-<p>本地创建新分支 <code>git branch &lt;branchName&gt;</code><br>切换到分支xx <code>git checkout &lt;branchName&gt;</code><br>创建分支的同时切换到该分支上 <code>git checkout -b &lt;branchName&gt;</code>  </p>
+<p>本地创建新分支 <code>git branch &lt;branchName&gt;</code><br>切换到分支xx <code>git checkout &lt;branchName&gt;</code><br>创建分支的同时切换到该分支上 <code>git checkout -b &lt;branchName&gt;</code><br>合并某分支到当前分支<code>git merge &lt;branchName&gt;</code></p>
 <p>将新分支推送到远程repo上 <code>git push origin &lt;branchName&gt;</code>  </p>
 <p>删除本地分支 <code>git branch -d &lt;branchName&gt;</code><br>删除远程分支 <code>git push origin --delete &lt;branchName&gt;</code>  </p>
 <p>删除远程tag <code>git push origin --delete tag &lt;tagname&gt;</code><br>把本地tag推送到远程<code>git push --tags</code><br>获取远程tag<code>git fetch origin tag &lt;tagname&gt;</code>  </p>
