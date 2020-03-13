@@ -36,6 +36,7 @@ git有一个暂存区(staging area), 可以放入新添加的文件或加入新�
 本地创建新分支 `git branch <branchName>`  
 切换到分支xx `git checkout <branchName>`  
 创建分支的同时切换到该分支上 `git checkout -b <branchName>`  
+合并某分支到当前分支`git merge <branchName>`
 
 将新分支推送到远程repo上 `git push origin <branchName>`  
 
