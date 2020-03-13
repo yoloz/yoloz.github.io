@@ -598,45 +598,57 @@
 		
 		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/linux/ncat(nc)/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/linux/ncat(nc)/">ncat(nc)</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					ncat 或者说 nc 是一款功能类似 cat 的工具，但是是用于网络的。它是一款拥有多种功能的 CLI 工具，可以用来在网络上读、写以及重定向数据。 它被设计成可以被脚本或其他程序调用的可靠的后端工
+					jstack dump文件中值得关注的线程状态有：
+
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
+
+$ useradd -m u
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="article-digest">
-					获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b v2.8.1
+					Lucene中包含了四种基本数据类型，分别是：
+
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
+					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
 				<div class="article-digest">
-					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
-npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
+					測試環境 CentOS7 x86_64
+TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
 					...
 				</div>
 		</li>

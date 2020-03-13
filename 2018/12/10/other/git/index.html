@@ -599,19 +599,24 @@
 </div>
 
 <div id="article">
-	<p>获取一个url对应的远程git repo, 创建一个本地copy <code>git clone url</code><br>clone指定分支 <code>git clone -b 分支名 url</code> , 如：git clone -b v2.8.1 <a href="https://xxx.git" target="_blank" rel="noopener">https://xxx.git</a>  </p>
+	<h2 id="clone相关"><a href="#clone相关" class="headerlink" title="clone相关"></a>clone相关</h2><p>获取一个url对应的远程git repo, 创建一个本地copy <code>git clone url</code><br><strong>clone指定分支</strong> <code>git clone -b 分支名 url</code> , 如：<code>git clone -b v2.8.1 https://xxx.git</code></p>
 <h2 id="commit相关"><a href="#commit相关" class="headerlink" title="commit相关"></a>commit相关</h2><p>git有一个暂存区(staging area), 可以放入新添加的文件或加入新的改动。 <code>commit</code> 是将暂存区的代码提交到本地仓库，不是我们disk上的改动(disk可见的是工作区)。 <code>git add .</code> 会递归地将工作区的改动文件添加到本地的暂存区，两者可以合并成一个命令 <code>git commit -am &quot;something&quot;</code> ，提交到远程服务端 <code>git push</code> 。</p>
 <blockquote>
 <p>如果有新增文件，则 <code>git add .</code> 和 <code>git commit -m &quot;something&quot;</code> 不可合并；  </p>
 </blockquote>
 <p><code>git commit -am &quot;something&quot;</code> 只能提交已跟踪过的改动文件, 新文件是untracking file；</p>
 <h2 id="diff相关"><a href="#diff相关" class="headerlink" title="diff相关"></a>diff相关</h2><p><code>git diff</code> 工作目录中的文件和暂存区快照之间的差异，即修改后还没暂存起来(commit)的变化内容；<br><code>git diff --cached</code> 已经暂存起来的文件和上次提交时的快照之间的差异；<br><code>git diff HEAD</code> 工作目录中的文件和上次提交之间的改动；<br><code>git diff [version tag]</code> 查看指定版本之后的改动；  </p>
-<h2 id="branch-tag相关"><a href="#branch-tag相关" class="headerlink" title="branch,tag相关"></a>branch,tag相关</h2><p>查看本地分支 <code>git branch</code><br>查看远程分支 <code>git branch -r</code><br>查看所有分支 <code>git branch -a</code><br>本地创建新分支 <code>git branch &lt;branchName&gt;</code><br>切换到分支xx <code>git checkout &lt;branchName&gt;</code><br>创建分支的同时切换到该分支上 <code>git checkout -b &lt;branchName&gt;</code><br>将新分支推送到远程repo上 <code>git push origin &lt;branchName&gt;</code><br>删除本地分支 <code>git branch -d &lt;branchName&gt;</code><br>删除远程分支 <code>git push origin --delete &lt;branchName&gt;</code><br>删除远程tag <code>git push origin --delete tag &lt;tagname&gt;</code><br>把本地tag推送到远程<code>git push --tags</code><br>获取远程tag<code>git fetch origin tag &lt;tagname&gt;</code><br><strong>重命名远程分支:</strong><br>即先删除远程分支，然后重命名本地分支，再重新提交一个远程分支</p>
+<h2 id="branch-tag相关"><a href="#branch-tag相关" class="headerlink" title="branch,tag相关"></a>branch,tag相关</h2><p>查看本地分支 <code>git branch</code><br>查看远程分支 <code>git branch -r</code><br>查看所有分支 <code>git branch -a</code>  </p>
+<p>本地创建新分支 <code>git branch &lt;branchName&gt;</code><br>切换到分支xx <code>git checkout &lt;branchName&gt;</code><br>创建分支的同时切换到该分支上 <code>git checkout -b &lt;branchName&gt;</code>  </p>
+<p>将新分支推送到远程repo上 <code>git push origin &lt;branchName&gt;</code>  </p>
+<p>删除本地分支 <code>git branch -d &lt;branchName&gt;</code><br>删除远程分支 <code>git push origin --delete &lt;branchName&gt;</code>  </p>
+<p>删除远程tag <code>git push origin --delete tag &lt;tagname&gt;</code><br>把本地tag推送到远程<code>git push --tags</code><br>获取远程tag<code>git fetch origin tag &lt;tagname&gt;</code>  </p>
+<p><strong>重命名远程分支:</strong><br>即先删除远程分支，然后重命名本地分支，再重新提交一个远程分支</p>
 <pre><code class="highlight sh">git push --delete origin &lt;branchName&gt; <span class="comment">#删除远程分支</span>
 git branch -m b1 new_b  <span class="comment">#重命名本地分支</span>
 git push origin new_b   <span class="comment">#推送本地分支</span></code></pre>
 
-<p><strong>切换分支</strong><br>如架构调整之类需要将先前代码以一个分支留存继续在此分支开发</p>
+<p><strong>切换分支</strong>如架构调整之类需要将先前代码以一个分支留存继续在此分支开发</p>
 <pre><code class="highlight sh">git branch -m thisBranch oldBranch
 git push origin oldBranch  <span class="comment">#留存老版到仓库</span>
 git checkout thisBranch  <span class="comment">#切换thisBranch继续开发</span></code></pre>
@@ -620,7 +625,33 @@ git checkout thisBranch  <span class="comment">#切换thisBranch继续开发</sp
 <blockquote>
 <p>更简单的方法是使用<code>git fetch -p</code>，它在fetch之后删除掉没有与远程分支对应的本地分支</p>
 </blockquote>
-<p>有时候我们需要创建一个干净的分支，其不继承任何提交没有父节点，而上文的 <code>git checkout xx</code> 创建的分支xx是有父节点的，包含了历史提交。流程如下：<br>1, 创建干净的分支 <code>git checkout --orphan xx</code> ；<br>2, 删除工作目录中其他分支存在的内容 <code>git rm -rf .</code> ;<br>3, 给分支xx添加内容 <code>git add file1 file2...</code> ;<br>4, 提交到本地仓库 <code>git commit -m &quot;something&quot;</code> ;<br>5, 推送到远程仓库 <code>git push origin xx</code> ;  </p>
+<p>有时候我们需要<strong>创建一个干净的分支</strong>，其不继承任何提交没有父节点，而上文的 <code>git checkout xx</code> 创建的分支xx是有父节点的，包含了历史提交。流程如下：<br>1, 创建干净的分支 <code>git checkout --orphan xx</code> ；<br>2, 删除工作目录中其他分支存在的内容 <code>git rm -rf .</code> ;<br>3, 给分支xx添加内容 <code>git add file1 file2...</code> ;<br>4, 提交到本地仓库 <code>git commit -m &quot;something&quot;</code> ;<br>5, 推送到远程仓库 <code>git push origin xx</code> ;  </p>
+<p><strong>其他分支的某个commit并入本分支</strong>当我们需要将其他分支的某一次提交合入到本地当前分支上，那么就要使用<code>git cherry-pick commitid</code></p>
+<blockquote>
+<p>如果在git cherry-pick后加一个分支名，则表示将该分支顶端提交进cherry-pick如：<code>git cherry-pick &lt;branchname&gt;</code></p>
+</blockquote>
+<ul>
+<li>git cherry-pick ..&lt;branchname&gt;和git cherry-pick ^HEAD &lt;branchname&gt;</li>
+</ul>
+<p>以上两个命令作用相同，表示应用所有提交引入的更改，这些提交是branchname的祖先但不是HEAD的祖先(即当前分支)，比如，现在我的仓库中有三个分支，其提交历史如下图：</p>
+<pre><code class="highlight log">               C&lt;---D&lt;---E  branch2
+              &#x2F;
+master   A&lt;---B  
+              \
+               F&lt;---G&lt;---H  branch3
+                         |
+                         HEAD</code></pre>
+
+<p>如果我使用<code>git cherry-pick ..branch2</code>或者<code>git cherry-pick ^HEAD branch2</code>,那么会将属于branch2的祖先但不属于branch3的祖先的所有提交引入到当前分支branch3上，并生成新的提交，执行后的提交历史如下：</p>
+<pre><code class="highlight log">
+               C&lt;---D&lt;---E  branch2
+              &#x2F;
+master   A&lt;---B  
+              \
+               F&lt;---G&lt;---H&lt;---C&lt;---D&lt;---E  branch3
+                                        |
+                                        HEAD</code></pre>
+
 <h2 id="撤销相关"><a href="#撤销相关" class="headerlink" title="撤销相关"></a>撤销相关</h2><p>git撤销操作主要有如下方式:<br>撤销上一次提交，并将暂存区文件重新提交 <code>git commit --amend</code> ;<br>拉取暂存区文件替换工作区文件 <code>git checkout file1 dir1...</code> ;<br>拉取版本库文件到暂存区, 不影响工作区 <code>git reset HEAD file1 dir1...</code> ;  </p>
 <blockquote>
 <p>第一种情况下–amend会打开编辑文件其中快捷键^表示ctrl, M表示alt(linux)  </p>

@@ -597,29 +597,29 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/查看占用cpu较高的线程/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+					href="/2020/03/10/java/查看占用cpu较高的线程/">查看占用cpu较高的线程</a>
 				<div class="article-digest">
-					Requirements:jdk, hadoop
-tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
-修改配置文件
-hive-env.sh
-
-cp $HIVE_HO
+					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
+tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
+					href="/2020/02/26/linux/ssh/">ssh</a>
 				<div class="article-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>
