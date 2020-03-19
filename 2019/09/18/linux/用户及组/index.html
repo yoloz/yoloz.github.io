@@ -242,6 +242,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/19/linux/Locale/">
+				<i class="fa fa-file"></i>
+				Locale
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
 				alternatives
@@ -600,22 +609,35 @@
 
 <div id="article">
 	<h2 id="创建用户及组"><a href="#创建用户及组" class="headerlink" title="创建用户及组"></a>创建用户及组</h2><p>sudo权限可以通过用户组或修改/etc/sudoers文件</p>
-<pre><code class="highlight sh">$ groupadd gname                         <span class="comment">#新建用户组</span>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> groupadd gname                         <span class="comment">#新建用户组</span></span>
 
-$ useradd -m uname                       <span class="comment">#新建用户并创建用户目录</span>
-$ usermod -G sudo -a uname               <span class="comment">#新创建的用户加入sudo(超级权限)组</span>
-$ usermod -G wheel -a uname              <span class="comment">#centos默认没有sudo组,wheel组拥有sudo权限，可能sudo仍没有权限，则可改变主组到wheel,-G换成-g</span>
-$ passwd uname                           <span class="comment">#新用户设置密码</span>
+<span class="meta">$</span><span class="bash"> useradd -m uname                       <span class="comment">#新建用户并创建用户目录</span></span>
+<span class="meta">$</span><span class="bash"> usermod -G sudo -a uname               <span class="comment">#新创建的用户加入sudo(超级权限)组</span></span>
+<span class="meta">$</span><span class="bash"> usermod -G wheel -a uname              <span class="comment">#centos默认没有sudo组,wheel组拥有sudo权限，可能sudo仍没有权限，则可改变主组到wheel,-G换成-g</span></span>
+<span class="meta">$</span><span class="bash"> passwd uname                           <span class="comment">#新用户设置密码</span></span>
 
-$ userdel -r uname                       <span class="comment">#删除用户</span>
-$ groupdel gname                         <span class="comment">#删除用户组</span>
-$ gpasswd -d uname gname                 <span class="comment">#从组gname里删除用户uname</span></code></pre>
+<span class="meta">$</span><span class="bash"> userdel -r uname                       <span class="comment">#删除用户</span></span>
+<span class="meta">$</span><span class="bash"> groupdel gname                         <span class="comment">#删除用户组</span></span>
+<span class="meta">$</span><span class="bash"> gpasswd -d uname gname                 <span class="comment">#从组gname里删除用户uname</span></span></code></pre>
+
 <blockquote>
 <p>在centos上可能会出现usermod: group ‘sudo’ does not exist,<br>因为centos默认没有sudo组，可以将用户指向wheel用户组, wheel用户组同样有sudo权限。</p>
 <p>usermod -g gname uname是把用户的主组变成gname</p>
 <p>usermod -G gname uname只是把用户加到gname组，并没有改变主组</p>
 <p>修改/etc/sudoers添加 <code>uname ALL=(ALL) ALL</code></p>
 <p>删除用户时携带-r表示完全删除，不添加则home及相关数据保留仅删除用户</p>
+</blockquote>
+<h3 id="shell中Tab命令无法自动补全"><a href="#shell中Tab命令无法自动补全" class="headerlink" title="shell中Tab命令无法自动补全"></a>shell中Tab命令无法自动补全</h3><ul>
+<li>修改/etc/passwd中用户的属性</li>
+</ul>
+<p>如:tmp:x:1003:1003::/home/tmp:/bin/sh 修改为tmp:x:1003:1003::/home/tmp:/bin/bash</p>
+<ul>
+<li>在创建时加入相应参数</li>
+</ul>
+<p>useradd -s /bin/bash -m username</p>
+<blockquote>
+<p>在debian中使用useradd命令创建的用户默认使用dash，Tab无法自动补全</p>
+<p>系统dash配置<code>sudo dpkg-reconfigure dash</code>选no，就可以更改默认shell环境</p>
 </blockquote>
 <h2 id="查看用户及组"><a href="#查看用户及组" class="headerlink" title="查看用户及组"></a>查看用户及组</h2><ul>
 <li><p>用户列表文件：/etc/passwd</p>

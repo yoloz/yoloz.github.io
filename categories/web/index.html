@@ -242,6 +242,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/03/19/linux/Locale/">
+				<i class="fa fa-file"></i>
+				Locale
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
 				alternatives
@@ -597,50 +606,37 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
 				<div class="article-digest">
-					java启动参数共分为三类
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
 
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+$ useradd -m u
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/查看占用cpu较高的线程/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/查看占用cpu较高的线程/">查看占用cpu较高的线程</a>
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
 				<div class="article-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+			<span class="article-date">2018-12-05</span>
+			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+					href="/2018/12/05/other/svn/">svn</a>
 				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/服务自启动/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/29/linux/服务自启动/">服务自启动</a>
-				<div class="article-digest">
-					centos可有如下三种方式
-ln -s 建立软连接在CentOS中总共有7种运行级别，可以在/etc/inittab 文件中进行设置，7种运行级别对应着 /etc/rc.d/rc[0-6].d 这7
+					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
 					...
 				</div>
 		</li>

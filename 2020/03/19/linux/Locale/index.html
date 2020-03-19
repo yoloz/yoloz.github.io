@@ -241,7 +241,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file">
+		<li class="file active">
 			<a href="/2020/03/19/linux/Locale/">
 				<i class="fa fa-file"></i>
 				Locale
@@ -602,60 +602,128 @@
 
 		<!-- 引入正文 -->
 		<div id="content">
-			<div id="articleList">
-	<ul>
-		
-		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
-				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/sh,exec,source/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/sh,exec,source/">sh,exec,source</a>
-				<div class="article-digest">
-					sh方式使用 $ sh script.sh 执行脚本时，当前shell是父进程，生成一个子shell进程，在子shell中执行脚本。脚本执行完毕，退出子shell，回到当前shell.
-
-$ ./sc
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
-				<div class="article-digest">
-					which只能寻找可执行文件, 并在PATH变量里面寻找  
-whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
-				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
-					...
-				</div>
-		</li>
-		
-	</ul>
+			<div style="background: #eee">
+	<span id="post-author">yoloz</span>
+	<span id="post-date">2020-03-19 13:27:15</span>
 </div>
+
+<div id="article">
+	<p>Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 </p>
+<p>Locale是软件在运行时的语言环境, 它包括语言(Language), 地域 (Territory) 和字符集(Codeset)。一个locale的书写格式为: 语言[_地域[.字符集]]。完全的locale表达方式是 [语言[_地域][.字符集] [@修正值]。zh_CN.GB2312＝中文_中华人民共和国＋国标2312字符集。 </p>
+<p>在Linux中通过locale来设置程序运行的不同语言环境，locale由ANSI C提供支持。locale的命名规则为&lt;语言&gt;_&lt;地区&gt;.&lt;字符集编码&gt;，如zh_CN.UTF-8，zh代表中文，CN代表大陆地区，UTF-8表示字符集。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>在locale环境中，有一组变量，代表国际化环境中的不同设置：</p>
+<ul>
+<li><p>LC_COLLATE<br>定义该环境的排序和比较规则</p>
+</li>
+<li><p>LC_CTYPE<br>用于字符分类和字符串处理，控制所有字符的处理方式，包括字符编码，字符是单字节还是多字节，如何打印等。是最重要的一个环境变量。</p>
+</li>
+<li><p>LC_MONETARY<br>货币格式</p>
+</li>
+<li><p>LC_NUMERIC<br>非货币的数字显示格式</p>
+</li>
+<li><p>LC_TIME<br>时间和日期格式</p>
+</li>
+<li><p>LC_MESSAGES<br>提示信息的语言。另外还有一个LANGUAGE参数，它与LC_MESSAGES相似，但如果该参数一旦设置，则LC_MESSAGES参数就会失效。LANGUAGE参数可同时设置多种语言信息，如LANGUANE=”zh_CN.GB18030:zh_CN.GB2312:zh_CN”。</p>
+</li>
+<li><p>LANG<br>LC_*的默认值，是最低级别的设置，如果LC_*没有设置，则使用该值。类似于 LC_ALL。</p>
+</li>
+<li><p>LC_ALL<br>它是一个宏，如果该值设置了，则该值会覆盖所有LC_*的设置值。注意，LANG的值不受该宏影响。</p>
+<blockquote>
+<p>LC_ALL=C,”C”是系统默认的locale，”POSIX”是”C”的别名。所以当我们新安装完一个系统时，默认的locale就是C或POSIX。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="设定"><a href="#设定" class="headerlink" title="设定"></a>设定</h2><p>locale的设定：</p>
+<p><strong>LC_ALL和LANG优先级</strong>的关系： LC_ALL &gt; LC_* &gt;LANG  </p>
+<ul>
+<li><p>如果需要一个纯中文的系统的话，设定LC_ALL= zh_CN.XXXX，或者LANG=zh_CN.XXXX都可以。  </p>
+</li>
+<li><p>如果只想要一个可以输入中文的环境，而保持菜单、标题，系统信息等等为英文界面，那么只需要设定 LC_CTYPE＝zh_CN.XXXX，LANG=en_US.XXXX就可以了。 </p>
+</li>
+<li><p>假如什么也不做的话，也就是LC_ALL，LANG和LC_*均不指定特定值的话，系统将采用POSIX作为lcoale，也就是C locale。</p>
+</li>
+</ul>
+<p><strong>LANG和LANGUAGE的区别</strong>：<br>LANG - Specifies the default locale for all unset locale variables  </p>
+<p>LANGUAGE - Most programs use this for the language of its interface  </p>
+<p>LANGUAGE是设置应用程序的界面语言。而LANG是优先级很低的一个变量，它指定所有与locale有关的变量的默认值  </p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
+<li><p>How to view the current locale setting <code>locale</code></p>
+</li>
+<li><p>How to change the locale setting</p>
+</li>
+<li><ul>
+<li>Via the CDE login locale</li>
+</ul>
+</li>
+<li><ul>
+<li>As a user-specific locale</li>
+</ul>
+</li>
+<li><ul>
+<li>As a system default locale</li>
+</ul>
+</li>
+</ul>
+<p>To change the current locale setting, first confirm that the desired locale is installed on the system with:</p>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> locale -a</span>
+de
+en_AU
+en_CA
+en_UK
+C</code></pre>
+
+<p>If the desired locale is not in the list, you will need to install the<br>appropriate packages for that locale. See the Note below for more information about locale packages.</p>
+<ul>
+<li>How to change the locale via the CDE login locale</li>
+</ul>
+<p>On the CDE login banner:<br>Choose options - languages<br>Under languages - choose the new locale<br>The CDE banner will re-cycle and then you can login to the selected locale.</p>
+<blockquote>
+<p>NOTE: If a user has a different default locale set in their environment, the<br>that locale setting will override the selected CDE login locale.</p>
+</blockquote>
+<ul>
+<li>How to set a user-specific locale</li>
+</ul>
+<p>Note:<br>For sh, ksh:</p>
+<pre><code class="highlight ksh"># LANG&#x3D;C; export LANG
+# LC_ALL&#x3D;C; export LC_ALL</code></pre>
+
+<p>For csh:</p>
+<pre><code class="highlight csh"># setenv LANG C
+# setenv LC_ALL C</code></pre>
+
+<blockquote>
+<p>Note: To set a default locale for a user’s environment, set the LANG or LC_* variables in a user’s shell intialization file such as $HOME/.profile or $HOME/.cshrc or $HOME/.bashrc</p>
+</blockquote>
+<ul>
+<li>How to change the locale by setting the system default locale</li>
+</ul>
+<pre><code class="highlight txt">LANG&#x3D;C
+LC_ALL&#x3D;C</code></pre>
+
+<p>Example from the /etc/default/init file:</p>
+<pre><code class="highlight txt"># Lines of this file should be of the form VAR&#x3D;value, where VAR is one of
+# TZ, LANG, or any of the LC_* environment variables.
+LANG&#x3D;C
+LC_ALL&#x3D;C</code></pre>
+
+<blockquote>
+<p>Note: The system must be rebooted after making changes to the /etc/default/init file in order for the changes to take effect.</p>
+</blockquote>
+<ul>
+<li>How to verify the locale setting</li>
+</ul>
+<p>After setting or changing the locale, verify that the locale is set correctly,Check if the locale is set correctly by running the locale command without any options:</p>
+<pre><code class="highlight sh">$ locale
+LANG=C
+LC_CTYPE= <span class="string">"C"</span>
+LC_NUMERIC= <span class="string">"C"</span>
+LC_TIME= <span class="string">"C"</span>
+LC_COLLATE= <span class="string">"C"</span>
+LC_MONETARY= <span class="string">"C"</span>
+LC_MESSAGES= <span class="string">"C"</span>
+LC_ALL=C</code></pre>
+</div>
+
 		</div>
 		
 	</div>
