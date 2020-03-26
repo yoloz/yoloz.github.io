@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/JVM调式工具/">
+				<i class="fa fa-file"></i>
+				JVM调式工具
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
 				ReentrantLock
@@ -160,15 +169,6 @@
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
 				jvm启动参数
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
-			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
-				<i class="fa fa-file"></i>
-				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -606,18 +606,6 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/20/database/mysql使用/">mysql使用</a>
-				<div class="article-digest">
-					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
-se
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2018-11-28</span>
 			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
@@ -635,28 +623,39 @@ xxxxx.class
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
-
-Modify shell resource limits. Prov
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<span class="article-date">2018-12-04</span>
+			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2018/12/04/linux/编写shell/">编写shell</a>
 				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
+					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
+$ ca
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+				<div class="article-digest">
+					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
 
-$ useradd -m u
+可自
 					...
 				</div>
 		</li>

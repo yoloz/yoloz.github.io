@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/JVM调式工具/">
+				<i class="fa fa-file"></i>
+				JVM调式工具
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
 				ReentrantLock
@@ -160,15 +169,6 @@
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
 				jvm启动参数
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
-			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
-				<i class="fa fa-file"></i>
-				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -606,51 +606,53 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/概述DQL,DML,DDL,DCL/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
+					href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">概述DQL,DML,DDL,DCL</a>
 				<div class="article-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
+					SQL(Structure Query Language)语言是数据库的核心语言。
+SQL的发展是从1974年开始的，其发展过程如下：1974年—–由Boyce和Chamberlin提出，当时称SEQ
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-26</span>
-			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
-				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-Modify shell resource limits. Prov
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2020/02/23/network/tcpdump/">tcpdump</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+				<div class="article-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>

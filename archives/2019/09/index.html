@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/JVM调式工具/">
+				<i class="fa fa-file"></i>
+				JVM调式工具
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
 				ReentrantLock
@@ -160,15 +169,6 @@
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
 				jvm启动参数
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
-			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
-				<i class="fa fa-file"></i>
-				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -606,42 +606,54 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="article-date">2020-02-28</span>
+			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
+				<div class="article-digest">
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2020/02/26/linux/ssh/">ssh</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+			<span class="article-date">2020-03-11</span>
+			<a class="article-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
 				<div class="article-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					killallkillall[参数][进程名]
+
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>

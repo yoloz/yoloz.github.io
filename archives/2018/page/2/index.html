@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/JVM调式工具/">
+				<i class="fa fa-file"></i>
+				JVM调式工具
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
 				ReentrantLock
@@ -160,15 +169,6 @@
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
 				jvm启动参数
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
-			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
-				<i class="fa fa-file"></i>
-				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -606,55 +606,58 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-28</span>
-			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/28/java/jar的使用/">jar的使用</a>
-				<div class="article-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
-
-方法步骤:1, 定义Main-Class创建文件夹ME
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
-				<div class="article-digest">
-					java启动参数共分为三类
-
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-26</span>
-			<a class="article-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/26/linux/du,df/">du,df</a>
-				<div class="article-digest">
-					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
-du -sh  #查看当
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+					jstack dump文件中值得关注的线程状态有：
+
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/29/linux/DNS/">DNS</a>
+				<div class="article-digest">
+					unknown host error
+确定设置了域名服务器(dns) cat /etc/resolv.conf 
+
+nameserver 119.29.29.29  
+nameserver 182.2
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/10/other/git/">git</a>
+				<div class="article-digest">
+					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+				<div class="article-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
 					...
 				</div>
 		</li>

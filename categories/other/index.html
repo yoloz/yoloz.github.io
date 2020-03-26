@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/JVM调式工具/">
+				<i class="fa fa-file"></i>
+				JVM调式工具
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
 				ReentrantLock
@@ -160,15 +169,6 @@
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
 				jvm启动参数
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
-			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
-				<i class="fa fa-file"></i>
-				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -606,26 +606,42 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
 				<div class="article-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
+
+cp $HIVE_HO
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
 				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
-
-如果能使用props实现，
+					ubuntu该方法ubuntu 18.04失效
+修改配置文件 /etc/network/interfaces
+auto eth0                  #设置自动启动eth0接口
+ifac
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+				<div class="article-digest">
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
@@ -639,18 +655,6 @@
 					killallkillall[参数][进程名]
 
 -Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-19</span>
-			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
-				<div class="article-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
 					...
 				</div>
 		</li>

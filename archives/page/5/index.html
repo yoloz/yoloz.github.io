@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/03/10/java/JVM调式工具/">
+				<i class="fa fa-file"></i>
+				JVM调式工具
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
 				ReentrantLock
@@ -160,15 +169,6 @@
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
 				jvm启动参数
-			</a>
-		</li>
-	</ul>
-	
-	<ul>
-		<li class="file">
-			<a href="/2020/03/10/java/查看占用cpu较高的线程/">
-				<i class="fa fa-file"></i>
-				查看占用cpu较高的线程
 			</a>
 		</li>
 	</ul>
@@ -606,52 +606,54 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-26</span>
-			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
-				<div class="article-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
-				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
-
-alternatives 和 update-alt
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					java启动参数共分为三类
 
-可自
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-19</span>
-			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
 				<div class="article-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
+					測試環境為 CentOS x86_64 (虛擬機)
+04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+				<div class="article-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
+				<div class="article-digest">
+					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
+tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>
