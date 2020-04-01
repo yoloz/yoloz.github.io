@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/01/java/CompletableFuture详解/">
+				<i class="fa fa-file"></i>
+				CompletableFuture详解
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/java/JVM调式工具/">
 				<i class="fa fa-file"></i>
 				JVM调式工具
@@ -606,22 +615,6 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
-				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
-
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2018-12-14</span>
 			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
@@ -636,26 +629,36 @@
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/ps/">ps</a>
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
 				<div class="article-digest">
-					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
-ps命令支持三种使用的语法格式
-
-UNIX
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+					href="/2018/11/27/other/start-hexo/">start-hexo</a>
 				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-11</span>
+			<a class="article-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
+				<div class="article-digest">
+					killallkillall[参数][进程名]
+
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>

@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/01/java/CompletableFuture详解/">
+				<i class="fa fa-file"></i>
+				CompletableFuture详解
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/java/JVM调式工具/">
 				<i class="fa fa-file"></i>
 				JVM调式工具
@@ -606,63 +615,49 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+				<div class="article-digest">
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
+				<div class="article-digest">
+					which只能寻找可执行文件, 并在PATH变量里面寻找  
+whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
 				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
-
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="article-date">2020-03-11</span>
+			<a class="article-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					killallkillall[参数][进程名]
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
-				<div class="article-digest">
-					測試環境為 CentOS x86_64 (虛擬機)
-04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
-				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
-
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>

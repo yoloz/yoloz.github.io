@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/01/java/CompletableFuture详解/">
+				<i class="fa fa-file"></i>
+				CompletableFuture详解
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/java/JVM调式工具/">
 				<i class="fa fa-file"></i>
 				JVM调式工具
@@ -606,56 +615,59 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-28</span>
-			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/28/java/jar的使用/">jar的使用</a>
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
 				<div class="article-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
 
-方法步骤:1, 定义Main-Class创建文件夹ME
+cp $HIVE_HO
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
-				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
+					jstack dump文件中值得关注的线程状态有：
 
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-19</span>
-			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2020/02/23/network/tcpdump/">tcpdump</a>
 				<div class="article-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
+					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-29</span>
+			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+				<div class="article-digest">
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+
+impor
 					...
 				</div>
 		</li>

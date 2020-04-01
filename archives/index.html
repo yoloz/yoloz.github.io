@@ -112,6 +112,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/01/java/CompletableFuture详解/">
+				<i class="fa fa-file"></i>
+				CompletableFuture详解
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/03/10/java/JVM调式工具/">
 				<i class="fa fa-file"></i>
 				JVM调式工具
@@ -606,47 +615,58 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-03</span>
-			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
+
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/tcpdump/">tcpdump</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="article-digest">
-					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
+					Lucene中包含了四种基本数据类型，分别是：
+
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
+					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
 				<div class="article-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
+tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>
