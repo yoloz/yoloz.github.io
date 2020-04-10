@@ -305,9 +305,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2019/09/18/linux/sh,exec,source/">
+			<a href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">
 				<i class="fa fa-file"></i>
-				sh,exec,source
+				shell中sh, exec, source, fork的区别
 			</a>
 		</li>
 	</ul>
@@ -615,12 +615,43 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
+
+方法步骤:1, 定义Main-Class创建文件夹ME
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+				<div class="article-digest">
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
+				<div class="article-digest">
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
@@ -632,33 +663,6 @@
 					href="/2018/12/10/other/git/">git</a>
 				<div class="article-digest">
 					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-19</span>
-			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/19/other/yaml格式/">yaml格式</a>
-				<div class="article-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
-				<div class="article-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>

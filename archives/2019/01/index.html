@@ -305,9 +305,9 @@
 	
 	<ul>
 		<li class="file">
-			<a href="/2019/09/18/linux/sh,exec,source/">
+			<a href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">
 				<i class="fa fa-file"></i>
-				sh,exec,source
+				shell中sh, exec, source, fork的区别
 			</a>
 		</li>
 	</ul>
@@ -615,17 +615,15 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
@@ -643,27 +641,40 @@
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
+					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
 				<div class="article-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					环境准备搭建nodejs环境
+初次需要创建仓库【username】.github.io;
+创建一个分支存放原始文件，方便跨机操作；
+
+拉取远程仓库【分支】到本地git clone -b 【分支】 ht
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-29</span>
-			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
+			<span class="article-date">2020-04-01</span>
+			<a class="article-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
+					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
 				<div class="article-digest">
-					
-安装依赖 yarn add react-loadable
-根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+					常用多线程并发，取结果归集的几种实现方案
 
-impor
+
+描述
+Future
+FutureTask
+CompletionService
+CompletableFuture
+
+
+
+原理
+Future接口
+接口Run
 					...
 				</div>
 		</li>
