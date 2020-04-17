@@ -53,6 +53,7 @@ keytool -genkeypair \
         -keystore ddssingsong.p12 \
         -storetype PKCS12 \
         -storepass 123456
+        -ext SAN=dns:{fqdn},ip:127.0.0.1
 ```
 
 * alias产生别名，每个keystore都关联这一个独一无二的alias
