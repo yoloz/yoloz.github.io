@@ -533,6 +533,26 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
+				security
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/04/17/security/keytool命令详解/">
+				<i class="fa fa-file"></i>
+				keytool命令详解
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
 				web
 			</a>
 			
@@ -615,53 +635,55 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
-				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
 
-$ useradd -m u
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/tcpdump/">tcpdump</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
+			<span class="article-date">2018-12-04</span>
+			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
+					href="/2018/12/04/linux/编写shell/">编写shell</a>
 				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
-
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
+$ ca
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-19</span>
+			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/19/linux/Locale/">Locale</a>
+				<div class="article-digest">
+					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
+Locale是软件在运行时的语言
 					...
 				</div>
 		</li>

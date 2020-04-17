@@ -533,6 +533,26 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
+				security
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/04/17/security/keytool命令详解/">
+				<i class="fa fa-file"></i>
+				keytool命令详解
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
 				web
 			</a>
 			
@@ -615,29 +635,6 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
-				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-11</span>
-			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
-				<div class="article-digest">
-					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
-initialize实现类org.apache.kafka.clients.consumer. KafkaCons
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2019-11-13</span>
 			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
 				<a class="article-title"
@@ -651,20 +648,40 @@ Modify shell resource limits. Prov
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+$ useradd -m u
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
+				<div class="article-digest">
+					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
+var obj = &#123;'0':'a','1':'b','2
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+				<div class="article-digest">
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
 					...
 				</div>
 		</li>

@@ -533,6 +533,26 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
+				security
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/04/17/security/keytool命令详解/">
+				<i class="fa fa-file"></i>
+				keytool命令详解
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
 				web
 			</a>
 			
@@ -615,51 +635,60 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-03</span>
-			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
-				<div class="article-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
 			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
+					href="/2020/02/29/linux/DNS/">DNS</a>
 				<div class="article-digest">
-					ubuntu该方法ubuntu 18.04失效
-修改配置文件 /etc/network/interfaces
-auto eth0                  #设置自动启动eth0接口
-ifac
+					unknown host error
+确定设置了域名服务器(dns) cat /etc/resolv.conf 
+
+nameserver 119.29.29.29  
+nameserver 182.2
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/30/linux/vim/">vim</a>
+				<div class="article-digest">
+					vi操作常用快捷方式如下, 非编辑状态下使用：
 
-可自
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>

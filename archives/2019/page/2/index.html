@@ -533,6 +533,26 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
+				security
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/04/17/security/keytool命令详解/">
+				<i class="fa fa-file"></i>
+				keytool命令详解
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
 				web
 			</a>
 			
@@ -615,49 +635,57 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
-				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-可自
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-19</span>
-			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="article-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-26</span>
+			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/26/linux/ssh/">ssh</a>
+				<div class="article-digest">
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>

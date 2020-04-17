@@ -156,7 +156,7 @@
 	</ul>
 	
 	<ul>
-		<li class="file active">
+		<li class="file">
 			<a href="/2020/03/10/java/javaThreadDump日志分析/">
 				<i class="fa fa-file"></i>
 				javaThreadDump日志分析
@@ -537,7 +537,7 @@
 			</a>
 			
 	<ul>
-		<li class="file">
+		<li class="file active">
 			<a href="/2020/04/17/security/keytool命令详解/">
 				<i class="fa fa-file"></i>
 				keytool命令详解
@@ -633,108 +633,189 @@
 		<div id="content">
 			<div style="background: #eee">
 	<span id="post-author">yoloz</span>
-	<span id="post-date">2020-03-10 11:49:04</span>
+	<span id="post-date">2020-04-17 11:23:20</span>
 </div>
 
 <div id="article">
-	<p>jstack dump文件中值得关注的线程状态有：</p>
-<ul>
-<li>死锁，Deadlock（重点关注） </li>
-<li>执行中，Runnable   </li>
-<li>等待资源，Waiting on condition（重点关注） </li>
-<li>等待获取监视器，Waiting on monitor entry（重点关注）</li>
-<li>暂停，Suspended</li>
-<li>对象等待中，Object.wait() 或 TIMED_WAITING</li>
-<li>阻塞，Blocked（重点关注）  </li>
-<li>停止，Parked</li>
-</ul>
-<p>dump文件中的线程状态含义及注意事项</p>
-<p><img src="https://bp-1252402719.cos.ap-shanghai.myqcloud.com/java_mointor.png" alt="Java Monitor"></p>
-<ul>
-<li>Deadlock：死锁线程，一般指多个线程调用间，进入相互资源占用，导致一直等待无法释放的情况。</li>
-<li>Runnable：一般指该线程正在执行状态中，该线程占用了资源，正在处理某个请求，有可能正在传递SQL到数据库执行，有可能在对某个文件操作，有可能进行数据类型等转换。</li>
-<li>Waiting on condition：等待资源，或等待某个条件的发生。具体原因需结合 stacktrace来分析。<ul>
-<li>如果堆栈信息明确是应用代码，则证明该线程正在等待资源。一般是大量读取某资源，且该资源采用了资源锁的情况下，线程进入等待状态，等待资源的读取。</li>
-<li>又或者，正在等待其他线程的执行等。</li>
-<li>如果发现有大量的线程都在处在 Wait on condition，从线程 stack看，正等待网络读写，这可能是一个网络瓶颈的征兆。因为网络阻塞导致线程无法执行。<ul>
-<li>一种情况是网络非常忙，几乎消耗了所有的带宽，仍然有大量数据等待网络读写；</li>
-<li>另一种情况也可能是网络空闲，但由于路由等问题，导致包无法正常的到达。</li>
-</ul>
-</li>
-<li>另外一种出现 Wait on condition的常见情况是该线程在 sleep，等待 sleep的时间到了时候，将被唤醒。</li>
-</ul>
-</li>
-<li>Blocked：线程阻塞，是指当前线程执行过程中，所需要的资源长时间等待却一直未能获取到，被容器的线程管理器标识为阻塞状态，可以理解为等待资源超时的线程。</li>
-<li>Waiting for monitor entry 和 in Object.wait()：Monitor是 Java中用以实现线程之间的互斥与协作的主要手段，它可以看成是对象或者 Class的锁。每一个对象都有，也仅有一个 monitor。从图中可以看出，每个 Monitor在某个时刻，只能被一个线程拥有，该线程就是 “Active Thread”，而其它线程都是 “Waiting Thread”，分别在两个队列 “ Entry Set”和 “Wait Set”里面等候。在 “Entry Set”中等待的线程状态是 “Waiting for monitor entry”，而在 “Wait Set”中等待的线程状态是 “in Object.wait()”。</li>
-</ul>
-<h2 id="Waiting-to-lock-和-Blocked"><a href="#Waiting-to-lock-和-Blocked" class="headerlink" title="Waiting to lock 和 Blocked"></a>Waiting to lock 和 Blocked</h2><pre><code class="highlight log">&quot;RMI TCP Connection(267865)-172.16.5.25&quot; daemon prio&#x3D;10 tid&#x3D;0x00007fd508371000 nid&#x3D;0x55ae waiting for monitor entry [0x00007fd4f8684000]
-   java.lang.Thread.State: BLOCKED (on object monitor)
-at org.apache.log4j.Category.callAppenders(Category.java:201)
-- waiting to lock &lt;0x00000000acf4d0c0&gt; (a org.apache.log4j.Logger)
-at org.apache.log4j.Category.forcedLog(Category.java:388)
-at org.apache.log4j.Category.log(Category.java:853)
-at org.apache.commons.logging.impl.Log4JLogger.warn(Log4JLogger.java:234)
-at com.tuan.core.common.lang.cache.remote.SpyMemcachedClient.get(SpyMemcachedClient.java:110)
-……</code></pre>
+	<h2 id="keytool简介"><a href="#keytool简介" class="headerlink" title="keytool简介"></a>keytool简介</h2><p>Keytool 是一个Java 数据证书的管理工具 ,Keytool 将密钥（key）和证书（certificates）存在一个称为keystore的文件中。<br>在keystore里，包含两种数据：</p>
+<ol>
+<li>密钥实体（Key entity）——密钥（secret key）又或者是私钥和配对公钥（采用非对称加密）</li>
+<li>可信任的证书实体（trusted certificate entries）——只包含公钥</li>
+</ol>
+<h2 id="keytool命令详解"><a href="#keytool命令详解" class="headerlink" title="keytool命令详解"></a>keytool命令详解</h2><p>使用<code>ketytool --help</code>命令可查看功能,主要功能如下:</p>
+<pre><code class="highlight shell">-certreq            生成证书请求
+-changealias        更改条目的别名
+-delete             删除条目
+-exportcert         导出证书
+-genkeypair         生成密钥对
+-genseckey          生成密钥
+-gencert            根据证书请求生成证书
+-importcert         导入证书或证书链
+-importpass         导入口令
+-importkeystore     从其他密钥库导入一个或所有条目
+-keypasswd          更改条目的密钥口令
+-list               列出密钥库中的条目
+-printcert          打印证书内容
+-printcertreq       打印证书请求的内容
+-printcrl           打印 CRL文件的内容
+-storepasswd        更改密钥库的存储口令</code></pre>
+
+<h3 id="创建证书库"><a href="#创建证书库" class="headerlink" title="创建证书库"></a>创建证书库</h3><p>创建证书库(keystore)并包含公私钥</p>
+<pre><code class="highlight shell">keytool -genkeypair \
+        -alias ddssingsong \
+        -keyalg RSA \
+        -keysize 2048 \
+        -keypass 123456 \
+        -sigalg SHA256withRSA \
+        -dname "cn=www.ddssingsong.com,ou=xxx,o=xxx,l=Beijing,st=Beijing,c=CN" \
+        -validity 3650 \
+        -keystore ddssingsong.p12 \
+        -storetype PKCS12 \
+        -storepass 123456</code></pre>
 
 <ul>
-<li>线程状态是 Blocked，阻塞状态。说明线程等待资源超时！</li>
-<li>“ waiting to lock &lt;0x00000000acf4d0c0&gt;”指，线程在等待给这个 0x00000000acf4d0c0 地址上锁（英文可描述为：trying to obtain  0x00000000acf4d0c0 lock）</li>
-<li>在 dump 日志里查找字符串 0x00000000acf4d0c0，发现有大量线程都在等待给这个地址上锁。如果能在日志里找到谁获得了这个锁（如locked &lt; 0x00000000acf4d0c0 &gt;），就可以顺藤摸瓜了。</li>
-<li>“waiting for monitor entry”说明此线程通过 synchronized(obj) {……} 申请进入了临界区，从而进入了上图中的“Entry Set”队列，但该 obj 对应的 monitor 被其他线程拥有，所以本线程在 Entry Set 队列中等待。</li>
-<li>第一行里，”RMI TCP Connection(267865)-172.16.5.25”是 Thread Name 。tid指Java Thread id。nid指native线程的id。prio是线程优先级。[0x00007fd4f8684000]是线程栈起始地址。</li>
+<li>alias产生别名，每个keystore都关联这一个独一无二的alias</li>
+<li>keyalg RSA 此处”RSA“为密钥的算法。可以选择的密钥算法有：RSA、DSA、EC。</li>
+<li>keysize 2048 密钥长度。keysize与keyalg默认对应关系：</li>
 </ul>
-<h2 id="Waiting-on-condition-和-TIMED-WAITING"><a href="#Waiting-on-condition-和-TIMED-WAITING" class="headerlink" title="Waiting on condition 和 TIMED_WAITING"></a>Waiting on condition 和 TIMED_WAITING</h2><pre><code class="highlight log">&quot;RMI TCP Connection(idle)&quot; daemon prio&#x3D;10 tid&#x3D;0x00007fd50834e800 nid&#x3D;0x56b2 waiting on condition [0x00007fd4f1a59000]
-   java.lang.Thread.State: TIMED_WAITING (parking)
-at sun.misc.Unsafe.park(Native Method)
-- parking to wait for  &lt;0x00000000acd84de8&gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
-at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:198)
-at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:424)
-at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:323)
-at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:874)
-at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
-at java.lang.Thread.run(Thread.java:662)</code></pre>
+<pre><code class="highlight shell">2048 (when using -genkeypair and -keyalg is “RSA”)
+1024 (when using -genkeypair and -keyalg is “DSA”)
+256 (when using -genkeypair and -keyalg is “EC”)</code></pre>
 
 <ul>
-<li>“TIMED_WAITING (parking)”中的 timed_waiting 指等待状态，但这里指定了时间，到达指定的时间后自动退出等待状态；parking指线程处于挂起中。</li>
-<li>“waiting on condition”需要与堆栈中的“parking to wait for  &lt;0x00000000acd84de8&gt; (a java.util.concurrent.SynchronousQueue$TransferStack)”结合来看。首先，本线程肯定是在等待某个条件的发生，来把自己唤醒。其次，SynchronousQueue 并不是一个队列，只是线程之间移交信息的机制，当我们把一个元素放入到 SynchronousQueue 中时必须有另一个线程正在等待接受移交的任务，因此这就是本线程在等待的条件。</li>
+<li>keypass 指定别名条目的密码(私钥的密码)</li>
+<li>sigalg 签名算法:</li>
 </ul>
-<h2 id="in-Obejct-wait-和-TIMED-WAITING"><a href="#in-Obejct-wait-和-TIMED-WAITING" class="headerlink" title="in Obejct.wait() 和 TIMED_WAITING"></a>in Obejct.wait() 和 TIMED_WAITING</h2><pre><code class="highlight log">&quot;RMI RenewClean-[172.16.5.19:28475]&quot; daemon prio&#x3D;10 tid&#x3D;0x0000000041428800 nid&#x3D;0xb09 in Object.wait() [0x00007f34f4bd0000]
-   java.lang.Thread.State: TIMED_WAITING (on object monitor)
-at java.lang.Object.wait(Native Method)
-- waiting on &lt;0x00000000aa672478&gt; (a java.lang.ref.ReferenceQueue$Lock)
-at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
-- locked &lt;0x00000000aa672478&gt; (a java.lang.ref.ReferenceQueue$Lock)
-at sun.rmi.transport.DGCClient$EndpointEntry$RenewCleanThread.run(DGCClient.java:516)
-at java.lang.Thread.run(Thread.java:662)</code></pre>
-
-<ul>
-<li>“TIMED_WAITING (on object monitor)”，对于本例而言，是因为本线程调用了 java.lang.Object.wait(long timeout) 而进入等待状态。</li>
-<li>“Wait Set”中等待的线程状态就是“ in Object.wait() ”。当线程获得了 Monitor，进入了临界区之后，如果发现线程继续运行的条件没有满足，它则调用对象（一般就是被 synchronized 的对象）的 wait() 方法，放弃了 Monitor，进入 “Wait Set”队列。只有当别的线程在该对象上调用了 notify() 或者 notifyAll() ，“ Wait Set”队列中线程才得到机会去竞争，但是只有一个线程获得对象的 Monitor，恢复到运行态。</li>
-<li>RMI RenewClean 是 DGCClient 的一部分。DGC 指的是 Distributed GC，即分布式垃圾回收。</li>
-<li>请注意，是先 locked &lt;0x00000000aa672478&gt;，后 waiting on &lt;0x00000000aa672478&gt;，之所以先锁再等同一个对象，请看下面它的代码实现：</li>
-</ul>
-<pre><code class="highlight java"><span class="keyword">static</span> <span class="keyword">private</span> <span class="class"><span class="keyword">class</span>  <span class="title">Lock</span> </span>&#123; &#125;;
-<span class="keyword">private</span> Lock lock = <span class="keyword">new</span> Lock();
-<span class="keyword">public</span> Reference&lt;? extends T&gt; remove(<span class="keyword">long</span> timeout)
-&#123;
-    <span class="keyword">synchronized</span> (lock) &#123;
-        Reference&lt;? extends T&gt; r = reallyPoll();
-        <span class="keyword">if</span> (r != <span class="keyword">null</span>) <span class="keyword">return</span> r;
-        <span class="keyword">for</span> (;;) &#123;
-            lock.wait(timeout);
-            r = reallyPoll();
-            ……
-       &#125;
-&#125;</code></pre>
-
+<p>keyalg=RSA时，签名算法有：MD5withRSA、SHA1withRSA、SHA256withRSA、SHA384withRSA、SHA512withRSA</p>
+<p>keyalg=DSA时，签名算法有：SHA1withDSA、SHA256withDSA</p>
 <blockquote>
-<p>即线程的执行中，先用 synchronized 获得了这个对象的 Monitor（对应于  locked &lt;0x00000000aa672478&gt; ）；当执行到 lock.wait(timeout);，线程就放弃了 Monitor 的所有权，进入“Wait Set”队列（对应于  waiting on &lt;0x00000000aa672478&gt; ）。</p>
+<p>此处需要注意：MD5和SHA1的签名算法已经不安全</p>
 </blockquote>
 <ul>
-<li>从堆栈信息看，是正在清理 remote references to remote objects ，引用的租约到了，分布式垃圾回收在逐一清理呢。</li>
+<li>dname 在此填写证书信息</li>
 </ul>
+<p>CN=名字与姓氏/域名,OU=组织单位名称,O=组织名称,L=城市或区域名称,ST=州或省份名称,C=单位的两字母国家代码</p>
+<ul>
+<li>validity 3650 此处”3650“为证书有效期天数</li>
+<li>keystore 创建出的密钥生成路径，默认在当前目录创建证书库</li>
+<li>storetype 生成证书类型，可用的证书库类型为：JKS、PKCS12等。jdk9以前，默认为JKS。自jdk9开始，默认为PKCS12。</li>
+<li>storepass 指定密钥库的密码(获取keystore信息所需的密码)，最好与keypass一致</li>
+</ul>
+<h3 id="查看生成的证书"><a href="#查看生成的证书" class="headerlink" title="查看生成的证书"></a>查看生成的证书</h3><p>打印如下:</p>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -list -v -keystore ddssingsong.p12 -storepass 123456</span>
+密钥库类型: PKCS12
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: ddssingsong
+创建日期: 2019-9-11
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=mydomain, OU=xxx, O=xxx, L=Beijing, ST=Beijing, C=CN
+发布者: CN=mydomain, OU=xxx, O=xxx, L=Beijing, ST=Beijing, C=CN
+序列号: 291b04d1
+有效期为 Wed Sep 11 09:30:36 CST 2019 至 Sat Sep 08 09:30:36 CST 2029
+证书指纹:
+         MD5:  3D:75:33:93:1C:BF:07:78:68:8E:54:7B:30:1B:EB:79
+         SHA1: 32:F2:6C:1A:F0:A8:9A:E9:92:A2:AF:7F:2D:35:FA:37:FD:28:7C:BD
+         SHA256: 0E:1E:7D:2E:CB:57:72:BC:7D:FE:C8:F0:24:48:2A:31:69:B2:D2:F2:2E:BC:03:9A:D4:15:BD:15:BE:5F:5F:2D
+签名算法名称: SHA256withRSA
+主体公共密钥算法: 2048 位 RSA 密钥
+版本: 3
+
+扩展:
+
+<span class="meta">#</span><span class="bash">1: ObjectId: 2.5.29.14 Criticality=<span class="literal">false</span></span>
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 34 44 40 24 BA 6F 5D 7F   0A 45 BE C3 24 BD A7 C8  4D@$.o]..E..$...
+0010: 9C 62 8C 9A                                        .b..</code></pre>
+
+<p>有时候需要查看base64的内容<code>keytool -list  -rfc -keystore ddssingsong.p12 -storepass 123456</code>,打印如下:</p>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -list  -rfc -keystore ddssingsong.p12 -storepass 123456</span>
+密钥库类型: PKCS12
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: ddssingsong
+创建日期: 2019-9-11
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+-----BEGIN CERTIFICATE-----
+MIIDXzCCAkegAwIBAgIEKRsE0TANBgkqhkiG9w0BAQsFADBgMQswCQYDVQQGEwJD
+TjEQMA4GA1UECBMHQmVpamluZzEQMA4GA1UEBxMHQmVpamluZzEMMAoGA1UEChMD
+eHh4MQwwCgYDVQQLEwN4eHgxETAPBgNVBAMTCG15ZG9tYWluMB4XDTE5MDkxMTAx
+MzAzNloXDTI5MDkwODAxMzAzNlowYDELMAkGA1UEBhMCQ04xEDAOBgNVBAgTB0Jl
+aWppbmcxEDAOBgNVBAcTB0JlaWppbmcxDDAKBgNVBAoTA3h4eDEMMAoGA1UECxMD
+eHh4MREwDwYDVQQDEwhteWRvbWFpbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+AQoCggEBALSFrqyYNse3A/UMnKF6+G13YsrOEWJ3ZSRevMmNqgdqC9sNjtx07jw7
+AQImxsfvaRLyPWgIt7iJxIU4USn0ARctv/ambzUPGk30bkq/Lst8PZmJGp6xRTdK
+jYkk/jqxIA56ChqKV4yd5ZbRAAXCt/rJxlKNCfg7/929xf9+8Topty96gohm3rXP
+sMkkmFHjlVUTUnNstmL8UjseS1K3Yomg1CrZ/CP1mYFrn2av0JHW11wd5Crbkzni
+izubzakjw9aDGRIsu4h6r5Dk+MiTDAszmYE7p2yvqFJNrkxxURAnZJ4H4AwtA84l
+KYB1QvESc9vzH35OOQpiJVH9Gob1EBUCAwEAAaMhMB8wHQYDVR0OBBYEFDREQCS6
+b11/CkW+wyS9p8icYoyaMA0GCSqGSIb3DQEBCwUAA4IBAQBdIpzxtgrcYBoTEkh5
+hGJWsa55CPFF0pAWeS0lVC6hE/jvS8ujZC3ReCVVLtl7B+qakQVI7B8sOR+l4cAz
+ns01/oWBAmOTUbsEUOaxHedCkxNOTKM1BppCxWcc6jZTtvf9F4ROuCR47jUk+v3Q
+FJfV7XtKQtupFeS5XmZv+3hVtFoxL5RZWG0XjjfOIoQ+WoPaWxByEAmK3xAGZxVm
+MBgGtv5QwQSJG7baEYTG5pVYM7wdPRjEC1ARnyBuhe/KBeWdpCXfeAtEmccNORov
+C2JAvDZGv8Dwam+sIZm0iTNOwKJOmwRbj58k41QH5D1/nCZrA1TRLwCOlpW/Ejns
+OA1/
+-----END CERTIFICATE-----</code></pre>
+
+<h3 id="导出证书信息"><a href="#导出证书信息" class="headerlink" title="导出证书信息"></a>导出证书信息</h3><pre><code class="highlight shell">keytool -export \
+		-alias ddssingsong \
+		-keystore ddssngong.p12 \
+		-file rootca.crt \
+		-storepass 123456</code></pre>
+
+<ul>
+<li>file 输出证书文件路径</li>
+</ul>
+<h3 id="打印证书信息"><a href="#打印证书信息" class="headerlink" title="打印证书信息"></a>打印证书信息</h3><p>打印如下：</p>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -printcert -file rootca.crt</span>
+所有者: CN=mydomain, OU=xxx, O=xxx, L=Beijing, ST=Beijing, C=CN
+发布者: CN=mydomain, OU=xxx, O=xxx, L=Beijing, ST=Beijing, C=CN
+序列号: 291b04d1
+有效期为 Wed Sep 11 09:30:36 CST 2019 至 Sat Sep 08 09:30:36 CST 2029
+证书指纹:
+         MD5:  3D:75:33:93:1C:BF:07:78:68:8E:54:7B:30:1B:EB:79
+         SHA1: 32:F2:6C:1A:F0:A8:9A:E9:92:A2:AF:7F:2D:35:FA:37:FD:28:7C:BD
+         SHA256: 0E:1E:7D:2E:CB:57:72:BC:7D:FE:C8:F0:24:48:2A:31:69:B2:D2:F2:2E:BC:03:9A:D4:15:BD:15:BE:5F:5F:2D
+签名算法名称: SHA256withRSA
+主体公共密钥算法: 2048 位 RSA 密钥
+版本: 3
+
+扩展:
+
+<span class="meta">#</span><span class="bash">1: ObjectId: 2.5.29.14 Criticality=<span class="literal">false</span></span>
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 34 44 40 24 BA 6F 5D 7F   0A 45 BE C3 24 BD A7 C8  4D@$.o]..E..$...
+0010: 9C 62 8C 9A                                        .b..
+]
+]</code></pre>
+
+<h3 id="jks转pkcs12"><a href="#jks转pkcs12" class="headerlink" title="jks转pkcs12"></a>jks转pkcs12</h3><pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -importkeystore \</span>
+		-srckeystore keystore.jks \
+		-srcstoretype JKS \
+		-deststoretype PKCS12 \
+		-destkeystore keystore.p12</code></pre>
+
+<h3 id="生成证书签名请求-CSR"><a href="#生成证书签名请求-CSR" class="headerlink" title="生成证书签名请求(CSR)"></a>生成证书签名请求(CSR)</h3><pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -certreq -keyalg RSA \</span>
+        -alias ddssingsong \
+        -keystore keystore.p12 \
+        -storetype PKCS12 \
+        -storepass 123456 \
+        -file certreq.csr</code></pre>
+
+<h3 id="查看生成的CSR证书请求"><a href="#查看生成的CSR证书请求" class="headerlink" title="查看生成的CSR证书请求"></a>查看生成的CSR证书请求</h3><p><code>keytool -printcertreq -file certreq.csr</code></p>
+<h3 id="导入证书到证书库"><a href="#导入证书到证书库" class="headerlink" title="导入证书到证书库"></a>导入证书到证书库</h3><p><code>keytool -importcert -alias server -file server.crt -keystore server.p12 -storepass 123456</code></p>
+<h3 id="更改密码"><a href="#更改密码" class="headerlink" title="更改密码"></a>更改密码</h3><p><code>keytool -storepasswd -new new_storepass -keystore keystore.p12</code></p>
 
 </div>
 

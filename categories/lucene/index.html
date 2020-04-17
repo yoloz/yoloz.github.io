@@ -533,6 +533,26 @@
 		<li class="directory">
 			<a href="#" class="directory">
 				<i class="fa fa-folder"></i>
+				security
+			</a>
+			
+	<ul>
+		<li class="file">
+			<a href="/2020/04/17/security/keytool命令详解/">
+				<i class="fa fa-file"></i>
+				keytool命令详解
+			</a>
+		</li>
+	</ul>
+	
+		</li>
+
+	</ul>
+	
+	<ul>
+		<li class="directory">
+			<a href="#" class="directory">
+				<i class="fa fa-folder"></i>
 				web
 			</a>
 			
@@ -615,56 +635,55 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-28</span>
-			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/28/java/jar的使用/">jar的使用</a>
-				<div class="article-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
-
-方法步骤:1, 定义Main-Class创建文件夹ME
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
 			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
 				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
+// Obtains an instance of Dat
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-$ useradd -m u
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
 				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
 
-如果能使用props实现，
+Modify shell resource limits. Prov
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-18</span>
+			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+				<div class="article-digest">
+					Lucene中包含了四种基本数据类型，分别是：
+
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
