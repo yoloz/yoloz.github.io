@@ -537,6 +537,15 @@
 			</a>
 			
 	<ul>
+		<li class="file">
+			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
+				<i class="fa fa-file"></i>
+				X.509数字证书中的扩展项
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
 		<li class="file active">
 			<a href="/2020/04/17/security/keytool命令详解/">
 				<i class="fa fa-file"></i>
@@ -662,16 +671,17 @@
 
 <h3 id="创建证书库"><a href="#创建证书库" class="headerlink" title="创建证书库"></a>创建证书库</h3><p>创建证书库(keystore)并包含公私钥</p>
 <pre><code class="highlight shell">keytool -genkeypair \
-        -alias ddssingsong \
+        -alias localhost \
         -keyalg RSA \
-        -keysize 2048 \
+        -keysize 2048
         -keypass 123456 \
         -sigalg SHA256withRSA \
-        -dname "cn=www.ddssingsong.com,ou=xxx,o=xxx,l=Beijing,st=Beijing,c=CN" \
+        -dname "cn=github.com,ou=github.com,Inc.,o=Github, Inc.,l=San Francisco,st=California,c=US" \
         -validity 3650 \
         -keystore ddssingsong.p12 \
         -storetype PKCS12 \
-        -storepass 123456</code></pre>
+        -storepass 123456
+        -ext SAN=dns:github.com,dns:www.github.com,ip:127.0.0.1</code></pre>
 
 <ul>
 <li>alias产生别名，每个keystore都关联这一个独一无二的alias</li>
@@ -700,6 +710,7 @@
 <li>keystore 创建出的密钥生成路径，默认在当前目录创建证书库</li>
 <li>storetype 生成证书类型，可用的证书库类型为：JKS、PKCS12等。jdk9以前，默认为JKS。自jdk9开始，默认为PKCS12。</li>
 <li>storepass 指定密钥库的密码(获取keystore信息所需的密码)，最好与keypass一致</li>
+<li>ext <a href="/2020/04/17/security/X.509数字证书中的扩展项/">X.509 extension</a></li>
 </ul>
 <h3 id="查看生成的证书"><a href="#查看生成的证书" class="headerlink" title="查看生成的证书"></a>查看生成的证书</h3><p>打印如下:</p>
 <pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -list -v -keystore ddssingsong.p12 -storepass 123456</span>
