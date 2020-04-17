@@ -43,17 +43,17 @@ Keytool 是一个Java 数据证书的管理工具 ,Keytool 将密钥（key）和
 
 ``` shell
 keytool -genkeypair \
-        -alias ddssingsong \
+        -alias localhost \
         -keyalg RSA \
-        -keysize 2048 \
+        -keysize 2048
         -keypass 123456 \
         -sigalg SHA256withRSA \
-        -dname "cn=www.ddssingsong.com,ou=xxx,o=xxx,l=Beijing,st=Beijing,c=CN" \
+        -dname "cn=github.com,ou=github.com,Inc.,o=Github, Inc.,l=San Francisco,st=California,c=US" \
         -validity 3650 \
         -keystore ddssingsong.p12 \
         -storetype PKCS12 \
         -storepass 123456
-        -ext SAN=dns:{fqdn},ip:127.0.0.1
+        -ext SAN=dns:github.com,dns:www.github.com,ip:127.0.0.1
 ```
 
 * alias产生别名，每个keystore都关联这一个独一无二的alias
@@ -82,6 +82,7 @@ CN=名字与姓氏/域名,OU=组织单位名称,O=组织名称,L=城市或区域
 * keystore 创建出的密钥生成路径，默认在当前目录创建证书库
 * storetype 生成证书类型，可用的证书库类型为：JKS、PKCS12等。jdk9以前，默认为JKS。自jdk9开始，默认为PKCS12。
 * storepass 指定密钥库的密码(获取keystore信息所需的密码)，最好与keypass一致
+* ext [X.509 extension](/2020/04/17/security/X.509数字证书中的扩展项/)
 
 ### 查看生成的证书
 
