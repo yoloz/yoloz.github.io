@@ -681,7 +681,7 @@
 -printcrl           打印 CRL文件的内容
 -storepasswd        更改密钥库的存储口令</code></pre>
 
-<h3 id="创建证书库"><a href="#创建证书库" class="headerlink" title="创建证书库"></a>创建证书库</h3><p>创建证书库(keystore)并包含公私钥</p>
+<h3 id="创建证书库"><a href="#创建证书库" class="headerlink" title="创建证书库"></a>创建证书库</h3><p>&emsp;&emsp;创建秘钥库(keystore),秘钥库是存储一个或多个密钥条目的文件，每个密钥条目应该以一个别名标识，它包含密钥和证书相关信息。<br>&emsp;&emsp;如果使用”keytool -genkeypair”命令生成密钥条目，则会生成一个密钥对（公钥和相关私钥）并将公钥包装到X.509 v3自签名证书中，该证书存储为单个元素证书链，此证书链和私钥存储在以别名标识的密钥库条目中，条目类型为PrivateKeyEntry。<br>&emsp;&emsp;如果使用”keytool -genseckey”命令生成密钥条目，则会生成一个密钥并将其存储在以别名标识的密钥库条目中，条目类型为SecretKeyEntry。  </p>
 <pre><code class="highlight shell">keytool -genkeypair \
         -alias localhost \
         -keyalg RSA \
@@ -695,6 +695,9 @@
         -storepass 123456
         -ext SAN=dns:github.com,dns:www.github.com,ip:127.0.0.1</code></pre>
 
+<blockquote>
+<p>如果创建默认类型(JKS)的密钥库，则可附加”-keypass”参数指定条目的密钥口令，如果没有指定则会在最后一步提示”输入该条目的密钥口令，如果与密钥库口令相同按回车”，一般设为与密钥库口令相同。如果创建PKCS12类型的密钥库，则会忽略条目的密钥口令相关参数，因为PKCS12不支持设置密钥库条目密码，默认它与密钥库密码一致</p>
+</blockquote>
 <ul>
 <li>alias产生别名，每个keystore都关联这一个独一无二的alias</li>
 <li>keyalg RSA 此处”RSA“为密钥的算法。可以选择的密钥算法有：RSA、DSA、EC。</li>
@@ -714,10 +717,7 @@
 <p>此处需要注意：MD5和SHA1的签名算法已经不安全</p>
 </blockquote>
 <ul>
-<li>dname 在此填写证书信息</li>
-</ul>
-<p>CN=名字与姓氏/域名,OU=组织单位名称,O=组织名称,L=城市或区域名称,ST=州或省份名称,C=单位的两字母国家代码</p>
-<ul>
+<li>dname 在此填写证书信息<br>CN=名字与姓氏/域名,OU=组织单位名称,O=组织名称,L=城市或区域名称,ST=州或省份名称,C=单位的两字母国家代码<br>“名字与姓氏”应该是输入域名，而不是我们的个人姓名，其他的可以不填</li>
 <li>validity 3650 此处”3650“为证书有效期天数</li>
 <li>keystore 创建出的密钥生成路径，默认在当前目录创建证书库</li>
 <li>storetype 生成证书类型，可用的证书库类型为：JKS、PKCS12等。jdk9以前，默认为JKS。自jdk9开始，默认为PKCS12。</li>
@@ -790,25 +790,26 @@ C2JAvDZGv8Dwam+sIZm0iTNOwKJOmwRbj58k41QH5D1/nCZrA1TRLwCOlpW/Ejns
 OA1/
 -----END CERTIFICATE-----</code></pre>
 
-<h3 id="导出证书信息"><a href="#导出证书信息" class="headerlink" title="导出证书信息"></a>导出证书信息</h3><pre><code class="highlight shell">keytool -exportcert \
+<h3 id="导出证书信息"><a href="#导出证书信息" class="headerlink" title="导出证书信息"></a>导出证书信息</h3><p>将密钥库ddssngong.jks中别名为ddss条目的相关信息以及公钥导出到一个数字证书文件rootca.crt中</p>
+<pre><code class="highlight shell">keytool -exportcert \
 		-alias ddss \
 		-keystore ddssngong.jks \
 		-file rootca.crt \
 		-storepass 123456</code></pre>
 
+<blockquote>
+<p>注意该证书文件不包含私钥</p>
+</blockquote>
 <ul>
 <li>file 输出证书文件路径</li>
 <li>alias <strong>为什么要别名</strong>,因为ddssngong.jks里可以存储多对公私钥文件，它们之间是通过别名区分的，所以这里是通过别名指定导出的是密钥文件里别名是ddss的公钥证书</li>
 <li>此时导出的证书为DER编码格式，-rfc选项可输出pem编码格式的证书</li>
 </ul>
-<h3 id="导入证书"><a href="#导入证书" class="headerlink" title="导入证书"></a>导入证书</h3><p>导入证书其实是在客户机器上使用的，如果是CA申请的证书是自动完成的</p>
-<ul>
-<li>双击xxx.cer完成导入操作(window中导入)</li>
-<li>使用命令行<code>keytool -importcert -alias server -file server.crt -keystore server.p12 -storepass 123456</code><blockquote>
-<p>cer时crt证书的微软形式</p>
+<h3 id="导入证书"><a href="#导入证书" class="headerlink" title="导入证书"></a>导入证书</h3><p>导入证书其实是在客户机器上使用的<br>双击xxx.cer完成导入操作(window中导入)<br>将信任证书test.crt以别名”test”导入到密钥库server.p12中<code>keytool -importcert -alias test -file test.crt -keystore server.p12 -storepass 123456</code></p>
+<blockquote>
+<p>cer时crt证书的微软形式<br>导入test.crt证书后，查看密钥库server.p12信息，新增一个”test”条目</p>
 </blockquote>
-</li>
-</ul>
+<p>注：test.crt是由另一个密钥库test.keystore生成的证书，将其导入到密钥库server.p12时指定的条目别名不能与密钥库中已存在的条目别名重复（导入签发证书除外），一般与导出该证书的密钥库条目别名相同，此时的导入条目会以信任证书的形式保存，条目类型为trustedCertEntry。</p>
 <h3 id="打印证书信息"><a href="#打印证书信息" class="headerlink" title="打印证书信息"></a>打印证书信息</h3><p>打印如下：</p>
 <pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -printcert -file rootca.crt</span>
 所有者: CN=mydomain, OU=xxx, O=xxx, L=Beijing, ST=Beijing, C=CN
@@ -833,6 +834,7 @@ KeyIdentifier [
 ]
 ]</code></pre>
 
+<p>注：也可以使用 -sslserver ip:port 的参数，直接从网络上打印出某个 ssl server提供的证书的内容</p>
 <h3 id="jks转pkcs12"><a href="#jks转pkcs12" class="headerlink" title="jks转pkcs12"></a>jks转pkcs12</h3><pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> keytool -importkeystore \</span>
 		-srckeystore keystore.jks \
 		-srcstoretype JKS \

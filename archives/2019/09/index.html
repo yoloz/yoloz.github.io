@@ -653,51 +653,57 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
-se
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
-				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+					href="/2018/12/10/other/git/">git</a>
 				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
 				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+				<div class="article-digest">
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
 					...
 				</div>
 		</li>

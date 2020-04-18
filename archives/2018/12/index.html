@@ -653,49 +653,42 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-14</span>
-			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
 				<div class="article-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+				<div class="article-digest">
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
 
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+cp $HIVE_HO
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-26</span>
-			<a class="article-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/26/linux/du,df/">du,df</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="article-digest">
-					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
-du -sh  #查看当
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
-				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
-				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
 					...
 				</div>
 		</li>

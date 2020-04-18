@@ -653,48 +653,37 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+			<span class="article-date">2020-02-28</span>
+			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
 				<div class="article-digest">
-					java启动参数共分为三类
-
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+			<span class="article-date">2019-01-23</span>
+			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
 				<div class="article-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
+			<span class="article-date">2020-04-18</span>
+			<a class="article-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
+					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
 				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/X.509数字证书中的扩展项/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/04/17/security/X.509数字证书中的扩展项/">X.509数字证书中的扩展项</a>
-				<div class="article-digest">
-					&emsp;&emsp;在 RFC 5280《Internet X.509 Public Key Infrastructure Certificate and Certificate Revocati
+					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
+模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
 					...
 				</div>
 		</li>
