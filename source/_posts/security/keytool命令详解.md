@@ -40,7 +40,9 @@ Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证�
 
 ### 创建证书库 
 
-创建证书库(keystore)并包含公私钥
+&emsp;&emsp;创建秘钥库(keystore),秘钥库是存储一个或多个密钥条目的文件，每个密钥条目应该以一个别名标识，它包含密钥和证书相关信息。  
+&emsp;&emsp;如果使用"keytool -genkeypair"命令生成密钥条目，则会生成一个密钥对（公钥和相关私钥）并将公钥包装到X.509 v3自签名证书中，该证书存储为单个元素证书链，此证书链和私钥存储在以别名标识的密钥库条目中，条目类型为PrivateKeyEntry。  
+&emsp;&emsp;如果使用"keytool -genseckey"命令生成密钥条目，则会生成一个密钥并将其存储在以别名标识的密钥库条目中，条目类型为SecretKeyEntry。  
 
 ``` shell
 keytool -genkeypair \
@@ -56,6 +58,8 @@ keytool -genkeypair \
         -storepass 123456
         -ext SAN=dns:github.com,dns:www.github.com,ip:127.0.0.1
 ```
+
+> 如果创建默认类型(JKS)的密钥库，则可附加"-keypass"参数指定条目的密钥口令，如果没有指定则会在最后一步提示"输入该条目的密钥口令，如果与密钥库口令相同按回车"，一般设为与密钥库口令相同。如果创建PKCS12类型的密钥库，则会忽略条目的密钥口令相关参数，因为PKCS12不支持设置密钥库条目密码，默认它与密钥库密码一致
 
 * alias产生别名，每个keystore都关联这一个独一无二的alias
 * keyalg RSA 此处”RSA“为密钥的算法。可以选择的密钥算法有：RSA、DSA、EC。
@@ -76,9 +80,9 @@ keyalg=DSA时，签名算法有：SHA1withDSA、SHA256withDSA
 
 > 此处需要注意：MD5和SHA1的签名算法已经不安全
 
-* dname 在此填写证书信息
-
-CN=名字与姓氏/域名,OU=组织单位名称,O=组织名称,L=城市或区域名称,ST=州或省份名称,C=单位的两字母国家代码
+* dname 在此填写证书信息  
+CN=名字与姓氏/域名,OU=组织单位名称,O=组织名称,L=城市或区域名称,ST=州或省份名称,C=单位的两字母国家代码  
+"名字与姓氏"应该是输入域名，而不是我们的个人姓名，其他的可以不填
 * validity 3650 此处”3650“为证书有效期天数
 * keystore 创建出的密钥生成路径，默认在当前目录创建证书库
 * storetype 生成证书类型，可用的证书库类型为：JKS、PKCS12等。jdk9以前，默认为JKS。自jdk9开始，默认为PKCS12。
@@ -161,6 +165,8 @@ OA1/
 
 ### 导出证书信息
 
+将密钥库ddssngong.jks中别名为ddss条目的相关信息以及公钥导出到一个数字证书文件rootca.crt中
+
 ``` shell
 keytool -exportcert \
 		-alias ddss \
@@ -169,16 +175,21 @@ keytool -exportcert \
 		-storepass 123456
 ```
 
+> 注意该证书文件不包含私钥
+
 * file 输出证书文件路径
 * alias **为什么要别名**,因为ddssngong.jks里可以存储多对公私钥文件，它们之间是通过别名区分的，所以这里是通过别名指定导出的是密钥文件里别名是ddss的公钥证书
 * 此时导出的证书为DER编码格式，-rfc选项可输出pem编码格式的证书
 
 ### 导入证书
 
-导入证书其实是在客户机器上使用的，如果是CA申请的证书是自动完成的
-* 双击xxx.cer完成导入操作(window中导入)
-* 使用命令行`keytool -importcert -alias server -file server.crt -keystore server.p12 -storepass 123456`
-> cer时crt证书的微软形式
+导入证书其实是在客户机器上使用的  
+双击xxx.cer完成导入操作(window中导入)  
+将信任证书test.crt以别名"test"导入到密钥库server.p12中`keytool -importcert -alias test -file test.crt -keystore server.p12 -storepass 123456`
+> cer时crt证书的微软形式  
+> 导入test.crt证书后，查看密钥库server.p12信息，新增一个"test"条目
+
+注：test.crt是由另一个密钥库test.keystore生成的证书，将其导入到密钥库server.p12时指定的条目别名不能与密钥库中已存在的条目别名重复（导入签发证书除外），一般与导出该证书的密钥库条目别名相同，此时的导入条目会以信任证书的形式保存，条目类型为trustedCertEntry。
 
 ### 打印证书信息
 
@@ -208,6 +219,8 @@ KeyIdentifier [
 ]
 ]
 ```
+
+注：也可以使用 -sslserver ip:port 的参数，直接从网络上打印出某个 ssl server提供的证书的内容
 
 ### jks转pkcs12
 
