@@ -9,10 +9,11 @@ tags:
 
 ## keytool简介
 
-Keytool 是一个Java 数据证书的管理工具 ,Keytool 将密钥（key）和证书（certificates）存在一个称为keystore的文件中。
+Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。
 在keystore里，包含两种数据：
 1. 密钥实体（Key entity）——密钥（secret key）又或者是私钥和配对公钥（采用非对称加密）
 2. 可信任的证书实体（trusted certificate entries）——只包含公钥
+> 我们常说的证书就是就是上面的公钥，公钥是公开给其它人使用的
 
 ## keytool命令详解
 
@@ -121,7 +122,7 @@ KeyIdentifier [
 0010: 9C 62 8C 9A                                        .b..
 ```
 
-有时候需要查看base64的内容`keytool -list  -rfc -keystore ddssingsong.p12 -storepass 123456`,打印如下:
+有时候需要查看base64的内容(即PEM编码)`keytool -list  -rfc -keystore ddssingsong.p12 -storepass 123456`,打印如下:
 
 ``` shell
 $ keytool -list  -rfc -keystore ddssingsong.p12 -storepass 123456
@@ -161,14 +162,23 @@ OA1/
 ### 导出证书信息
 
 ``` shell
-keytool -export \
-		-alias ddssingsong \
-		-keystore ddssngong.p12 \
+keytool -exportcert \
+		-alias ddss \
+		-keystore ddssngong.jks \
 		-file rootca.crt \
 		-storepass 123456
 ```
 
 * file 输出证书文件路径
+* alias **为什么要别名**,因为ddssngong.jks里可以存储多对公私钥文件，它们之间是通过别名区分的，所以这里是通过别名指定导出的是密钥文件里别名是ddss的公钥证书
+* 此时导出的证书为DER编码格式，-rfc选项可输出pem编码格式的证书
+
+### 导入证书
+
+导入证书其实是在客户机器上使用的，如果是CA申请的证书是自动完成的
+* 双击xxx.cer完成导入操作(window中导入)
+* 使用命令行`keytool -importcert -alias server -file server.crt -keystore server.p12 -storepass 123456`
+> cer时crt证书的微软形式
 
 ### 打印证书信息
 
@@ -224,9 +234,6 @@ $ keytool -certreq -keyalg RSA \
 
 `keytool -printcertreq -file certreq.csr`
 
-### 导入证书到证书库
-
-`keytool -importcert -alias server -file server.crt -keystore server.p12 -storepass 123456`
 
 ### 更改密码
 
