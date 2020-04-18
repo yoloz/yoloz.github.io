@@ -26,7 +26,7 @@ Server需要：
 
 ## keytool制作双向认证
 
-### 创建服务端证书
+### 1. 创建服务端证书
 
 1. 生成服务端私钥，并且导入到服务端KeyStore文件中
 `keytool -genkeypair -alias serverkey -keystore kserver.keystore`
@@ -37,7 +37,7 @@ server.crt就是服务端的证书
 `keytool -import -alias serverkey -file server.crt -keystore tclient.keystore`
 tclient.keystore是给客户端用的，其中保存着受信任的证书
 
-### 创建客户端证书
+### 2. 创建客户端证书
 
 采用同样的方法，生成客户端的私钥，客户端的证书，并且导入到服务端的Trust KeyStore中<br/>
 
@@ -53,7 +53,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 
 ## openssl制作双向认证
 
-### 创建根证书
+### 1. 创建根证书
 
 1. 生成根证书私钥
 `openssl genrsa -des3 -out root.key 1024`
@@ -68,7 +68,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 只导出证书不导出秘钥`openssl pkcs12 -export -nokeys -cacerts -in root-cert.crt -inkey root.key -out root.p12`
 
 
-### 创建服务端证书
+### 2. 创建服务端证书
 
 1. 生成服务端key
 `openssl genrsa -des3 -out server-key.key 1024`
@@ -79,7 +79,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 4. 生成服务端p12格式根证书
 `openssl pkcs12 -export -clcerts -in server-cert.crt -inkey server-key.key -out server.p12`
 
-### 创建客户端证书
+### 3. 创建客户端证书
 
 1. 生成客户端key
 `openssl genrsa -des3 -out client-key.key 1024`
@@ -105,7 +105,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 
 ## 实现web项目的ssl双向认证
 
-### openssl生成CA_ROOT
+### 1. openssl生成CA_ROOT
 
 1. 生成根证书私钥
 `openssl genrsa -out ca_root.pem 1024`
@@ -116,7 +116,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 4. 导出ca证书(只导出证书未导出秘钥)
 `openssl pkcs12 -export -nokeys -cacerts -in ca_root-cert.pem -inkey ca_root.pem -out ca_root.p12`
 
-### 注册服务端证书
+### 2. 注册服务端证书
 
 1. 创建服务端密钥库,别名为server，validity有效期为365天，密钥算法为RSA， storepass密钥库密码，keypass别名条目密码。
 `keytool -genkey -alias server -validity 365 -keyalg RSA -keypass 123456 -storepass 123456 -keystore server.jks` 
@@ -131,7 +131,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 6. 使用CA_ROOT证书生成服务端信任库
 `keytool -import -alias servertrust -file ca_root-cert.pem -keystore servertrust.jks`
 
-### 注册客户端证书
+### 3. 注册客户端证书
 
 1. 创建客户端密钥(指定用户名，下列命令中的user将替换为颁发证书的用户名)
 `openssl genrsa -out user-key.pem 1024`
@@ -146,7 +146,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 6. 查看服务端信任库中用户条目信息
 `keytool -list -v -alias user -keystore servertrust.jks -storepass 123456`
 
-### 配置web容器
+### 4. 配置web容器
 
 ## JAVA实现
 
