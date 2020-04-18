@@ -538,6 +538,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/18/security/SSL双向认证实现/">
+				<i class="fa fa-file"></i>
+				SSL双向认证实现
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
 				<i class="fa fa-file"></i>
 				X.509数字证书中的扩展项
@@ -644,52 +653,49 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+					href="/2018/11/30/linux/ps/">ps</a>
 				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
+ps命令支持三种使用的语法格式
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+UNIX
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+					href="/2018/11/27/other/start-hexo/">start-hexo</a>
 				<div class="article-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-01</span>
-			<a class="article-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
+			<span class="article-date">2018-12-10</span>
+			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
+					href="/2018/12/10/other/git/">git</a>
 				<div class="article-digest">
-					常用多线程并发，取结果归集的几种实现方案
+					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
+				<div class="article-digest">
+					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
 
-
-描述
-Future
-FutureTask
-CompletionService
-CompletableFuture
-
-
-
-原理
-Future接口
-接口Run
 					...
 				</div>
 		</li>

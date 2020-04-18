@@ -538,6 +538,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/18/security/SSL双向认证实现/">
+				<i class="fa fa-file"></i>
+				SSL双向认证实现
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
 				<i class="fa fa-file"></i>
 				X.509数字证书中的扩展项
@@ -644,52 +653,38 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-14</span>
-			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/概述DQL,DML,DDL,DCL/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">概述DQL,DML,DDL,DCL</a>
 				<div class="article-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+					SQL(Structure Query Language)语言是数据库的核心语言。
+SQL的发展是从1974年开始的，其发展过程如下：1974年—–由Boyce和Chamberlin提出，当时称SEQ
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/30/linux/ps/">ps</a>
+				<div class="article-digest">
+					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
+ps命令支持三种使用的语法格式
 
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+UNIX
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<span class="article-date">2020-04-17</span>
+			<a class="article-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
 				<div class="article-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
-
-nameserver 119.29.29.29  
-nameserver 182.2
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/linux/ncat(nc)/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/linux/ncat(nc)/">ncat(nc)</a>
-				<div class="article-digest">
-					ncat 或者说 nc 是一款功能类似 cat 的工具，但是是用于网络的。它是一款拥有多种功能的 CLI 工具，可以用来在网络上读、写以及重定向数据。 它被设计成可以被脚本或其他程序调用的可靠的后端工
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
-				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
 					...
 				</div>
 		</li>

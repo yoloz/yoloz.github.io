@@ -538,6 +538,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/18/security/SSL双向认证实现/">
+				<i class="fa fa-file"></i>
+				SSL双向认证实现
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
 				<i class="fa fa-file"></i>
 				X.509数字证书中的扩展项
@@ -644,51 +653,53 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
-				<div class="article-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
+					jstack dump文件中值得关注的线程状态有：
 
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-05</span>
-			<a class="article-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/05/other/svn/">svn</a>
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
 				<div class="article-digest">
-					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/X.509数字证书中的扩展项/"> 阅读全文 </span>
+			<span class="article-date">2019-07-24</span>
+			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/17/security/X.509数字证书中的扩展项/">X.509数字证书中的扩展项</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="article-digest">
-					&emsp;&emsp;在 RFC 5280《Internet X.509 Public Key Infrastructure Certificate and Certificate Revocati
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+
+alternatives 和 update-alt
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
+				<div class="article-digest">
+					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
+
 					...
 				</div>
 		</li>

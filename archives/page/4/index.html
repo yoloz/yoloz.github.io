@@ -538,6 +538,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/18/security/SSL双向认证实现/">
+				<i class="fa fa-file"></i>
+				SSL双向认证实现
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
 				<i class="fa fa-file"></i>
 				X.509数字证书中的扩展项
@@ -644,40 +653,39 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-28</span>
-			<a class="article-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="article-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
-
-nameserver 119.29.29.29  
-nameserver 182.2
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-alternatives 和 update-alt
+如果能使用props实现，
 					...
 				</div>
 		</li>
@@ -688,7 +696,7 @@ alternatives 和 update-alt
 				<a class="article-title"
 					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
 				<div class="article-digest">
-					keytool简介Keytool 是一个Java 数据证书的管理工具 ,Keytool 将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包
+					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
 					...
 				</div>
 		</li>

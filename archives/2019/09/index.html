@@ -538,6 +538,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/04/18/security/SSL双向认证实现/">
+				<i class="fa fa-file"></i>
+				SSL双向认证实现
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
 				<i class="fa fa-file"></i>
 				X.509数字证书中的扩展项
@@ -657,22 +666,38 @@ se
 		
 		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+					jstack dump文件中值得关注的线程状态有：
+
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					keytool简介Keytool 是一个Java 数据证书的管理工具 ,Keytool 将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+				<div class="article-digest">
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
