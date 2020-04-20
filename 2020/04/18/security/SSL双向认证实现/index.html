@@ -689,8 +689,13 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore</co
 <p>csr文件交给CA签名后形成自己的证书(与根证书私钥对应)</p>
 </blockquote>
 </li>
-<li>导出p12格式证书<br><code>openssl pkcs12 -export -clcerts -in root-cert.crt -inkey root.key -out root.p12</code><br>只导出证书不导出秘钥<code>openssl pkcs12 -export -nokeys -cacerts -in root-cert.crt -inkey root.key -out root.p12</code></li>
+<li>导出p12格式证书<br><code>openssl pkcs12 -export -clcerts -in root-cert.crt -inkey root.key -out root.p12</code></li>
 </ol>
+<p>或者直接两步</p>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> openssl req -new -x509 -keyout ca_root.key -out ca_root.crt -days 365</span>
+<span class="meta">$</span><span class="bash"> openssl pkcs12 -<span class="built_in">export</span> -clcerts -<span class="keyword">in</span> ca_root.crt -inkey ca_root.key -out ca_root.p12</span></code></pre>
+
+
 <h3 id="2-创建服务端证书"><a href="#2-创建服务端证书" class="headerlink" title="2. 创建服务端证书"></a>2. 创建服务端证书</h3><ol>
 <li>生成服务端key<br><code>openssl genrsa -des3 -out server-key.key 1024</code></li>
 <li>生成服务端请求文件<br><code>openssl req -new -out server-req.csr -key server-key.key</code></li>
@@ -714,16 +719,23 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore</co
 <li>生成根证书私钥<br><code>openssl genrsa -out ca_root.pem 1024</code></li>
 <li>生成根证书签名请求文件<br><code>openssl req -new -out ca_root.csr -key ca_root.pem</code></li>
 <li>自签署证书<br><code>openssl x509 -req -in ca_root.csr -out ca_root-cert.pem -signkey ca_root.pem -days 365</code></li>
-<li>导出ca证书(只导出证书未导出秘钥)<br><code>openssl pkcs12 -export -nokeys -cacerts -in ca_root-cert.pem -inkey ca_root.pem -out ca_root.p12</code></li>
+<li>导出ca证书<br><code>openssl pkcs12 -export -clcerts -in ca_root-cert.pem -inkey ca_root.pem -out ca_root.p12</code></li>
 </ol>
+<p>或者直接两步</p>
+<pre><code class="highlight shell"><span class="meta">$</span><span class="bash"> openssl req -new -x509 -keyout ca_root.key -out ca_root.crt -days 365</span>
+<span class="meta">$</span><span class="bash"> openssl pkcs12 -<span class="built_in">export</span> -clcerts -<span class="keyword">in</span> ca_root.crt -inkey ca_root.key -out ca_root.p12</span></code></pre>
+
 <h3 id="2-注册服务端证书"><a href="#2-注册服务端证书" class="headerlink" title="2. 注册服务端证书"></a>2. 注册服务端证书</h3><ol>
 <li>创建服务端密钥库,别名为server，validity有效期为365天，密钥算法为RSA， storepass密钥库密码，keypass别名条目密码。<br><code>keytool -genkey -alias server -validity 365 -keyalg RSA -keypass 123456 -storepass 123456 -keystore server.jks</code> </li>
 <li>生成服务端证书请求文件<br><code>keytool -certreq -alias server -sigalgMD5withRSA -file server.csr -keypass 123456 -keystore server.jks -storepass 123456</code></li>
 <li>使用CA_ROOT签证生成服务端证书<br><code>openssl x509 -req -in server.csr -out server.pem -CA ca_root.pem -CAkey ca_root-cert.pem -days 365</code></li>
 <li>服务端信任CA_ROOT(CA_ROOT证书导入服务端密钥库)<br><code>keytool -import -v -trustcacerts -keypass 123456 -storepass 123456 -alias root -file ca_root-cert.pem -keystore server.jks</code></li>
-<li>将服务端证书导入服务端密钥库中<br><code>keytool -import -v -trustcacerts -storepass 123456 -alias server -file server.pem -keystore server.jks</code></li>
+<li>将服务端证书导入服务端密钥库中(安装证书回复到密钥库中)<br><code>keytool -import -v -trustcacerts -storepass 123456 -alias server -file server.pem -keystore server.jks</code></li>
 <li>使用CA_ROOT证书生成服务端信任库<br><code>keytool -import -alias servertrust -file ca_root-cert.pem -keystore servertrust.jks</code></li>
 </ol>
+<blockquote>
+<p>问题：No subject alternative names present<br>密钥库可以添加SAN(-ext SAN=),但是安装证书回复后server.jks中SAN就没了<br>生成请求文件时也可以添加SAN(密钥库生成的请求文件中不会自动带上SAN),但是签证后生成的证书server.pem中仍会没有SAN<br>解决:在签证的时候添加SAN(-extfile file) <a href="https://www.openssl.org/docs/man1.1.1/man5/x509v3_config.html" target="_blank" rel="noopener">Subject Alternative Name</a></p>
+</blockquote>
 <h3 id="3-注册客户端证书"><a href="#3-注册客户端证书" class="headerlink" title="3. 注册客户端证书"></a>3. 注册客户端证书</h3><ol>
 <li>创建客户端密钥(指定用户名，下列命令中的user将替换为颁发证书的用户名)<br><code>openssl genrsa -out user-key.pem 1024</code></li>
 <li>生成客户端证书请求文件<br><code>openssl req -new -out user-req.csr-key user-key.pem</code></li>
