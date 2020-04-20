@@ -653,53 +653,45 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+			<span class="article-date">2018-11-28</span>
+			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+					href="/2018/11/28/java/jar的使用/">jar的使用</a>
 				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
-				<div class="article-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
 
-nameserver 119.29.29.29  
-nameserver 182.2
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
+					jstack dump文件中值得关注的线程状态有：
 
-$ useradd -m u
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-19</span>
-			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>

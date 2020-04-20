@@ -716,7 +716,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore</co
 </blockquote>
 <p>&emsp;&emsp;我们使用的浏览器就保存了几个常用的CA_ROOT,每次连接到网站时只要这个网站的证书是经过这些CA_ROOT签名过的,就可以通过验证了。但是这些共用的CA_ROOT的服务不是免费的,而且价格不菲。所以我们可以自己生成一个CA_ROOT的密钥对(OpenSSL)，然后部署应用时，只要把这个CA_ROOT的私钥部署在所有节点就可以完成验证了。</p>
 <h2 id="实现web项目的ssl双向认证"><a href="#实现web项目的ssl双向认证" class="headerlink" title="实现web项目的ssl双向认证"></a>实现web项目的ssl双向认证</h2><h3 id="1-openssl生成CA-ROOT"><a href="#1-openssl生成CA-ROOT" class="headerlink" title="1. openssl生成CA_ROOT"></a>1. openssl生成CA_ROOT</h3><ol>
-<li>生成根证书私钥<br><code>openssl genrsa -out ca_root.pem 1024</code></li>
+<li>生成根证书私钥<br><code>openssl genrsa -out ca_root.pem -passout pass:123456</code></li>
 <li>生成根证书签名请求文件<br><code>openssl req -new -out ca_root.csr -key ca_root.pem</code></li>
 <li>自签署证书<br><code>openssl x509 -req -in ca_root.csr -out ca_root-cert.pem -signkey ca_root.pem -days 365</code></li>
 <li>导出ca证书<br><code>openssl pkcs12 -export -clcerts -in ca_root-cert.pem -inkey ca_root.pem -out ca_root.p12</code></li>
@@ -726,24 +726,40 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore</co
 <span class="meta">$</span><span class="bash"> openssl pkcs12 -<span class="built_in">export</span> -clcerts -<span class="keyword">in</span> ca_root.crt -inkey ca_root.key -out ca_root.p12</span></code></pre>
 
 <h3 id="2-注册服务端证书"><a href="#2-注册服务端证书" class="headerlink" title="2. 注册服务端证书"></a>2. 注册服务端证书</h3><ol>
-<li>创建服务端密钥库,别名为server，validity有效期为365天，密钥算法为RSA， storepass密钥库密码，keypass别名条目密码。<br><code>keytool -genkey -alias server -validity 365 -keyalg RSA -keypass 123456 -storepass 123456 -keystore server.jks</code> </li>
-<li>生成服务端证书请求文件<br><code>keytool -certreq -alias server -sigalgMD5withRSA -file server.csr -keypass 123456 -keystore server.jks -storepass 123456</code></li>
-<li>使用CA_ROOT签证生成服务端证书<br><code>openssl x509 -req -in server.csr -out server.pem -CA ca_root.pem -CAkey ca_root-cert.pem -days 365</code></li>
-<li>服务端信任CA_ROOT(CA_ROOT证书导入服务端密钥库)<br><code>keytool -import -v -trustcacerts -keypass 123456 -storepass 123456 -alias root -file ca_root-cert.pem -keystore server.jks</code></li>
-<li>将服务端证书导入服务端密钥库中(安装证书回复到密钥库中)<br><code>keytool -import -v -trustcacerts -storepass 123456 -alias server -file server.pem -keystore server.jks</code></li>
-<li>使用CA_ROOT证书生成服务端信任库<br><code>keytool -import -alias servertrust -file ca_root-cert.pem -keystore servertrust.jks</code></li>
+<li>创建服务端密钥库,别名为server，validity有效期为365天，密钥算法为RSA， storepass密钥库密码，keypass别名条目密码。<br><code>keytool -genkeypair -storetype pkcs12 -keystore 1-183.p12 -alias 1-183-server -validity 365 -keyalg RSA</code> </li>
+<li>生成服务端证书请求文件<br><code>keytool -certreq -file 1-183.csr -storetype pkcs12 -keystore 1-183.p12 -alias 1-183-server</code></li>
+<li>使用CA_ROOT签证生成服务端证书<br><code>openssl x509 -req -CA ca.crt -CAkey ca.key -in 1-183.csr -out 1-183.crt -days 365 -CAcreateserial</code></li>
+<li>服务端信任CA_ROOT(CA_ROOT证书导入服务端密钥库)<br><code>keytool -importcert -file ca.crt -storetype pkcs12 -keystore 1-183.p12 -alias CARoot</code></li>
+<li>将服务端证书导入服务端密钥库中(安装证书回复到密钥库中)<br><code>keytool -importcert -file 1-183.crt -storetype pkcs12 -keystore 1-183.p12 -alias 1-183-server</code></li>
+<li>使用CA_ROOT证书生成服务端信任库<br><code>keytool -importcert -file ca.crt -alias CARoot -keystore 1-183-truststore.p12 -storetype pkcs12</code></li>
 </ol>
 <blockquote>
 <p>问题：No subject alternative names present<br>密钥库可以添加SAN(-ext SAN=),但是安装证书回复后server.jks中SAN就没了<br>生成请求文件时也可以添加SAN(密钥库生成的请求文件中不会自动带上SAN),但是签证后生成的证书server.pem中仍会没有SAN<br>解决:在签证的时候添加SAN(-extfile file) <a href="https://www.openssl.org/docs/man1.1.1/man5/x509v3_config.html" target="_blank" rel="noopener">Subject Alternative Name</a></p>
 </blockquote>
 <h3 id="3-注册客户端证书"><a href="#3-注册客户端证书" class="headerlink" title="3. 注册客户端证书"></a>3. 注册客户端证书</h3><ol>
-<li>创建客户端密钥(指定用户名，下列命令中的user将替换为颁发证书的用户名)<br><code>openssl genrsa -out user-key.pem 1024</code></li>
-<li>生成客户端证书请求文件<br><code>openssl req -new -out user-req.csr-key user-key.pem</code></li>
-<li>使用CA_ROOT签证生成对应用户名的客户端证书<br><code>openssl x509 -req -in user-req.csr -out user-cert.pem -signkey user-key.pem -CA ca_root.pem -CAkey ca_root-cert.pem -CAcreateserial -days 365</code></li>
-<li>将签证之后的证书文件user-cert.pem导出为p12格式文件（p12格式可以被浏览器识别并安装到证书库中）<br><code>openssl pkcs12 -export -clcerts -in user-cert.pem -inkey user-key.pem -out user.p12</code> </li>
-<li>将签证之后的用户证书导入服务端信任库（<strong>由于没有去CA认证中心购买个人证书，所以只有导入信任库才可进行双向ssl交互</strong>)<br><code>keytool -import -alias usertrustcacerts -file user-cert.pem -keystore servertrust.jks</code></li>
-<li>查看服务端信任库中用户条目信息<br><code>keytool -list -v -alias user -keystore servertrust.jks -storepass 123456</code></li>
+<li>使用CA_ROOT证书生成客户端信任库<br><code>keytool -importcert -file ca.crt -alias CARoot -keystore user1-truststore.p12 -storetype pkcs12</code></li>
+<li>创建客户端密钥(指定用户名，下列命令中的user将替换为颁发证书的用户名)<br><code>openssl genrsa -out user1.pem -passout pass:123456</code></li>
+<li>生成客户端证书请求文件<br><code>openssl req -new -out user1.csr -key user1.pem</code></li>
+<li>使用CA_ROOT签证生成对应用户名的客户端证书<br><code>openssl x509 -req -in user1.csr -out user1.crt -signkey user1.pem -CA ca.crt -CAkey ca.key -CAcreateserial -days 365</code></li>
+<li>将签证之后的用户证书导入服务端信任库（<strong>由于没有去CA认证中心购买个人证书，所以只有导入信任库才可进行双向ssl交互</strong>)<br><code>keytool -importcert -alias user1trust -file user1.crt -keystore 1-183-truststore.p12</code></li>
+<li>将签证之后的证书文件user-cert.pem导出为p12格式文件（p12格式可以被浏览器识别并安装到证书库中）<br><code>openssl pkcs12 -export -clcerts -in user1.crt -inkey user1.pem -out user1.p12</code> </li>
 </ol>
+<p>或者</p>
+<pre><code class="highlight shell"><span class="meta">#</span><span class="bash">使用CA_ROOT证书生成客户端信任库</span>
+<span class="meta">$</span><span class="bash"> keytool -importcert -file ca.crt -<span class="built_in">alias</span> CARoot -keystore user1-truststore.p12 -storetype pkcs12</span>
+<span class="meta">#</span><span class="bash">新建密钥库</span>
+<span class="meta">$</span><span class="bash"> keytool -genkeypair -storetype pkcs12 -keystore user1.p12 -<span class="built_in">alias</span> user1 -validity 365 -keyalg RSA</span>
+<span class="meta">#</span><span class="bash">生成证书请求文件</span>
+<span class="meta">$</span><span class="bash"> keytool -certreq -file user1.csr -storetype pkcs12 -keystore user1.p12 -<span class="built_in">alias</span> user1</span>
+<span class="meta">#</span><span class="bash">CA_ROOT签证</span>
+<span class="meta">$</span><span class="bash"> openssl x509 -req -CA ca.crt -CAkey ca.key -<span class="keyword">in</span> user1.csr -out user1.crt -days 365 -CAcreateserial</span>
+<span class="meta">#</span><span class="bash">证书链之信任根证书</span>
+<span class="meta">$</span><span class="bash"> keytool -importcert -file ca.crt -storetype pkcs12 -keystore user1.p12 -<span class="built_in">alias</span> CARoot</span>
+<span class="meta">#</span><span class="bash">安装自己的证书回复</span>
+<span class="meta">$</span><span class="bash"> keytool -importcert -file user1.crt -storetype pkcs12 -keystore user1.p12 -<span class="built_in">alias</span> user1</span>
+<span class="meta">#</span><span class="bash">用户证书导入服务端信任库</span>
+<span class="meta">$</span><span class="bash"> keytool -importcert -<span class="built_in">alias</span> user1trust -file user1.crt -keystore 1-183-truststore.p12</span></code></pre>
+
 <h3 id="4-配置web容器"><a href="#4-配置web容器" class="headerlink" title="4. 配置web容器"></a>4. 配置web容器</h3><h2 id="JAVA实现"><a href="#JAVA实现" class="headerlink" title="JAVA实现"></a>JAVA实现</h2><p>采用JSSE及keytool生成的证书，分别生成SSLServerSocket,SSLSocket<br>client采用kclient.keystore中的clientkey私钥进行数据加密，发送给server<br>server采用tserver.keystore中的client.crt证书（包含了clientkey的公钥）对数据解密，如果解密成功，证明消息来自client，进行逻辑处理<br>server采用kserver.keystore中的serverkey私钥进行数据加密，发送给client<br>client采用tclient.keystore中的server.crt证书（包含了serverkey的公钥）对数据解密，如果解密成功，证明消息来自server，进行逻辑处理<br>如果过程中，解密失败，那么证明消息来源错误。不进行逻辑处理。这样就完成了双向的身份认证。</p>
 <p><a href="https://github.com/yoloz/Samples/tree/master/samples-ssl" target="_blank" rel="noopener">完整样例</a></p>
 <p>服务端，生成SSLServerSocket代码</p>

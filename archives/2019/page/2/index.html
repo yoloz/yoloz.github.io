@@ -669,43 +669,41 @@ cp $HIVE_HO
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-28</span>
-			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/28/java/jar的使用/">jar的使用</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="article-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-方法步骤:1, 定义Main-Class创建文件夹ME
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/ps/">ps</a>
+					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
 				<div class="article-digest">
-					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
-ps命令支持三种使用的语法格式
+					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
 
-UNIX
+可自
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="article-digest">
-					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
 					...
 				</div>
 		</li>

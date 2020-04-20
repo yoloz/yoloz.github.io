@@ -653,60 +653,50 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2020-02-20</span>
+			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+				<div class="article-digest">
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-14</span>
+			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+				<div class="article-digest">
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
+				<div class="article-digest">
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2019-11-13</span>
-			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
-
-Modify shell resource limits. Prov
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
-				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
-
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-19</span>
-			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/19/other/yaml格式/">yaml格式</a>
-				<div class="article-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
-				<div class="article-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>

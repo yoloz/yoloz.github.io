@@ -653,55 +653,51 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2019-01-26</span>
+			<a class="article-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
 				<div class="article-digest">
-					ubuntu该方法ubuntu 18.04失效
-修改配置文件 /etc/network/interfaces
-auto eth0                  #设置自动启动eth0接口
-ifac
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-18</span>
-			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+			<span class="article-date">2019-02-20</span>
+			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="article-digest">
-					Lucene中包含了四种基本数据类型，分别是：
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-Index：索引，由很多的Document组成。
-Document：由很多的Field组成，是Index和Search的最小单位。
-Field：由很多
+如果能使用props实现，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-29</span>
-			<a class="article-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
+			<span class="article-date">2020-03-11</span>
+			<a class="article-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
 				<div class="article-digest">
-					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
-npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
+					killallkillall[参数][进程名]
+
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>
