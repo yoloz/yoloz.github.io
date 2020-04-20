@@ -65,7 +65,13 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 > csr文件交给CA签名后形成自己的证书(与根证书私钥对应)
 4. 导出p12格式证书
 `openssl pkcs12 -export -clcerts -in root-cert.crt -inkey root.key -out root.p12`
-只导出证书不导出秘钥`openssl pkcs12 -export -nokeys -cacerts -in root-cert.crt -inkey root.key -out root.p12`
+
+或者直接两步
+
+``` shell
+$ openssl req -new -x509 -keyout ca_root.key -out ca_root.crt -days 365
+$ openssl pkcs12 -export -clcerts -in ca_root.crt -inkey ca_root.key -out ca_root.p12
+```
 
 
 ### 2. 创建服务端证书
@@ -79,6 +85,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 4. 生成服务端p12格式根证书
 `openssl pkcs12 -export -clcerts -in server-cert.crt -inkey server-key.key -out server.p12`
 
+
 ### 3. 创建客户端证书
 
 1. 生成客户端key
@@ -89,6 +96,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 `openssl x509 -req -in client-req.csr -out client-cert.crt -signkey client-key.key -CA root-cert.crt -CAkey root.key -CAcreateserial -days 365`
 4. 生成客户端p12格式根证书
 `openssl pkcs12 -export -clcerts -in client-cert.crt -inkey client-key.key -out client.p12`
+
 
 如此一来，生成的文件分成两组  
 服务端保存：trustStore使用root.p12，keyStore使用server.p12  
@@ -113,8 +121,15 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 `openssl req -new -out ca_root.csr -key ca_root.pem`
 3. 自签署证书
 `openssl x509 -req -in ca_root.csr -out ca_root-cert.pem -signkey ca_root.pem -days 365`
-4. 导出ca证书(只导出证书未导出秘钥)
-`openssl pkcs12 -export -nokeys -cacerts -in ca_root-cert.pem -inkey ca_root.pem -out ca_root.p12`
+4. 导出ca证书
+`openssl pkcs12 -export -clcerts -in ca_root-cert.pem -inkey ca_root.pem -out ca_root.p12`
+
+或者直接两步
+
+``` shell
+$ openssl req -new -x509 -keyout ca_root.key -out ca_root.crt -days 365
+$ openssl pkcs12 -export -clcerts -in ca_root.crt -inkey ca_root.key -out ca_root.p12
+```
 
 ### 2. 注册服务端证书
 
@@ -126,10 +141,16 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.keystore
 `openssl x509 -req -in server.csr -out server.pem -CA ca_root.pem -CAkey ca_root-cert.pem -days 365`
 4. 服务端信任CA_ROOT(CA_ROOT证书导入服务端密钥库)
 `keytool -import -v -trustcacerts -keypass 123456 -storepass 123456 -alias root -file ca_root-cert.pem -keystore server.jks`
-5. 将服务端证书导入服务端密钥库中
+5. 将服务端证书导入服务端密钥库中(安装证书回复到密钥库中)
 `keytool -import -v -trustcacerts -storepass 123456 -alias server -file server.pem -keystore server.jks`
 6. 使用CA_ROOT证书生成服务端信任库
 `keytool -import -alias servertrust -file ca_root-cert.pem -keystore servertrust.jks`
+
+> 问题：No subject alternative names present
+> 密钥库可以添加SAN(-ext SAN=),但是安装证书回复后server.jks中SAN就没了
+> 生成请求文件时也可以添加SAN(密钥库生成的请求文件中不会自动带上SAN),但是签证后生成的证书server.pem中仍会没有SAN
+> 解决:在签证的时候添加SAN(-extfile file) [Subject Alternative Name](https://www.openssl.org/docs/man1.1.1/man5/x509v3_config.html)
+
 
 ### 3. 注册客户端证书
 
