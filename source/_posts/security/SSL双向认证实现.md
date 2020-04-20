@@ -116,7 +116,7 @@ $ openssl pkcs12 -export -clcerts -in ca_root.crt -inkey ca_root.key -out ca_roo
 ### 1. openssl生成CA_ROOT
 
 1. 生成根证书私钥
-`openssl genrsa -out ca_root.pem 1024`
+`openssl genrsa -out ca_root.pem -passout pass:123456`
 2. 生成根证书签名请求文件
 `openssl req -new -out ca_root.csr -key ca_root.pem`
 3. 自签署证书
@@ -134,17 +134,17 @@ $ openssl pkcs12 -export -clcerts -in ca_root.crt -inkey ca_root.key -out ca_roo
 ### 2. 注册服务端证书
 
 1. 创建服务端密钥库,别名为server，validity有效期为365天，密钥算法为RSA， storepass密钥库密码，keypass别名条目密码。
-`keytool -genkey -alias server -validity 365 -keyalg RSA -keypass 123456 -storepass 123456 -keystore server.jks` 
+`keytool -genkeypair -storetype pkcs12 -keystore 1-183.p12 -alias 1-183-server -validity 365 -keyalg RSA` 
 2. 生成服务端证书请求文件
-`keytool -certreq -alias server -sigalgMD5withRSA -file server.csr -keypass 123456 -keystore server.jks -storepass 123456`
+`keytool -certreq -file 1-183.csr -storetype pkcs12 -keystore 1-183.p12 -alias 1-183-server`
 3. 使用CA_ROOT签证生成服务端证书
-`openssl x509 -req -in server.csr -out server.pem -CA ca_root.pem -CAkey ca_root-cert.pem -days 365`
+`openssl x509 -req -CA ca.crt -CAkey ca.key -in 1-183.csr -out 1-183.crt -days 365 -CAcreateserial`
 4. 服务端信任CA_ROOT(CA_ROOT证书导入服务端密钥库)
-`keytool -import -v -trustcacerts -keypass 123456 -storepass 123456 -alias root -file ca_root-cert.pem -keystore server.jks`
+`keytool -importcert -file ca.crt -storetype pkcs12 -keystore 1-183.p12 -alias CARoot`
 5. 将服务端证书导入服务端密钥库中(安装证书回复到密钥库中)
-`keytool -import -v -trustcacerts -storepass 123456 -alias server -file server.pem -keystore server.jks`
+`keytool -importcert -file 1-183.crt -storetype pkcs12 -keystore 1-183.p12 -alias 1-183-server`
 6. 使用CA_ROOT证书生成服务端信任库
-`keytool -import -alias servertrust -file ca_root-cert.pem -keystore servertrust.jks`
+`keytool -importcert -file ca.crt -alias CARoot -keystore 1-183-truststore.p12 -storetype pkcs12`
 
 > 问题：No subject alternative names present
 > 密钥库可以添加SAN(-ext SAN=),但是安装证书回复后server.jks中SAN就没了
@@ -153,19 +153,38 @@ $ openssl pkcs12 -export -clcerts -in ca_root.crt -inkey ca_root.key -out ca_roo
 
 
 ### 3. 注册客户端证书
-
-1. 创建客户端密钥(指定用户名，下列命令中的user将替换为颁发证书的用户名)
-`openssl genrsa -out user-key.pem 1024`
-2. 生成客户端证书请求文件
-`openssl req -new -out user-req.csr-key user-key.pem`
-3. 使用CA_ROOT签证生成对应用户名的客户端证书
-`openssl x509 -req -in user-req.csr -out user-cert.pem -signkey user-key.pem -CA ca_root.pem -CAkey ca_root-cert.pem -CAcreateserial -days 365`
-4. 将签证之后的证书文件user-cert.pem导出为p12格式文件（p12格式可以被浏览器识别并安装到证书库中）
-`openssl pkcs12 -export -clcerts -in user-cert.pem -inkey user-key.pem -out user.p12` 
+1. 使用CA_ROOT证书生成客户端信任库
+`keytool -importcert -file ca.crt -alias CARoot -keystore user1-truststore.p12 -storetype pkcs12`
+2. 创建客户端密钥(指定用户名，下列命令中的user将替换为颁发证书的用户名)
+`openssl genrsa -out user1.pem -passout pass:123456`
+3. 生成客户端证书请求文件
+`openssl req -new -out user1.csr -key user1.pem`
+4. 使用CA_ROOT签证生成对应用户名的客户端证书
+`openssl x509 -req -in user1.csr -out user1.crt -signkey user1.pem -CA ca.crt -CAkey ca.key -CAcreateserial -days 365`
 5. 将签证之后的用户证书导入服务端信任库（**由于没有去CA认证中心购买个人证书，所以只有导入信任库才可进行双向ssl交互**)
-`keytool -import -alias usertrustcacerts -file user-cert.pem -keystore servertrust.jks`
-6. 查看服务端信任库中用户条目信息
-`keytool -list -v -alias user -keystore servertrust.jks -storepass 123456`
+`keytool -importcert -alias user1trust -file user1.crt -keystore 1-183-truststore.p12`
+6. 将签证之后的证书文件user-cert.pem导出为p12格式文件（p12格式可以被浏览器识别并安装到证书库中）
+`openssl pkcs12 -export -clcerts -in user1.crt -inkey user1.pem -out user1.p12` 
+
+
+或者
+
+``` shell
+#使用CA_ROOT证书生成客户端信任库
+$ keytool -importcert -file ca.crt -alias CARoot -keystore user1-truststore.p12 -storetype pkcs12
+#新建密钥库
+$ keytool -genkeypair -storetype pkcs12 -keystore user1.p12 -alias user1 -validity 365 -keyalg RSA
+#生成证书请求文件
+$ keytool -certreq -file user1.csr -storetype pkcs12 -keystore user1.p12 -alias user1
+#CA_ROOT签证
+$ openssl x509 -req -CA ca.crt -CAkey ca.key -in user1.csr -out user1.crt -days 365 -CAcreateserial
+#证书链之信任根证书
+$ keytool -importcert -file ca.crt -storetype pkcs12 -keystore user1.p12 -alias CARoot
+#安装自己的证书回复
+$ keytool -importcert -file user1.crt -storetype pkcs12 -keystore user1.p12 -alias user1
+#用户证书导入服务端信任库
+$ keytool -importcert -alias user1trust -file user1.crt -keystore 1-183-truststore.p12
+```
 
 ### 4. 配置web容器
 
