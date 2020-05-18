@@ -83,6 +83,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">
+				<i class="fa fa-file"></i>
+				hbase-2.2.4伪分布式
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/03/hadoop/hbase架构了解/">
 				<i class="fa fa-file"></i>
 				hbase架构了解
@@ -653,49 +662,53 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-14</span>
-			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="article-date">2019-07-30</span>
+			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
 				<div class="article-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+				<div class="article-digest">
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
+				<div class="article-digest">
+					环境准备搭建nodejs环境
+初次需要创建仓库【username】.github.io;
+创建一个分支存放原始文件，方便跨机操作；
 
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+拉取远程仓库【分支】到本地git clone -b 【分支】 ht
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="article-date">2018-11-29</span>
+			<a class="article-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
-				<div class="article-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/X.509数字证书中的扩展项/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/04/17/security/X.509数字证书中的扩展项/">X.509数字证书中的扩展项</a>
-				<div class="article-digest">
-					&emsp;&emsp;在 RFC 5280《Internet X.509 Public Key Infrastructure Certificate and Certificate Revocati
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+
+impor
 					...
 				</div>
 		</li>

@@ -83,6 +83,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">
+				<i class="fa fa-file"></i>
+				hbase-2.2.4伪分布式
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/03/hadoop/hbase架构了解/">
 				<i class="fa fa-file"></i>
 				hbase架构了解
@@ -653,55 +662,49 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-30</span>
-			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="article-date">2018-12-11</span>
+			<a class="article-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="article-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
+				<div class="article-digest">
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="article-date">2018-11-27</span>
+			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2018/11/27/other/start-hexo/">start-hexo</a>
 				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-19</span>
-			<a class="article-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
 				<div class="article-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
-				<div class="article-digest">
-					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
+					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
+tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>

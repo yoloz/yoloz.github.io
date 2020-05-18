@@ -83,6 +83,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">
+				<i class="fa fa-file"></i>
+				hbase-2.2.4伪分布式
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/03/hadoop/hbase架构了解/">
 				<i class="fa fa-file"></i>
 				hbase架构了解
@@ -653,55 +662,55 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+					href="/2020/02/29/linux/DNS/">DNS</a>
 				<div class="article-digest">
-					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
-se
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
-				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					unknown host error
+确定设置了域名服务器(dns) cat /etc/resolv.conf 
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+nameserver 119.29.29.29  
+nameserver 182.2
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-12-14</span>
-			<a class="article-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="article-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
-
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-18</span>
-			<a class="article-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+			<span class="article-date">2019-02-19</span>
+			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
 				<div class="article-digest">
-					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
-模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-05-18</span>
+			<a class="article-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
+				<div class="article-digest">
+					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
+单机Requirements:jdk
+解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
 					...
 				</div>
 		</li>

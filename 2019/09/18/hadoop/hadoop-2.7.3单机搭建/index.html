@@ -83,6 +83,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">
+				<i class="fa fa-file"></i>
+				hbase-2.2.4伪分布式
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/03/hadoop/hbase架构了解/">
 				<i class="fa fa-file"></i>
 				hbase架构了解
@@ -675,7 +684,7 @@ mkdir -p ~/hadoop-2.7.3/data/<span class="built_in">log</span></code></pre>
 <pre><code class="highlight xml"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span>
 <span class="tag">&lt;<span class="name">property</span>&gt;</span>
 <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span>
-<span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span>
+<span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://$&#123;hostname&#125;:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span>
 <span class="tag">&lt;<span class="name">description</span>&gt;</span>hdfs内部通讯访问地址<span class="tag">&lt;/<span class="name">description</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">property</span>&gt;</span>
 <span class="tag">&lt;<span class="name">property</span>&gt;</span>

@@ -83,6 +83,15 @@
 	
 	<ul>
 		<li class="file">
+			<a href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">
+				<i class="fa fa-file"></i>
+				hbase-2.2.4伪分布式
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2018/12/03/hadoop/hbase架构了解/">
 				<i class="fa fa-file"></i>
 				hbase架构了解
@@ -653,52 +662,55 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+					href="/2018/11/30/linux/vim/">vim</a>
 				<div class="article-digest">
-					jstack dump文件中值得关注的线程状态有：
+					vi操作常用快捷方式如下, 非编辑状态下使用：
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
+				<div class="article-digest">
+					測試環境為 CentOS x86_64 (虛擬機)
+04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/23/network/tcpdump/">tcpdump</a>
+				<div class="article-digest">
+					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/linux/ncat(nc)/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/linux/ncat(nc)/">ncat(nc)</a>
+					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
 				<div class="article-digest">
-					ncat 或者说 nc 是一款功能类似 cat 的工具，但是是用于网络的。它是一款拥有多种功能的 CLI 工具，可以用来在网络上读、写以及重定向数据。 它被设计成可以被脚本或其他程序调用的可靠的后端工
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
-				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
-				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
-
-如果能使用props实现，
+					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
+tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>
