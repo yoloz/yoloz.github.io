@@ -38,7 +38,7 @@ mkdir -p ~/hadoop-2.7.3/data/log
 <configuration>
 <property>
 <name>fs.defaultFS</name>
-<value>hdfs://localhost:9000</value>
+<value>hdfs://${hostname}:9000</value>
 <description>hdfs内部通讯访问地址</description>
 </property>
 <property>
