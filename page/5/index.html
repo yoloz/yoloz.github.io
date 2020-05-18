@@ -662,28 +662,42 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					java启动参数共分为三类
+					jstack dump文件中值得关注的线程状态有：
 
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-24</span>
-			<a class="article-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/linux/ncat(nc)/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
+					href="/2020/03/10/linux/ncat(nc)/">ncat(nc)</a>
 				<div class="article-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
-
-alternatives 和 update-alt
+					ncat 或者说 nc 是一款功能类似 cat 的工具，但是是用于网络的。它是一款拥有多种功能的 CLI 工具，可以用来在网络上读、写以及重定向数据。 它被设计成可以被脚本或其他程序调用的可靠的后端工
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-02-29</span>
+			<a class="article-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
+				<div class="article-digest">
+					ubuntu该方法ubuntu 18.04失效
+修改配置文件 /etc/network/interfaces
+auto eth0                  #设置自动启动eth0接口
+ifac
 					...
 				</div>
 		</li>
@@ -696,17 +710,6 @@ alternatives 和 update-alt
 				<div class="article-digest">
 					測試環境 CentOS7 x86_64
 TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/X.509数字证书中的扩展项/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/04/17/security/X.509数字证书中的扩展项/">X.509数字证书中的扩展项</a>
-				<div class="article-digest">
-					&emsp;&emsp;在 RFC 5280《Internet X.509 Public Key Infrastructure Certificate and Certificate Revocati
 					...
 				</div>
 		</li>
