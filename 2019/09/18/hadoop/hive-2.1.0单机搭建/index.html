@@ -74,6 +74,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/05/20/hadoop/CDH概念验证安装/">
+				<i class="fa fa-file"></i>
+				CDH概念验证安装
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">
 				<i class="fa fa-file"></i>
 				hadoop-2.7.3单机搭建
@@ -677,8 +686,8 @@
 <pre><code class="highlight xml"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span>
 <span class="tag">&lt;<span class="name">property</span>&gt;</span>
 <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionURL<span class="tag">&lt;/<span class="name">name</span>&gt;</span>
-<span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://localhost:3306/hive_basic?createDatabaseIfNotExist=true<span class="symbol">&amp;amp;</span>characterEncoding=UTF-8<span class="symbol">&amp;amp;</span>useSSL=false<span class="tag">&lt;/<span class="name">value</span>&gt;</span>
-<span class="tag">&lt;<span class="name">description</span>&gt;</span>hive_basic为要创建的数据库名,注意字符集设置<span class="tag">&lt;/<span class="name">description</span>&gt;</span>
+<span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://localhost:3306/hive_metastore?createDatabaseIfNotExist=true<span class="symbol">&amp;amp;</span>characterEncoding=UTF-8<span class="symbol">&amp;amp;</span>useSSL=false<span class="tag">&lt;/<span class="name">value</span>&gt;</span>
+<span class="tag">&lt;<span class="name">description</span>&gt;</span>metastore_db为要创建的数据库名,注意字符集设置<span class="tag">&lt;/<span class="name">description</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">property</span>&gt;</span>
 <span class="tag">&lt;<span class="name">property</span>&gt;</span>
 <span class="tag">&lt;<span class="name">name</span>&gt;</span>javax.jdo.option.ConnectionDriverName<span class="tag">&lt;/<span class="name">name</span>&gt;</span>
@@ -717,9 +726,6 @@
 <span class="comment"># Error: Failed to open new session: java.lang.RuntimeException: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.authorize.AuthorizationException): User: ylz is not allowed to impersonate anonymous (state=,code=0)</span>
 <span class="comment"># beeline&gt;</span></code></pre>
 
-<blockquote>
-<p>default localhost:10000<br>默认没有用户密码, hive-site.xml中hive.server2.authentication为NONE</p>
-</blockquote>
 <p>对于上述的Error, 修改hadoop的core-site.xml加入:</p>
 <pre><code class="highlight xml"><span class="tag">&lt;<span class="name">property</span>&gt;</span>
 <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.ylz.hosts<span class="tag">&lt;/<span class="name">name</span>&gt;</span>
@@ -730,6 +736,9 @@
 <span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">property</span>&gt;</span></code></pre>
 
+<blockquote>
+<p>default localhost:10000<br>默认没有用户密码, hive-site.xml中hive.server2.authentication为NONE</p>
+</blockquote>
 <p>重启hadoop</p>
 <pre><code class="highlight sh"><span class="variable">$HADOOP_HOME</span>/sbin/hadoop-daemon.sh stop namenode
 <span class="variable">$HADOOP_HOME</span>/sbin/hadoop-daemon.sh stop secondarynamenode

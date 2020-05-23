@@ -74,6 +74,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/05/20/hadoop/CDH概念验证安装/">
+				<i class="fa fa-file"></i>
+				CDH概念验证安装
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">
 				<i class="fa fa-file"></i>
 				hadoop-2.7.3单机搭建
@@ -662,6 +671,33 @@
 	<ul>
 		
 		<li class="article-li">
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+				<div class="article-digest">
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
+
+cp $HIVE_HO
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-12-03</span>
+			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
+				<div class="article-digest">
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
 			<span class="article-date">2020-02-26</span>
 			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
 				<a class="article-title"
@@ -678,39 +714,12 @@ ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-18</span>
-			<a class="article-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+			<span class="article-date">2020-04-17</span>
+			<a class="article-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
 				<div class="article-digest">
-					Lucene中包含了四种基本数据类型，分别是：
-
-Index：索引，由很多的Document组成。
-Document：由很多的Field组成，是Index和Search的最小单位。
-Field：由很多
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
-				<div class="article-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
-				<div class="article-digest">
-					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
-
+					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
 					...
 				</div>
 		</li>

@@ -74,6 +74,15 @@
 			
 	<ul>
 		<li class="file">
+			<a href="/2020/05/20/hadoop/CDH概念验证安装/">
+				<i class="fa fa-file"></i>
+				CDH概念验证安装
+			</a>
+		</li>
+	</ul>
+	
+	<ul>
+		<li class="file">
 			<a href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">
 				<i class="fa fa-file"></i>
 				hadoop-2.7.3单机搭建
@@ -662,64 +671,52 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-26</span>
-			<a class="article-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
+			<span class="article-date">2019-01-23</span>
+			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/26/linux/ssh/">ssh</a>
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
 				<div class="article-digest">
-					ssh免密登录
-客户端生成密钥
-
-ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
-
-生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
+			<span class="article-date">2019-11-13</span>
+			<a class="article-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
 				<div class="article-digest">
-					測試環境 CentOS7 x86_64
-TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-01</span>
-			<a class="article-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
+			<span class="article-date">2020-05-20</span>
+			<a class="article-read" href="/2020/05/20/hadoop/CDH概念验证安装/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
+					href="/2020/05/20/hadoop/CDH概念验证安装/">CDH概念验证安装</a>
 				<div class="article-digest">
-					常用多线程并发，取结果归集的几种实现方案
-
-
-描述
-Future
-FutureTask
-CompletionService
-CompletableFuture
-
-
-
-原理
-Future接口
-接口Run
+					Cloudera Manager Server Installer$ wget https://archive.cloudera.com/cm6/6.3.1/cloudera-manager-inst
 					...
 				</div>
 		</li>
