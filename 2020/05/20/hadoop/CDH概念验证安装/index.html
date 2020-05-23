@@ -679,7 +679,7 @@ $ sudo ./cloudera-manager-installer.bin</code></pre>
 <blockquote>
 <p>6.3.3及以上requires authentication<br>会安装oracle_jdk，需要网络通畅或者sudo proxychains ./cloudera-manager-installer.bin</p>
 </blockquote>
-<h2 id="通过页面继续安装"><a href="#通过页面继续安装" class="headerlink" title="通过页面继续安装"></a>通过页面继续安装</h2><p>地址:<a href="http://ip:7180" target="_blank" rel="noopener">http://ip:7180</a> 用户密码admin/admin<br>在提供SSH登录凭据这一步骤中需要sudo无密码，可入下操作:</p>
+<h2 id="通过页面继续安装"><a href="#通过页面继续安装" class="headerlink" title="通过页面继续安装"></a>通过页面继续安装</h2><p>地址:<a href="http://ip:7180" target="_blank" rel="noopener">http://ip:7180</a> 用户密码admin/admin<br>在提供SSH登录凭据这一步骤中需要sudo无密码，可如下操作:</p>
 <pre><code class="highlight sh">sudo groupadd cloudera
 sudo useradd -m cloudera -g cloudera
 sudo passwd cloudera
@@ -714,7 +714,20 @@ Command aborted because of exception: Command timed-out after 150 seconds
 Hive Metastore Server (cdh183)</code></pre>
 
 <p>缺少驱动包执行<code>sudo cp CDH-6.3.2-1.cdh6.3.2.p0.1605554/jars/postgresql-42.2.5.jar CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive/lib/</code>后重试即可。</p>
-<p><strong>虚拟机重启后默认cloudera manager会自启</strong></p>
+<p><strong>虚拟机重启后默认cloudera manager会自启，页面访问ip:7180则需等待一会</strong></p>
+<p><strong>Canary 测试无法为 /tmp/.cloudera_health_monitoring_canary_files 创建父目录。</strong><br>一般过一会儿就好了，如果没好可以手动创建<br>执行<code>sudo -u hdfs hdfs dfs -mkdir /tmp</code>即可，稍后页面告警就会消失</p>
+<blockquote>
+<p>sudo -u hdfs hdfs dfs -ls /<br>修改hdfs的根目录的权限： <code>hdfs dfs -chmod 777 /</code><br>报错<strong>chmod: changing permissions of ‘/‘: Permission denied. user=root is not the owner of inode=/</strong><br>默认用户是hdfs，执行<code>sudo -u hdfs hdfs dfs -chmod 777 /</code>即可  </p>
+</blockquote>
+<p><strong>Error applying authorization policy on hive configuration: org.apache.hadoop.security.AccessControlException: Permission denied: user=hive, access=WRITE, inode=”/tmp”:hdfs:supergroup:drwxr-xr-x</strong></p>
+<p><code>sudo -u hdfs hdfs dfs -chmod a+rwx /tmp</code>这样/tmp除了所有者有读写执行权限外，其他用户也有读写执行权限</p>
+<p><strong>Namenode and SecondaryNamenode Have different heapsizes</strong></p>
+<p>To change the heap size for NameNode and Secondary NameNode:</p>
+<ul>
+<li>open the HDFS service in Cloudera Manager</li>
+<li>select “Configuration” from the menu</li>
+<li>enter “Java Heap Size “ in the search field<br>Here you can configure heap size for NameNode and Secondary NameNode.</li>
+</ul>
 
 </div>
 
