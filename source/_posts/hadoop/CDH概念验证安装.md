@@ -68,7 +68,7 @@ Hive Metastore Server (cdh183)
 
 缺少驱动包执行`sudo cp CDH-6.3.2-1.cdh6.3.2.p0.1605554/jars/postgresql-42.2.5.jar CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive/lib/`后重试即可。
 
-**虚拟机重启后默认cloudera manager会自启，页面访问http://ip:7180则需等待一会**
+**虚拟机重启后默认cloudera manager会自启，页面访问ip:7180则需等待一会**
 
 **Canary 测试无法为 /tmp/.cloudera_health_monitoring_canary_files 创建父目录。**
 一般过一会儿就好了，如果没好可以手动创建
