@@ -27,8 +27,8 @@ Requirements:jdk, hadoop
 <configuration>
 <property>
 <name>javax.jdo.option.ConnectionURL</name>
-<value>jdbc:mysql://localhost:3306/hive_basic?createDatabaseIfNotExist=true&amp;characterEncoding=UTF-8&amp;useSSL=false</value>
-<description>hive_basic为要创建的数据库名,注意字符集设置</description>
+<value>jdbc:mysql://localhost:3306/hive_metastore?createDatabaseIfNotExist=true&amp;characterEncoding=UTF-8&amp;useSSL=false</value>
+<description>metastore_db为要创建的数据库名,注意字符集设置</description>
 </property>
 <property>
 <name>javax.jdo.option.ConnectionDriverName</name>
@@ -75,9 +75,6 @@ $HIVE_HOME/bin/beeline
 # beeline>
 ```
 
-> default localhost:10000
-> 默认没有用户密码, hive-site.xml中hive.server2.authentication为NONE
-
 对于上述的Error, 修改hadoop的core-site.xml加入:
 
 ``` xml
@@ -90,6 +87,9 @@ $HIVE_HOME/bin/beeline
 <value>*</value>
 </property>
 ```
+
+> default localhost:10000
+> 默认没有用户密码, hive-site.xml中hive.server2.authentication为NONE
 
 重启hadoop
 
