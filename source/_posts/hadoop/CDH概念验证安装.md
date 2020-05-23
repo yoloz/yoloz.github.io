@@ -20,7 +20,7 @@ $ sudo ./cloudera-manager-installer.bin
 ## 通过页面继续安装
 
 地址:http://ip:7180 用户密码admin/admin
-在提供SSH登录凭据这一步骤中需要sudo无密码，可入下操作:
+在提供SSH登录凭据这一步骤中需要sudo无密码，可如下操作:
 
 ```sh
 sudo groupadd cloudera
@@ -68,4 +68,26 @@ Hive Metastore Server (cdh183)
 
 缺少驱动包执行`sudo cp CDH-6.3.2-1.cdh6.3.2.p0.1605554/jars/postgresql-42.2.5.jar CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive/lib/`后重试即可。
 
-**虚拟机重启后默认cloudera manager会自启**
+**虚拟机重启后默认cloudera manager会自启，页面访问http://ip:7180则需等待一会**
+
+**Canary 测试无法为 /tmp/.cloudera_health_monitoring_canary_files 创建父目录。**
+一般过一会儿就好了，如果没好可以手动创建
+执行`sudo -u hdfs hdfs dfs -mkdir /tmp`即可，稍后页面告警就会消失
+
+>sudo -u hdfs hdfs dfs -ls /  
+>修改hdfs的根目录的权限： `hdfs dfs -chmod 777 /`  
+>报错**chmod: changing permissions of '/': Permission denied. user=root is not the owner of inode=/**  
+>默认用户是hdfs，执行`sudo -u hdfs hdfs dfs -chmod 777 /`即可  
+
+**Error applying authorization policy on hive configuration: org.apache.hadoop.security.AccessControlException: Permission denied: user=hive, access=WRITE, inode="/tmp":hdfs:supergroup:drwxr-xr-x**
+
+`sudo -u hdfs hdfs dfs -chmod a+rwx /tmp`这样/tmp除了所有者有读写执行权限外，其他用户也有读写执行权限
+
+
+**Namenode and SecondaryNamenode Have different heapsizes**
+
+To change the heap size for NameNode and Secondary NameNode:
+* open the HDFS service in Cloudera Manager
+* select "Configuration" from the menu
+* enter "Java Heap Size " in the search field
+Here you can configure heap size for NameNode and Secondary NameNode.
