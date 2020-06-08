@@ -671,25 +671,23 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-20</span>
-			<a class="article-read" href="/2020/02/20/database/概述DQL,DML,DDL,DCL/"> 阅读全文 </span>
+			<span class="article-date">2018-12-03</span>
+			<a class="article-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">概述DQL,DML,DDL,DCL</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="article-digest">
-					SQL(Structure Query Language)语言是数据库的核心语言。
-SQL的发展是从1974年开始的，其发展过程如下：1974年—–由Boyce和Chamberlin提出，当时称SEQ
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
 				<div class="article-digest">
-					測試環境為 CentOS x86_64 (虛擬機)
-04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>
@@ -710,14 +708,13 @@ impor
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-03-11</span>
-			<a class="article-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
+			<span class="article-date">2019-09-18</span>
+			<a class="article-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
+					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
 				<div class="article-digest">
-					killallkillall[参数][进程名]
+					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
 
--Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>

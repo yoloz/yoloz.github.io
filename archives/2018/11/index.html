@@ -671,48 +671,51 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2020-02-23</span>
-			<a class="article-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/02/23/network/tcpdump/">tcpdump</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-15</span>
-			<a class="article-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
-				<div class="article-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+					jstack dump文件中值得关注的线程状态有：
 
-可自
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
 			<span class="article-date">2020-03-10</span>
-			<a class="article-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
+			<a class="article-read" href="/2020/03/10/linux/ncat(nc)/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
+					href="/2020/03/10/linux/ncat(nc)/">ncat(nc)</a>
 				<div class="article-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
+					ncat 或者说 nc 是一款功能类似 cat 的工具，但是是用于网络的。它是一款拥有多种功能的 CLI 工具，可以用来在网络上读、写以及重定向数据。 它被设计成可以被脚本或其他程序调用的可靠的后端工
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-04-17</span>
-			<a class="article-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
+			<span class="article-date">2020-02-23</span>
+			<a class="article-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
+					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
 				<div class="article-digest">
-					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
+					測試環境為 CentOS x86_64 (虛擬機)
+04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
+				<div class="article-digest">
+					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
 					...
 				</div>
 		</li>

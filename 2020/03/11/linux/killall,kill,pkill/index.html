@@ -686,7 +686,14 @@ $ killall -9 bash
 killall -TERM nginx
 killall -KILL nginx</code></pre>
 
-<h2 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h2><p>pkill 和killall 应用方法差不多，也是直接杀死运行中的程式,pkill后的进程名可以不完整，而killall的进程名必须完整的</p>
+<h2 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h2><p>pkill 和killall 应用方法差不多，也是直接杀死运行中的程式,pkill后的进程名可以不完整，而killall的进程名必须完整的。<br>关闭已登录的用户:</p>
+<pre><code class="highlight sh">$ who
+user1    pts/0        Jun  7 21:50 (125.120.44.33)
+user2    pts/1        Jun  7 21:55 (125.120.44.33)
+user3    pts/2        Jun  7 22:05 (125.120.44.33)
+
+$ pkill -<span class="built_in">kill</span> -t pts/0</code></pre>
+
 <h2 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h2><p>kill[参数][进程id]</p>
 <blockquote>
 <p>-l  信号，若果不加信号的编号参数，则使用“-l”参数会列出全部的信号名称<br>-a  当处理当前进程时，不限制命令名和进程号的对应关系<br>-p  指定kill 命令只打印相关进程的进程号，而不发送任何信号<br>-s  指定发送信号<br>-u  指定用户  </p>
