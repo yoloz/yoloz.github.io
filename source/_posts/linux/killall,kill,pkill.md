@@ -38,7 +38,17 @@ killall -KILL nginx
 
 ## pkill
 
-pkill 和killall 应用方法差不多，也是直接杀死运行中的程式,pkill后的进程名可以不完整，而killall的进程名必须完整的
+pkill 和killall 应用方法差不多，也是直接杀死运行中的程式,pkill后的进程名可以不完整，而killall的进程名必须完整的。
+关闭已登录的用户:
+``` sh
+$ who
+user1    pts/0        Jun  7 21:50 (125.120.44.33)
+user2    pts/1        Jun  7 21:55 (125.120.44.33)
+user3    pts/2        Jun  7 22:05 (125.120.44.33)
+
+$ pkill -kill -t pts/0
+
+```
 
 ## kill
 
