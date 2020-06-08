@@ -120,7 +120,43 @@ root      3370  2822  0 16:21 pts/0    00:00:00 grep vim
 命令：kill –9 3268   #-9 强制杀掉进程
 ```
 
+## kill 进程的几种用法
 
+把ps的查询结果通过管道给grep查找包含特定字符串的进程。管道符“|”用来隔开两个命令，管道符左边命令的输出会作为管道符右边命令的输入`ps -ef|grep pname, kill -9 pid`
+
+### 使用pgrep
+pgrep的p表明了这个命令是专门用于进程查询的grep。`pgrep pname, kill  -9 pid`
+
+### 使用pidof
+*没错pid of xx，字面翻译过来就是 xx的PID*
+`pidof pname, kill  -9 pid` 
+和pgrep相比稍显不足的是，pidof必须给出进程的全名
+
+### 使用pkill
+*看到pkill想到了什么？没错pgrep和kill！pkill＝pgrep+kill*
+`$pkill -９ pname`
+
+### 使用killall
+killall和pkill是相似的,不过如果给出的进程名不完整，killall会报错。pkill或者pgrep只要给出进程名的一部分就可以终止进程。
+`$killall -9 pname`
+
+### 改进一
+`$ps -ef | grep pname | grep -v grep | cut -c 9-15 | xargs kill -s 9`
+说明：
+“grep firefox”的输出结果是，所有含有关键字“firefox”的进程。
+“grep -v grep”是在列出的进程中去除含有关键字“grep”的进程。
+“cut -c 9-15”是截取输入行的第9个字符到第15个字符，而这正好是进程号PID。
+“xargs kill -s 9”中的xargs命令是用来把前面命令的输出结果（PID）作为“kill -s 9”命令的参数，并执行该命令。
+“kill -s 9”会强行杀掉指定进程。
+
+### 改进二
+`ps -ef | grep pname | awk '{print $2}' | xargs kill -9` 或者`
+kill -s 9  $(ps -aux | grep pname | awk '{print $2}' )`
+
+### 改进三
+使用pgrep或pidof缩短命令长度
+`$ pgrep pname | xargs kill -s 9`
+`kill -s 9 $(pgrep pname)`
 
 
 
