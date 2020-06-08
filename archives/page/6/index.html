@@ -671,55 +671,63 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2019-01-23</span>
-			<a class="article-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+			<span class="article-date">2020-03-10</span>
+			<a class="article-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="article-digest">
-					准备配置文件kafka_server_jaas.conf
-KafkaServer &#123;
-org.apache.kafka.common.security.plain.PlainLoginMod
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-04</span>
-			<a class="article-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
-				<div class="article-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
-				<div class="article-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
+					jstack dump文件中值得关注的线程状态有：
 
-$ useradd -m u
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2019-02-19</span>
-			<a class="article-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="article-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					java启动参数共分为三类
+
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2018/11/30/linux/vim/">vim</a>
+				<div class="article-digest">
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
+					...
+				</div>
+		</li>
+		
+		<li class="article-li">
+			<span class="article-date">2020-05-18</span>
+			<a class="article-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
+				<a class="article-title"
+					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
+				<div class="article-digest">
+					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
+单机Requirements:jdk
+解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
 					...
 				</div>
 		</li>

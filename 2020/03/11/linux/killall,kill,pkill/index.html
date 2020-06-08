@@ -752,10 +752,14 @@ root      3370  2822  0 16:21 pts/0    00:00:00 grep vim
 <span class="comment">#彻底杀死进程</span>
 命令：<span class="built_in">kill</span> –9 3268   <span class="comment">#-9 强制杀掉进程</span></code></pre>
 
-
-
-
-
+<h2 id="kill-进程的几种用法"><a href="#kill-进程的几种用法" class="headerlink" title="kill 进程的几种用法"></a>kill 进程的几种用法</h2><p>把ps的查询结果通过管道给grep查找包含特定字符串的进程。管道符“|”用来隔开两个命令，管道符左边命令的输出会作为管道符右边命令的输入<code>ps -ef|grep pname, kill -9 pid</code></p>
+<h3 id="使用pgrep"><a href="#使用pgrep" class="headerlink" title="使用pgrep"></a>使用pgrep</h3><p>pgrep的p表明了这个命令是专门用于进程查询的grep。<code>pgrep pname, kill  -9 pid</code></p>
+<h3 id="使用pidof"><a href="#使用pidof" class="headerlink" title="使用pidof"></a>使用pidof</h3><p><em>没错pid of xx，字面翻译过来就是 xx的PID</em><br><code>pidof pname, kill  -9 pid</code><br>和pgrep相比稍显不足的是，pidof必须给出进程的全名</p>
+<h3 id="使用pkill"><a href="#使用pkill" class="headerlink" title="使用pkill"></a>使用pkill</h3><p><em>看到pkill想到了什么？没错pgrep和kill！pkill＝pgrep+kill</em><br><code>$pkill -９ pname</code></p>
+<h3 id="使用killall"><a href="#使用killall" class="headerlink" title="使用killall"></a>使用killall</h3><p>killall和pkill是相似的,不过如果给出的进程名不完整，killall会报错。pkill或者pgrep只要给出进程名的一部分就可以终止进程。<br><code>$killall -9 pname</code></p>
+<h3 id="改进一"><a href="#改进一" class="headerlink" title="改进一"></a>改进一</h3><p><code>$ps -ef | grep pname | grep -v grep | cut -c 9-15 | xargs kill -s 9</code><br>说明：<br>“grep firefox”的输出结果是，所有含有关键字“firefox”的进程。<br>“grep -v grep”是在列出的进程中去除含有关键字“grep”的进程。<br>“cut -c 9-15”是截取输入行的第9个字符到第15个字符，而这正好是进程号PID。<br>“xargs kill -s 9”中的xargs命令是用来把前面命令的输出结果（PID）作为“kill -s 9”命令的参数，并执行该命令。<br>“kill -s 9”会强行杀掉指定进程。</p>
+<h3 id="改进二"><a href="#改进二" class="headerlink" title="改进二"></a>改进二</h3><p><code>ps -ef | grep pname | awk &#39;{print $2}&#39; | xargs kill -9</code> 或者<code>kill -s 9  $(ps -aux | grep pname | awk &#39;{print $2}&#39; )</code></p>
+<h3 id="改进三"><a href="#改进三" class="headerlink" title="改进三"></a>改进三</h3><p>使用pgrep或pidof缩短命令长度<br><code>$ pgrep pname | xargs kill -s 9</code><br><code>kill -s 9 $(pgrep pname)</code></p>
 
 </div>
 

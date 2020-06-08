@@ -671,40 +671,47 @@
 	<ul>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-28</span>
-			<a class="article-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
+			<span class="article-date">2019-02-15</span>
+			<a class="article-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/28/java/jar的使用/">jar的使用</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="article-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
+					java启动参数共分为三类
 
-方法步骤:1, 定义Main-Class创建文件夹ME
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2018-11-27</span>
-			<a class="article-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="article-date">2018-11-30</span>
+			<a class="article-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2018/11/30/linux/vim/">vim</a>
 				<div class="article-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>
 		
 		<li class="article-li">
-			<span class="article-date">2020-05-20</span>
-			<a class="article-read" href="/2020/05/20/hadoop/CDH概念验证安装/"> 阅读全文 </span>
+			<span class="article-date">2020-05-18</span>
+			<a class="article-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
 				<a class="article-title"
-					href="/2020/05/20/hadoop/CDH概念验证安装/">CDH概念验证安装</a>
+					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
 				<div class="article-digest">
-					Cloudera Manager Server Installer$ wget https://archive.cloudera.com/cm6/6.3.1/cloudera-manager-inst
+					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
+单机Requirements:jdk
+解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
 					...
 				</div>
 		</li>
