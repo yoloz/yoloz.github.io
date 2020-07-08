@@ -1,0 +1,35 @@
+#article-toc-inner .toc ul li{
+    padding-top: 10px;
+}
+
+#article-toc-inner .toc a.read {
+    /*color: #e06c75;*/
+    color: #87daff;
+    border-bottom: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+#article-toc-inner .toc a {
+    color: #999;
+    border-bottom: 0;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+
+#article-toc-inner .toc a:hover {
+    /* color: #87daff; */
+    color: #e5c07b;
+    padding-left: 5px;
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+}

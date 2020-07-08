@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Yoloz</title>
 	<meta charset="utf-8">
-
+	<!-- <meta name="viewport" content="width=1024,initial-scale=0.68, minimum-scale=0.1, maximum-scale=1.0"/>
+	<meta name="viewport" content="width=800,initial-scale=0.51, minimum-scale=0.1, maximum-scale=1.0"/> -->
+	<meta name="viewport" content="width=400,initial-scale=0.25, minimum-scale=0.1, maximum-scale=1.0" />
 	<!-- 引入配置文件 -->
 	
 <link rel="stylesheet" href="/css/main.css">
 
+	
+<link rel="stylesheet" href="/css/index.css">
+
+	
+<link rel="stylesheet" href="/css/tree.css">
+
+	
+<link rel="stylesheet" href="/css/post.css">
+
+	
+<link rel="stylesheet" href="/css/toc.css">
 
 	<!-- 字体图片库 -->
 	
@@ -18,20 +32,39 @@
 	
 <link rel="stylesheet" href="/lib/highlight/styles/atom-one-dark.css">
 
-	
+
 <meta name="generator" content="Hexo 4.2.0"></head>
+
 <body>
+	<div id="container">
+		<header id="header" class="wrapper">
+			<div id="header-inner" class="inner">
+				<nav id="main-nav">
+    
+    
+    <a href="/" class="main-nav-link">主页</a>
+    
+    <a href="/about" class="main-nav-link">关于</a>
+    
 
-	<div id="main">
-		<!-- 引入侧边栏 -->
-		<aside>
-			<!-- 搜索栏 -->
-<div id="search">
-	<input class="search-input" type="text" placeholder="filter by name"/>
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
-</div>
-
-<!-- 侧边目录栏 -->
+    
+    
+    <a target="_blank" href="https://github.com/yoloz" rel="external nofollow noreferrer noopener"
+        class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+    <div id="search-input-icon">
+        <i class="fa fa-search"></i>
+    </div>
+    <span style="position: relative; display: inline-block; direction: ltr;"><input type="search" id="search-input"
+            placeholder="Search..." autocomplete="off" style="position: relative; vertical-align: top;">
+    </span>
+</nav>
+			</div>
+		</header>
+		<div id="content-wrap">
+			<div id="content" class="wrapper">
+				<aside id="sidebar" role="navigation">
+					<div class="inner">
+						<!-- 侧边目录栏 -->
 <div id="tree">
 	
 
@@ -43,7 +76,7 @@
 				database
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
@@ -52,7 +85,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/20/database/概述DQL,DML,DDL,DCL/">
 				<i class="fa fa-file"></i>
@@ -72,7 +105,7 @@
 				hadoop
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/05/20/hadoop/CDH概念验证安装/">
 				<i class="fa fa-file"></i>
@@ -81,7 +114,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">
 				<i class="fa fa-file"></i>
@@ -90,7 +123,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">
 				<i class="fa fa-file"></i>
@@ -99,7 +132,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/12/03/hadoop/hbase架构了解/">
 				<i class="fa fa-file"></i>
@@ -108,7 +141,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">
 				<i class="fa fa-file"></i>
@@ -128,7 +161,7 @@
 				java
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/04/01/java/CompletableFuture详解/">
 				<i class="fa fa-file"></i>
@@ -137,7 +170,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/03/10/java/JVM调式工具/">
 				<i class="fa fa-file"></i>
@@ -146,7 +179,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/28/java/ReentrantLock/">
 				<i class="fa fa-file"></i>
@@ -155,7 +188,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/07/30/java/date与localDateTime/">
 				<i class="fa fa-file"></i>
@@ -164,7 +197,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/11/28/java/jar的使用/">
 				<i class="fa fa-file"></i>
@@ -173,7 +206,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/03/10/java/javaThreadDump日志分析/">
 				<i class="fa fa-file"></i>
@@ -182,7 +215,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">
 				<i class="fa fa-file"></i>
@@ -191,7 +224,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/02/15/java/jvm启动参数/">
 				<i class="fa fa-file"></i>
@@ -200,7 +233,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/07/30/java/读取InputStream生成String/">
 				<i class="fa fa-file"></i>
@@ -220,7 +253,7 @@
 				kafka
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/12/11/kafka/consumerApi/">
 				<i class="fa fa-file"></i>
@@ -229,7 +262,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/01/26/kafka/producer/">
 				<i class="fa fa-file"></i>
@@ -238,7 +271,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/01/23/kafka/sasl-plaintext-acl/">
 				<i class="fa fa-file"></i>
@@ -258,7 +291,7 @@
 				linux
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/29/linux/DNS/">
 				<i class="fa fa-file"></i>
@@ -267,7 +300,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/03/19/linux/Locale/">
 				<i class="fa fa-file"></i>
@@ -276,7 +309,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/07/24/linux/alternatives/">
 				<i class="fa fa-file"></i>
@@ -285,7 +318,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/26/linux/du,df/">
 				<i class="fa fa-file"></i>
@@ -294,7 +327,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/03/11/linux/killall,kill,pkill/">
 				<i class="fa fa-file"></i>
@@ -303,7 +336,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/03/10/linux/ncat(nc)/">
 				<i class="fa fa-file"></i>
@@ -312,7 +345,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/11/30/linux/ps/">
 				<i class="fa fa-file"></i>
@@ -321,7 +354,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">
 				<i class="fa fa-file"></i>
@@ -330,7 +363,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/26/linux/ssh/">
 				<i class="fa fa-file"></i>
@@ -339,7 +372,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/11/13/linux/tcp连接数/">
 				<i class="fa fa-file"></i>
@@ -348,7 +381,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/11/13/linux/ulimit/">
 				<i class="fa fa-file"></i>
@@ -357,7 +390,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/11/30/linux/vim/">
 				<i class="fa fa-file"></i>
@@ -366,7 +399,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/09/18/linux/which,whereis,locate,find/">
 				<i class="fa fa-file"></i>
@@ -375,7 +408,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/29/linux/服务自启动/">
 				<i class="fa fa-file"></i>
@@ -384,7 +417,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/09/18/linux/用户及组/">
 				<i class="fa fa-file"></i>
@@ -393,7 +426,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/12/04/linux/编写shell/">
 				<i class="fa fa-file"></i>
@@ -402,7 +435,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/29/linux/静态ip地址/">
 				<i class="fa fa-file"></i>
@@ -422,7 +455,7 @@
 				lucene
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/02/18/lucene/Lucene的Index文档模型/">
 				<i class="fa fa-file"></i>
@@ -442,7 +475,7 @@
 				network
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/23/network/TCPIP常見封包/">
 				<i class="fa fa-file"></i>
@@ -451,7 +484,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/23/network/cksum(checksum)incorrect/">
 				<i class="fa fa-file"></i>
@@ -460,7 +493,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/03/10/network/tcp_timestamps/">
 				<i class="fa fa-file"></i>
@@ -469,7 +502,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/23/network/tcpdump/">
 				<i class="fa fa-file"></i>
@@ -489,7 +522,7 @@
 				other
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/12/10/other/git/">
 				<i class="fa fa-file"></i>
@@ -498,7 +531,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/11/27/other/hexo搭建博客/">
 				<i class="fa fa-file"></i>
@@ -507,7 +540,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/11/27/other/start-hexo/">
 				<i class="fa fa-file"></i>
@@ -516,7 +549,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/12/05/other/svn/">
 				<i class="fa fa-file"></i>
@@ -525,7 +558,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/02/19/other/yaml格式/">
 				<i class="fa fa-file"></i>
@@ -534,7 +567,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">
 				<i class="fa fa-file"></i>
@@ -554,7 +587,7 @@
 				security
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/04/18/security/SSL双向认证实现/">
 				<i class="fa fa-file"></i>
@@ -563,7 +596,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/04/17/security/X.509数字证书中的扩展项/">
 				<i class="fa fa-file"></i>
@@ -572,7 +605,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/04/17/security/keytool命令详解/">
 				<i class="fa fa-file"></i>
@@ -592,7 +625,7 @@
 				web
 			</a>
 			
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/02/20/web/javaScript遍历对象、数组/">
 				<i class="fa fa-file"></i>
@@ -601,7 +634,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">
 				<i class="fa fa-file"></i>
@@ -610,7 +643,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2018/11/29/web/react-loadable代码分割/">
 				<i class="fa fa-file"></i>
@@ -619,7 +652,7 @@
 		</li>
 	</ul>
 	
-	<ul>
+	<ul style="display: none;">
 		<li class="file">
 			<a href="/2019/02/20/web/react组件之间通信/">
 				<i class="fa fa-file"></i>
@@ -633,94 +666,110 @@
 	</ul>
 	
 </div>
-
-
-<!-- 展示文章内部标题 -->
-<div id="toc" style="display: none;">
-</div>
-		</aside>
-
-		<!-- 引入导航 -->
-		<nav>
-			<div class="container-fluid">
-    <ul id="menu">
-        
-        
-        <li class="menu-item">
-            <a href="/" class="menu-item-link">主页</a>
-        </li>
-        
-        <li class="menu-item">
-            <a href="/about" class="menu-item-link">关于</a>
-        </li>
-        
-
-        
-        
-        <li class="menu-item">
-            <a href="https://github.com/yoloz" class="menu-item-link" target="_blank">github</a>
-        </li>
-        
-    </ul>
-</div>
-		</nav>
-
-		<!-- 引入正文 -->
-		<div id="content">
-			<div id="articleList">
+					</div>
+				</aside>
+				<div id="content-inner">
+					<article class="article-container" itemscope="" itemtype="http://schema.org/Article">
+						<aside id="article-toc" role="navigation">
+							<div id="article-toc-inner">
+								<strong class="sidebar-title">目录</strong>
+								<ol class="toc">
+								</ol>
+								<a href="#" id="article-toc-top">回到顶部</a>
+							</div>
+						</aside>
+						<div class="article-inner">
+							<div id="briefList">
 	<ul>
 		
-		<li class="article-li">
-			<span class="article-date">2019-07-30</span>
-			<a class="article-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
-				<div class="article-digest">
-					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
+		<li class="brief-li">
+			<span class="brief-date">2020-05-18</span>
+			<a class="brief-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
+				<div class="brief-digest">
+					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
+单机Requirements:jdk
+解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
 					...
 				</div>
 		</li>
 		
-		<li class="article-li">
-			<span class="article-date">2019-09-18</span>
-			<a class="article-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
-				<div class="article-digest">
-					which只能寻找可执行文件, 并在PATH变量里面寻找  
-whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2018-12-10</span>
-			<a class="article-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2018/12/10/other/git/">git</a>
-				<div class="article-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
-					...
-				</div>
-		</li>
-		
-		<li class="article-li">
-			<span class="article-date">2019-02-20</span>
-			<a class="article-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
-				<a class="article-title"
-					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
-				<div class="article-digest">
-					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+		<li class="brief-li">
+			<span class="brief-date">2020-04-01</span>
+			<a class="brief-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
+				<div class="brief-digest">
+					常用多线程并发，取结果归集的几种实现方案
 
-如果能使用props实现，
+
+描述
+Future
+FutureTask
+CompletionService
+CompletableFuture
+
+
+
+原理
+Future接口
+接口Run
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-03-10</span>
+			<a class="brief-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+				<div class="brief-digest">
+					jstack dump文件中值得关注的线程状态有：
+
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-04-18</span>
+			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+				<div class="brief-digest">
+					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
+模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
 					...
 				</div>
 		</li>
 		
 	</ul>
 </div>
+						</div>
+					</article>
+				</div>
+			</div>
 		</div>
-		
+		<footer id="footer" class="wrapper">
+			<div class="inner">
+				<div id="footer-copyright">
+					© 2020 <a href="https://github.com/yoloz" rel="external nofollow noreferrer"
+						target="_blank">Yoloz</a><br>
+					Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/"
+						rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>.
+				</div>
+				<div id="footer-links">
+					<a href="https://twitter.com/796c7a" rel="external nofollow noreferrer" class="footer-link"
+						target="_blank"><i class="fa fa-twitter"></i></a>
+					<a href="https://github.com/yoloz" rel="external nofollow noreferrer" class="footer-link"
+						target="_blank"><i class="fa fa-github-alt"></i></a>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 	<!-- 引入代码高亮的 js -->
@@ -737,7 +786,7 @@ whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可�
 	
 <script src="/lib/jquery.pjax.js"></script>
 
-	
+
 	<!-- 引入 js 文件 -->
 	
 <script src="/js/main.js"></script>
@@ -749,4 +798,5 @@ whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可�
 	</script> -->
 
 </body>
+
 </html>
