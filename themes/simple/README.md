@@ -25,3 +25,5 @@ highlight:
 theme: simple
  ```
 
+ **[排版修改为仿hexo文档](https://hexo.io/zh-cn/docs/index.html)**
+
