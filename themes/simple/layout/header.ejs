@@ -1,0 +1,19 @@
+<nav id="main-nav">
+    <%# 内部链接本页面直接跳转 %>
+    <% for ( menu in theme.menus ) { %>
+    <a href="<%- theme.menus[menu] %>" class="main-nav-link"><%- menu %></a>
+    <% } %>
+
+    <%# 外部链接打开新的窗口跳转 %>
+    <% for ( link in theme.links ) { %>
+    <a href="<%- theme.links[link] %>" class="main-nav-link" target="_blank"><%- link %></a>
+    <% } %>
+    <a target="_blank" href="https://github.com/yoloz" rel="external nofollow noreferrer noopener"
+        class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+    <div id="search-input-icon">
+        <i class="fa fa-search"></i>
+    </div>
+    <span style="position: relative; display: inline-block; direction: ltr;"><input type="search" id="search-input"
+            placeholder="Search..." autocomplete="off" style="position: relative; vertical-align: top;">
+    </span>
+</nav>

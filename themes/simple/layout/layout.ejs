@@ -1,37 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title><%- theme.title %></title>
 	<meta charset="utf-8">
-
+	<!-- <meta name="viewport" content="width=1024,initial-scale=0.68, minimum-scale=0.1, maximum-scale=1.0"/>
+	<meta name="viewport" content="width=800,initial-scale=0.51, minimum-scale=0.1, maximum-scale=1.0"/> -->
+	<meta name="viewport" content="width=400,initial-scale=0.25, minimum-scale=0.1, maximum-scale=1.0" />
 	<!-- 引入配置文件 -->
 	<%- css('css/main.css') %>
-
+	<%- css('css/index.css') %>
+	<%- css('css/tree.css') %>
+	<%- css('css/post.css') %>
+	<%- css('css/toc.css') %>
 	<!-- 字体图片库 -->
 	<%- css('lib/font-awesome/css/font-awesome.min.css') %>
 
 	<!-- 代码高亮库 -->
 	<%- css('/lib/highlight/styles/atom-one-dark') %>
-	
+
 </head>
+
 <body>
-
-	<div id="main">
-		<!-- 引入侧边栏 -->
-		<aside>
-			<%- include('aside.ejs') %>
-		</aside>
-
-		<!-- 引入导航 -->
-		<nav>
-			<%- include('nav.ejs') %>
-		</nav>
-
-		<!-- 引入正文 -->
-		<div id="content">
-			<%- body %>
+	<div id="container">
+		<header id="header" class="wrapper">
+			<div id="header-inner" class="inner">
+				<%- include('header.ejs') %>
+			</div>
+		</header>
+		<div id="content-wrap">
+			<div id="content" class="wrapper">
+				<aside id="sidebar" role="navigation">
+					<div class="inner">
+						<%- include('aside.ejs') %>
+					</div>
+				</aside>
+				<div id="content-inner">
+					<article class="article-container" itemscope="" itemtype="http://schema.org/Article">
+						<aside id="article-toc" role="navigation">
+							<div id="article-toc-inner">
+								<strong class="sidebar-title">目录</strong>
+								<ol class="toc">
+								</ol>
+								<a href="#" id="article-toc-top">回到顶部</a>
+							</div>
+						</aside>
+						<div class="article-inner">
+							<%- body %>
+						</div>
+					</article>
+				</div>
+			</div>
 		</div>
-		
+		<footer id="footer" class="wrapper">
+			<div class="inner">
+				<div id="footer-copyright">
+					© 2020 <a href="https://github.com/yoloz" rel="external nofollow noreferrer"
+						target="_blank">Yoloz</a><br>
+					Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/"
+						rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>.
+				</div>
+				<div id="footer-links">
+					<a href="https://twitter.com/796c7a" rel="external nofollow noreferrer" class="footer-link"
+						target="_blank"><i class="fa fa-twitter"></i></a>
+					<a href="https://github.com/yoloz" rel="external nofollow noreferrer" class="footer-link"
+						target="_blank"><i class="fa fa-github-alt"></i></a>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 	<!-- 引入代码高亮的 js -->
@@ -42,7 +78,7 @@
 
 	<!-- 引入 pjax -->
 	<%- js('/lib/jquery.pjax.js') %>
-	
+
 	<!-- 引入 js 文件 -->
 	<%- js('js/main.js') %>
 
@@ -52,4 +88,5 @@
 	</script> -->
 
 </body>
+
 </html>

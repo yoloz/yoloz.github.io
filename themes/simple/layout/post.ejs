@@ -1,8 +1,5 @@
-<div style="background: #eee">
-	<span id="post-author"><% if(page.refer) {%> 转载 <%} else {%><%- theme.author %><%}%></span>
-	<span id="post-date"><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></span>
-</div>
-
-<div id="article">
+<span id="post-author"><% if(page.refer) {%> 转载 <%} else {%><%- theme.author %><%}%></span>
+<span id="post-date"><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></span>
+<div id="post-content">
 	<%- page.content %>
 </div>

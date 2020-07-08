@@ -1,9 +1,3 @@
-<!-- 搜索栏 -->
-<div id="search">
-	<input class="search-input" type="text" placeholder="filter by name"/>
-	<i id="search-icon" class="fa fa-bars" title="切换目录与索引"></i>
-</div>
-
 <!-- 侧边目录栏 -->
 <div id="tree">
 	<%
@@ -59,9 +53,9 @@
 			});
 			<!-- 循环输出 html 结构 -->
 			input.forEach(function(node) {
-				if ( node.children == 0 ) {
+				if (node.children == 0) {
 	%>
-	<ul>
+	<ul style="display: none;">
 		<li class="file<%- (is_post() && node.post._id == page._id) ? ' active' : '' %>">
 			<a href="<%- config.root %><%- node.post.path %>">
 				<i class="fa fa-file"></i>
@@ -69,10 +63,7 @@
 			</a>
 		</li>
 	</ul>
-	<%
-				}
-				else {
-	%>
+	<%}else {%>
 	<ul>
 		<li class="directory">
 			<a href="#" class="directory">
@@ -90,9 +81,4 @@
 
 		showTree(pathToTree(site.posts))
 	%>
-</div>
-
-
-<!-- 展示文章内部标题 -->
-<div id="toc" style="display: none;">
 </div>
