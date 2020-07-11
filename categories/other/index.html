@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -694,37 +694,38 @@
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-10</span>
-			<a class="brief-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-03</span>
+			<a class="brief-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="brief-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-11-13</span>
-			<a class="brief-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
+			<span class="brief-date">2019-01-26</span>
+			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="brief-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-02-15</span>
+			<a class="brief-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+				<div class="brief-digest">
+					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
 
-Modify shell resource limits. Prov
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-03-10</span>
-			<a class="brief-read" href="/2020/03/10/network/tcp_timestamps/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/03/10/network/tcp_timestamps/">tcp_timestamps</a>
-				<div class="brief-digest">
-					服务端抓包发现客户端发包只有 SYN，没有回包，可以执行netstat -s |grep rejec 查看下是否是 tcp_timestamps 的问题。如果出现数据包的 timestamp 被拒绝，
+可自
 					...
 				</div>
 		</li>

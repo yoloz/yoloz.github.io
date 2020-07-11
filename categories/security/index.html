@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,38 +683,14 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-10</span>
-			<a class="brief-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
+			<span class="brief-date">2019-01-26</span>
+			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="brief-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-07-24</span>
-			<a class="brief-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/07/24/linux/alternatives/">alternatives</a>
-				<div class="brief-digest">
-					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
-
-alternatives 和 update-alt
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-03-19</span>
-			<a class="brief-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
-				<div class="brief-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
@@ -731,6 +707,31 @@ Locale是软件在运行时的语言
 ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
 
 生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
+				<div class="brief-digest">
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
+
+$ useradd -m u
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-02-23</span>
+			<a class="brief-read" href="/2020/02/23/network/tcpdump/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/02/23/network/tcpdump/">tcpdump</a>
+				<div class="brief-digest">
+					有時候設定一些跟網路相關的服務 PXE , DHCP , FTP , TFTP , HTTP …,服務雖然是啟動的,但部分功能卻是有問題,這時候可透過 #tcpdump 這個指令來觀看封包 TCP P
 					...
 				</div>
 		</li>

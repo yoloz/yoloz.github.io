@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,52 +683,51 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-14</span>
-			<a class="brief-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="brief-date">2019-01-26</span>
+			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="brief-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
-
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
+			<span class="brief-date">2020-03-19</span>
+			<a class="brief-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
+					href="/2020/03/19/linux/Locale/">Locale</a>
 				<div class="brief-digest">
-					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
-
+					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
+Locale是软件在运行时的语言
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-11-13</span>
-			<a class="brief-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+			<span class="brief-date">2018-11-30</span>
+			<a class="brief-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+					href="/2018/11/30/linux/ps/">ps</a>
 				<div class="brief-digest">
-					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
+ps命令支持三种使用的语法格式
+
+UNIX
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<span class="brief-date">2020-04-17</span>
+			<a class="brief-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
 				<div class="brief-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
-
-$ useradd -m u
+					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
 					...
 				</div>
 		</li>

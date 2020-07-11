@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,66 +683,62 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-05-18</span>
-			<a class="brief-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-15</span>
+			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="brief-digest">
-					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
-单机Requirements:jdk
-解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
+					java启动参数共分为三类
+
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-04-01</span>
-			<a class="brief-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-18</span>
+			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="brief-digest">
-					常用多线程并发，取结果归集的几种实现方案
+					Lucene中包含了四种基本数据类型，分别是：
 
-
-描述
-Future
-FutureTask
-CompletionService
-CompletableFuture
-
-
-
-原理
-Future接口
-接口Run
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-10</span>
-			<a class="brief-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
+			<span class="brief-date">2018-11-27</span>
+			<a class="brief-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
+					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
 				<div class="brief-digest">
-					jstack dump文件中值得关注的线程状态有：
+					环境准备搭建nodejs环境
+初次需要创建仓库【username】.github.io;
+创建一个分支存放原始文件，方便跨机操作；
 
-死锁，Deadlock（重点关注） 
-执行中，Runnable   
-等待资源，Waiting on condition（重点关注） 
-等待获取监
+拉取远程仓库【分支】到本地git clone -b 【分支】 ht
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-04-18</span>
-			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+			<span class="brief-date">2018-11-28</span>
+			<a class="brief-read" href="/2018/11/28/java/java,javac,jar命令/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+					href="/2018/11/28/java/java,javac,jar命令/">java,javac,jar命令</a>
 				<div class="brief-digest">
-					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
-模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
+
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>

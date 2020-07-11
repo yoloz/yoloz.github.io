@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,6 +683,18 @@
 	<ul>
 		
 		<li class="brief-li">
+			<span class="brief-date">2019-07-30</span>
+			<a class="brief-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
+				<div class="brief-digest">
+					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
+// Obtains an instance of Dat
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
 			<span class="brief-date">2020-03-10</span>
 			<a class="brief-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="brief-title"
@@ -699,30 +711,15 @@
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-01-26</span>
-			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-15</span>
+			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="brief-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-02-26</span>
-			<a class="brief-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/02/26/linux/ssh/">ssh</a>
-				<div class="brief-digest">
-					ssh免密登录
-客户端生成密钥
+					java启动参数共分为三类
 
-ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
-
-生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
 					...
 				</div>
 		</li>

@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,52 +683,41 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-04-01</span>
-			<a class="brief-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
+			<span class="brief-date">2019-07-30</span>
+			<a class="brief-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
+					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
 				<div class="brief-digest">
-					常用多线程并发，取结果归集的几种实现方案
-
-
-描述
-Future
-FutureTask
-CompletionService
-CompletableFuture
-
-
-
-原理
-Future接口
-接口Run
+					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
+// Obtains an instance of Dat
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-15</span>
+			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
 				<div class="brief-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
+					java启动参数共分为三类
 
-nameserver 119.29.29.29  
-nameserver 182.2
+其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
+其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
 			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
+			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
 				<div class="brief-digest">
-					which只能寻找可执行文件, 并在PATH变量里面寻找  
-whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
+
+$ useradd -m u
 					...
 				</div>
 		</li>

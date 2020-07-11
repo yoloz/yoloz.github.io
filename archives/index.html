@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,53 +683,54 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="brief-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-05-18</span>
+			<a class="brief-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
+				<div class="brief-digest">
+					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
+单机Requirements:jdk
+解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
+				<div class="brief-digest">
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
 
-nameserver 119.29.29.29  
-nameserver 182.2
+$ useradd -m u
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-19</span>
-			<a class="brief-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-04</span>
+			<a class="brief-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2018/12/04/linux/编写shell/">编写shell</a>
 				<div class="brief-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-11-13</span>
-			<a class="brief-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/11/13/linux/ulimit/">ulimit</a>
-				<div class="brief-digest">
-					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
-
-Modify shell resource limits. Prov
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-02-20</span>
-			<a class="brief-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
-				<div class="brief-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
+					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
+$ ca
 					...
 				</div>
 		</li>

@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,53 +683,51 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
+			<span class="brief-date">2019-11-13</span>
+			<a class="brief-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="brief-digest">
-					Requirements:jdk
-tar -zxvf hadoop-2.7.3.tar.gz -C ~
-创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
-mkdir -p ~/hadoo
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-02-19</span>
+			<a class="brief-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+				<div class="brief-digest">
+					注释和properties相同，使用#作为注释，YAML中只有行注释
+基本格式要求
+YAML大小写敏感；
+使用缩进代表层级关系；
+缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-04-18</span>
+			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+				<div class="brief-digest">
+					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
+模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
 			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<a class="brief-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
 				<div class="brief-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
-
-nameserver 119.29.29.29  
-nameserver 182.2
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2018-12-04</span>
-			<a class="brief-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
-				<div class="brief-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2018-12-10</span>
-			<a class="brief-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2018/12/10/other/git/">git</a>
-				<div class="brief-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
+npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
 					...
 				</div>
 		</li>

@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -683,54 +683,69 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-05-20</span>
-			<a class="brief-read" href="/2020/05/20/hadoop/CDH概念验证安装/"> 阅读全文 </span>
+			<span class="brief-date">2020-04-01</span>
+			<a class="brief-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/05/20/hadoop/CDH概念验证安装/">CDH概念验证安装</a>
+					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
 				<div class="brief-digest">
-					Cloudera Manager Server Installer$ wget https://archive.cloudera.com/cm6/6.3.1/cloudera-manager-inst
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2018-11-28</span>
-			<a class="brief-read" href="/2018/11/28/java/jar的使用/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2018/11/28/java/jar的使用/">jar的使用</a>
-				<div class="brief-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
+					常用多线程并发，取结果归集的几种实现方案
 
-方法步骤:1, 定义Main-Class创建文件夹ME
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-02-15</span>
-			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
-				<div class="brief-digest">
-					java启动参数共分为三类
 
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+描述
+Future
+FutureTask
+CompletionService
+CompletableFuture
+
+
+
+原理
+Future接口
+接口Run
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-04-17</span>
-			<a class="brief-read" href="/2020/04/17/security/keytool命令详解/"> 阅读全文 </span>
+			<span class="brief-date">2020-02-26</span>
+			<a class="brief-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/04/17/security/keytool命令详解/">keytool命令详解</a>
+					href="/2020/02/26/linux/du,df/">du,df</a>
 				<div class="brief-digest">
-					keytool简介Keytool是一个Java数据证书的管理工具,Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中。在keystore里，包含两种数
+					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
+du -sh  #查看当
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-03-11</span>
+			<a class="brief-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
+				<div class="brief-digest">
+					killallkillall[参数][进程名]
+
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2018-11-30</span>
+			<a class="brief-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2018/11/30/linux/vim/">vim</a>
+				<div class="brief-digest">
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>

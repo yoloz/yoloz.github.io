@@ -199,9 +199,9 @@
 	
 	<ul style="display: none;">
 		<li class="file active">
-			<a href="/2018/11/28/java/jar的使用/">
+			<a href="/2018/11/28/java/java,javac,jar命令/">
 				<i class="fa fa-file"></i>
-				jar的使用
+				java,javac,jar命令
 			</a>
 		</li>
 	</ul>
@@ -737,6 +737,12 @@ Class-Path: xxx.jar #路径指向你需要的所有jar包</code></pre>
 
 <blockquote>
 <p>上述中xxx.jar要和hello.jar在同一路径下，执行 <code>java -jar hello.jar</code> 即可</p>
+</blockquote>
+<h2 id="javac和java"><a href="#javac和java" class="headerlink" title="javac和java"></a>javac和java</h2><pre><code class="highlight bash">javac -classpath $(<span class="built_in">echo</span> <span class="variable">$&#123;dir&#125;</span>/lib/*.jar | tr <span class="string">' '</span> <span class="string">':'</span>) com/xxx/Test.java
+java -cp .:$(<span class="built_in">echo</span> <span class="variable">$&#123;dir&#125;</span>/lib/*.jar | tr <span class="string">' '</span> <span class="string">':'</span>) com.xxx.Test</code></pre>
+
+<blockquote>
+<p>tr是个简单的替换命令，从标准输入中替换、缩减和/或删除字符，并将结果写到标准输出</p>
 </blockquote>
 
 </div>
