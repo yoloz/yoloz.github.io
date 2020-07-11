@@ -1,5 +1,5 @@
 ---
-title: jar的使用
+title: java,javac,jar命令
 comments: false
 toc: false
 date: 2018-11-28 14:54:43
@@ -97,3 +97,12 @@ Class-Path: xxx.jar #路径指向你需要的所有jar包
 ```
 
 > 上述中xxx.jar要和hello.jar在同一路径下，执行 `java -jar hello.jar` 即可
+
+## javac和java
+
+``` bash
+javac -classpath $(echo ${dir}/lib/*.jar | tr ' ' ':') com/xxx/Test.java
+java -cp .:$(echo ${dir}/lib/*.jar | tr ' ' ':') com.xxx.Test
+```
+
+> tr是个简单的替换命令，从标准输入中替换、缩减和/或删除字符，并将结果写到标准输出
