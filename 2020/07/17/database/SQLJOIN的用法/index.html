@@ -77,7 +77,7 @@
 			</a>
 			
 	<ul style="display: none;">
-		<li class="file">
+		<li class="file active">
 			<a href="/2020/07/17/database/SQLJOIN的用法/">
 				<i class="fa fa-file"></i>
 				SQLJOIN的用法
@@ -400,7 +400,7 @@
 	</ul>
 	
 	<ul style="display: none;">
-		<li class="file active">
+		<li class="file">
 			<a href="/2018/11/30/linux/vim/">
 				<i class="fa fa-file"></i>
 				vim
@@ -689,34 +689,213 @@
 						</aside>
 						<div class="article-inner">
 							<span id="post-author">yoloz</span>
-<span id="post-date">2018-11-30 16:06:46</span>
+<span id="post-date">2020-07-17 16:19:39</span>
 <div id="post-content">
-	<p>vi操作常用快捷方式如下, 非编辑状态下使用：</p>
-<ul>
-<li>删除光标所在行 <code>dd</code></li>
-<li>删除光标所在行以下5行 <code>5dd</code></li>
-<li>撤销 <code>u</code></li>
-<li>反撤销 <code>ctrl+r</code></li>
-<li>跳到文件头 <code>gg</code></li>
-<li>跳到文件尾 <code>GG</code> </li>
-<li>查找字符串str <code>:/str</code> , 查看下一个 <code>n</code> ，查看上一个 <code>N</code></li>
-<li>显示行号 <code>:set nu</code></li>
-<li>取消显示行号 <code>:set nonu</code></li>
-<li>跳转到79行 <code>:79</code></li>
-<li>第二行到第十行首添加注释符 <code>:2,10s/^/注释符/g</code></li>
-<li>第二行到第十行首取消注释符 <code>:2,10s/^注释符//g</code></li>
-<li>更改打开文件的编码方式 <code>:e ++enc=&lt;utf-8&gt;</code></li>
-<li>取消高亮字符串 <code>:nohl</code></li>
-</ul>
-<p>备注:  </p>
-<ul>
-<li><p><code>:</code> 在非编辑状态下通过’shift+:’快捷方式打开</p>
-</li>
-<li><p>如果注释符是//，为了避免对/做转义处理，可如下操作(即/换成#)： <code>:2,10s#^#//#g</code> (第二行到第十行首添加//) <code>:2,10s#^//##g</code> (第二行到第十行首取消//)</p>
-</li>
-<li><p>退出编辑状态按 <code>esc</code></p>
-</li>
-</ul>
+	<p>建表table1,table2：</p>
+<pre><code class="highlight sql"><span class="keyword">create</span> <span class="keyword">table</span> table1(<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>))
+<span class="keyword">create</span> <span class="keyword">table</span> table2(<span class="keyword">id</span> <span class="built_in">int</span>,score <span class="built_in">int</span>)
+<span class="keyword">insert</span> <span class="keyword">into</span> table1 <span class="keyword">select</span> <span class="number">1</span>,<span class="string">'lee'</span>
+<span class="keyword">insert</span> <span class="keyword">into</span> table1 <span class="keyword">select</span> <span class="number">2</span>,<span class="string">'zhang'</span>
+<span class="keyword">insert</span> <span class="keyword">into</span> table1 <span class="keyword">select</span> <span class="number">4</span>,<span class="string">'wang'</span>
+<span class="keyword">insert</span> <span class="keyword">into</span> table2 <span class="keyword">select</span> <span class="number">1</span>,<span class="number">90</span>
+<span class="keyword">insert</span> <span class="keyword">into</span> table2 <span class="keyword">select</span> <span class="number">2</span>,<span class="number">100</span>
+<span class="keyword">insert</span> <span class="keyword">into</span> table2 <span class="keyword">select</span> <span class="number">3</span>,<span class="number">70</span></code></pre>
+
+<p>如表:</p>
+<table>
+<thead>
+<tr>
+<th align="left">table1</th>
+<th align="left">table2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id  name</td>
+<td align="left">id  score</td>
+</tr>
+<tr>
+<td align="left">1  lee</td>
+<td align="left">1  90</td>
+</tr>
+<tr>
+<td align="left">2  zhang</td>
+<td align="left">2  100</td>
+</tr>
+<tr>
+<td align="left">4  wang</td>
+<td align="left">3  70</td>
+</tr>
+</tbody></table>
+<h2 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h2><p>包括左向外联接、右向外联接或完整外部联接</p>
+<h3 id="左连接"><a href="#左连接" class="headerlink" title="左连接"></a>左连接</h3><p><em>left [outer] join</em></p>
+<p>左向外联接的结果集包括 LEFT OUTER 子句中指定的左表的所有行，而不仅仅是联接列所匹配的行。如果左表的某行在右表中没有匹配行，则在相关联的结果集行中右表的所有选择列表列均为空值(null)。sql语句:</p>
+<pre><code class="highlight sql"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">left</span> <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id</code></pre>
+
+<p>结果:</p>
+<table>
+<thead>
+<tr>
+<th align="left">id name</th>
+<th align="left">id score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1 lee</td>
+<td align="left">1 90</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">2 100</td>
+</tr>
+<tr>
+<td align="left">4 wang</td>
+<td align="left">NULL NULL</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>包含table1的所有子句，根据指定条件返回table2相应的字段，不符合的以null显示</p>
+</blockquote>
+<h3 id="右连接"><a href="#右连接" class="headerlink" title="右连接"></a>右连接</h3><p><em>right [outer] join</em></p>
+<p>右向外联接是左向外联接的反向联接。将返回右表的所有行。如果右表的某行在左表中没有匹配行，则将为左表返回空值。sql语句:</p>
+<pre><code class="highlight sql"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">right</span> <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id</code></pre>
+
+<p>结果:</p>
+<table>
+<thead>
+<tr>
+<th align="left">id name</th>
+<th align="left">id score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1 lee</td>
+<td align="left">1 90</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">2 100</td>
+</tr>
+<tr>
+<td align="left">NULL NULL</td>
+<td align="left">3 70</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>包含table2的所有子句，根据指定条件返回table1相应的字段，不符合的以null显示</p>
+</blockquote>
+<h3 id="完整外部联接"><a href="#完整外部联接" class="headerlink" title="完整外部联接"></a>完整外部联接</h3><p><em>full [outer] join</em></p>
+<p>完整外部联接返回左表和右表中的所有行。当某行在另一个表中没有匹配行时，则另一个表的选择列表列包含空值。如果表之间有匹配行，则整个结果集行包含基表的数据值。sql语句:</p>
+<pre><code class="highlight sql"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">full</span> <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id</code></pre>
+
+<p>结果:</p>
+<table>
+<thead>
+<tr>
+<th align="left">id name</th>
+<th align="left">id score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1 lee</td>
+<td align="left">1 90</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">2 100</td>
+</tr>
+<tr>
+<td align="left">4 wang</td>
+<td align="left">NULL NULL</td>
+</tr>
+<tr>
+<td align="left">NULL NULL</td>
+<td align="left">3 70</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回左右连接的和（见上左、右连接）</p>
+</blockquote>
+<h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><p><em>[inner] join</em></p>
+<p>内联接是用比较运算符比较要联接列的值的联接。sql语句:</p>
+<pre><code class="highlight sql"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id
+<span class="comment">#等价（与下列执行效果相同）</span>
+<span class="keyword">select</span> a.*,b.* <span class="keyword">from</span> table1 a,table2 b <span class="keyword">where</span> a.id=b.id
+<span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">cross</span> <span class="keyword">join</span> table2 <span class="keyword">where</span> table1.id=table2.id</code></pre>
+
+<p>结果:</p>
+<table>
+<thead>
+<tr>
+<th align="left">id name</th>
+<th align="left">id score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1 lee 1</td>
+<td align="left">90</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">2 100</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>只返回符合条件的table1和table2的列<br>cross join后加条件只能用where,不能用on</p>
+</blockquote>
+<h2 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h2><p><em>cross join</em></p>
+<p>没有 WHERE 子句的交叉联接将产生联接所涉及的表的笛卡尔积。第一个表的行数乘以第二个表的行数等于笛卡尔积结果集的大小。（table1和table2交叉连接产生3*3=9条记录）。sql语句:</p>
+<pre><code class="highlight sql"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">cross</span> <span class="keyword">join</span> table2
+<span class="comment">#等价（与下列执行效果相同）</span>
+<span class="keyword">select</span> * <span class="keyword">from</span> table1,table2</code></pre>
+
+<p>结果:</p>
+<table>
+<thead>
+<tr>
+<th align="left">id name</th>
+<th align="left">id score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1 lee</td>
+<td align="left">1 90</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">1 90</td>
+</tr>
+<tr>
+<td align="left">4 wang</td>
+<td align="left">1 90</td>
+</tr>
+<tr>
+<td align="left">1 lee</td>
+<td align="left">2 100</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">2 100</td>
+</tr>
+<tr>
+<td align="left">4 wang</td>
+<td align="left">2 100</td>
+</tr>
+<tr>
+<td align="left">1 lee</td>
+<td align="left">3 70</td>
+</tr>
+<tr>
+<td align="left">2 zhang</td>
+<td align="left">3 70</td>
+</tr>
+<tr>
+<td align="left">4 wang</td>
+<td align="left">3 70</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>返回3*3=9条记录，即笛卡尔积</p>
+</blockquote>
 
 </div>
 						</div>

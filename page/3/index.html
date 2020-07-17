@@ -78,6 +78,15 @@
 			
 	<ul style="display: none;">
 		<li class="file">
+			<a href="/2020/07/17/database/SQLJOIN的用法/">
+				<i class="fa fa-file"></i>
+				SQLJOIN的用法
+			</a>
+		</li>
+	</ul>
+	
+	<ul style="display: none;">
+		<li class="file">
 			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
@@ -683,15 +692,35 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-15</span>
-			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-03</span>
+			<a class="brief-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="brief-digest">
-					java启动参数共分为三类
-
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-11-13</span>
+			<a class="brief-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+				<div class="brief-digest">
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
+				<div class="brief-digest">
+					which只能寻找可执行文件, 并在PATH变量里面寻找  
+whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
 					...
 				</div>
 		</li>
@@ -706,17 +735,6 @@
 $ groupadd gname                         #新建用户组
 
 $ useradd -m u
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2018-12-10</span>
-			<a class="brief-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2018/12/10/other/git/">git</a>
-				<div class="brief-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
 					...
 				</div>
 		</li>

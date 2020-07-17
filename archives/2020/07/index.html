@@ -400,7 +400,7 @@
 	</ul>
 	
 	<ul style="display: none;">
-		<li class="file active">
+		<li class="file">
 			<a href="/2018/11/30/linux/vim/">
 				<i class="fa fa-file"></i>
 				vim
@@ -688,36 +688,61 @@
 							</div>
 						</aside>
 						<div class="article-inner">
-							<span id="post-author">yoloz</span>
-<span id="post-date">2018-11-30 16:06:46</span>
-<div id="post-content">
-	<p>vi操作常用快捷方式如下, 非编辑状态下使用：</p>
-<ul>
-<li>删除光标所在行 <code>dd</code></li>
-<li>删除光标所在行以下5行 <code>5dd</code></li>
-<li>撤销 <code>u</code></li>
-<li>反撤销 <code>ctrl+r</code></li>
-<li>跳到文件头 <code>gg</code></li>
-<li>跳到文件尾 <code>GG</code> </li>
-<li>查找字符串str <code>:/str</code> , 查看下一个 <code>n</code> ，查看上一个 <code>N</code></li>
-<li>显示行号 <code>:set nu</code></li>
-<li>取消显示行号 <code>:set nonu</code></li>
-<li>跳转到79行 <code>:79</code></li>
-<li>第二行到第十行首添加注释符 <code>:2,10s/^/注释符/g</code></li>
-<li>第二行到第十行首取消注释符 <code>:2,10s/^注释符//g</code></li>
-<li>更改打开文件的编码方式 <code>:e ++enc=&lt;utf-8&gt;</code></li>
-<li>取消高亮字符串 <code>:nohl</code></li>
-</ul>
-<p>备注:  </p>
-<ul>
-<li><p><code>:</code> 在非编辑状态下通过’shift+:’快捷方式打开</p>
-</li>
-<li><p>如果注释符是//，为了避免对/做转义处理，可如下操作(即/换成#)： <code>:2,10s#^#//#g</code> (第二行到第十行首添加//) <code>:2,10s#^//##g</code> (第二行到第十行首取消//)</p>
-</li>
-<li><p>退出编辑状态按 <code>esc</code></p>
-</li>
-</ul>
+							<div id="briefList">
+	<ul>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-01-23</span>
+			<a class="brief-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
+				<div class="brief-digest">
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-03-11</span>
+			<a class="brief-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
+				<div class="brief-digest">
+					killallkillall[参数][进程名]
 
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-02-20</span>
+			<a class="brief-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
+				<div class="brief-digest">
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-02-20</span>
+			<a class="brief-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
+				<div class="brief-digest">
+					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
+var obj = &#123;'0':'a','1':'b','2
+					...
+				</div>
+		</li>
+		
+	</ul>
 </div>
 						</div>
 					</article>

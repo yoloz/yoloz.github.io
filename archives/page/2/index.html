@@ -78,6 +78,15 @@
 			
 	<ul style="display: none;">
 		<li class="file">
+			<a href="/2020/07/17/database/SQLJOIN的用法/">
+				<i class="fa fa-file"></i>
+				SQLJOIN的用法
+			</a>
+		</li>
+	</ul>
+	
+	<ul style="display: none;">
+		<li class="file">
 			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
@@ -683,54 +692,49 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-20</span>
-			<a class="brief-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
+			<span class="brief-date">2020-05-18</span>
+			<a class="brief-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/20/database/mysql使用/">mysql使用</a>
+					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
 				<div class="brief-digest">
-					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
-se
+					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
+单机Requirements:jdk
+解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-01-26</span>
-			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+			<span class="brief-date">2019-07-30</span>
+			<a class="brief-read" href="/2019/07/30/java/读取InputStream生成String/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
+					href="/2019/07/30/java/读取InputStream生成String/">读取InputStream生成String</a>
 				<div class="brief-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
+					1, 使用IOUtils.toString（Apache Utils）String result = IOUtils.toString(inputStream, StandardCharsets.UT
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
+			<span class="brief-date">2020-03-11</span>
+			<a class="brief-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/29/linux/DNS/">DNS</a>
+					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
 				<div class="brief-digest">
-					unknown host error
-确定设置了域名服务器(dns) cat /etc/resolv.conf 
+					killallkillall[参数][进程名]
 
-nameserver 119.29.29.29  
-nameserver 182.2
+-Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-15</span>
-			<a class="brief-read" href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/"> 阅读全文 </span>
+			<span class="brief-date">2019-11-13</span>
+			<a class="brief-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/15/other/五种开源协议(GPL,LGPL,BSD,MIT,Apache)/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
 				<div class="brief-digest">
-					GNU GPLGNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
-
-可自
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>

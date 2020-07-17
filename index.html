@@ -78,6 +78,15 @@
 			
 	<ul style="display: none;">
 		<li class="file">
+			<a href="/2020/07/17/database/SQLJOIN的用法/">
+				<i class="fa fa-file"></i>
+				SQLJOIN的用法
+			</a>
+		</li>
+	</ul>
+	
+	<ul style="display: none;">
+		<li class="file">
 			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
@@ -683,51 +692,55 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-15</span>
-			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+			<span class="brief-date">2020-03-10</span>
+			<a class="brief-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="brief-digest">
-					java启动参数共分为三类
+					jstack dump文件中值得关注的线程状态有：
 
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-19</span>
-			<a class="brief-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-14</span>
+			<a class="brief-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/19/linux/Locale/">Locale</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="brief-digest">
-					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
-Locale是软件在运行时的语言
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
-				<div class="brief-digest">
-					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
+			<span class="brief-date">2020-02-23</span>
+			<a class="brief-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
+					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
 				<div class="brief-digest">
-					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
-npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
+					測試環境 CentOS7 x86_64
+TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-04-18</span>
+			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+				<div class="brief-digest">
+					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
+模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
 					...
 				</div>
 		</li>

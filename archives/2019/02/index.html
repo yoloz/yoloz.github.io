@@ -78,6 +78,15 @@
 			
 	<ul style="display: none;">
 		<li class="file">
+			<a href="/2020/07/17/database/SQLJOIN的用法/">
+				<i class="fa fa-file"></i>
+				SQLJOIN的用法
+			</a>
+		</li>
+	</ul>
+	
+	<ul style="display: none;">
+		<li class="file">
 			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
@@ -683,62 +692,50 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-15</span>
-			<a class="brief-read" href="/2019/02/15/java/jvm启动参数/"> 阅读全文 </span>
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/15/java/jvm启动参数/">jvm启动参数</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="brief-digest">
-					java启动参数共分为三类
-
-其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
-其二是非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-18</span>
-			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+			<span class="brief-date">2020-03-10</span>
+			<a class="brief-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
 				<div class="brief-digest">
-					Lucene中包含了四种基本数据类型，分别是：
-
-Index：索引，由很多的Document组成。
-Document：由很多的Field组成，是Index和Search的最小单位。
-Field：由很多
+					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
+tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-27</span>
-			<a class="brief-read" href="/2018/11/27/other/hexo搭建博客/"> 阅读全文 </span>
+			<span class="brief-date">2020-02-26</span>
+			<a class="brief-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/27/other/hexo搭建博客/">hexo搭建博客</a>
+					href="/2020/02/26/linux/du,df/">du,df</a>
 				<div class="brief-digest">
-					环境准备搭建nodejs环境
-初次需要创建仓库【username】.github.io;
-创建一个分支存放原始文件，方便跨机操作；
-
-拉取远程仓库【分支】到本地git clone -b 【分支】 ht
+					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
+du -sh  #查看当
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-28</span>
-			<a class="brief-read" href="/2018/11/28/java/java,javac,jar命令/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-05</span>
+			<a class="brief-read" href="/2018/12/05/other/svn/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/28/java/java,javac,jar命令/">java,javac,jar命令</a>
+					href="/2018/12/05/other/svn/">svn</a>
 				<div class="brief-digest">
-					简单的jar生成的jar包结构:  
-META-INF  
-Tom.class  
-Hello.class(主类)  
-xxxxx.class
-
-方法步骤:1, 定义Main-Class创建文件夹ME
+					检出(checkout)svn co [--revision] http(svn)://路径(目录或文件的全路径) [本地目录全路径] [--username 用户名] [--password 密码]
 					...
 				</div>
 		</li>

@@ -78,6 +78,15 @@
 			
 	<ul style="display: none;">
 		<li class="file">
+			<a href="/2020/07/17/database/SQLJOIN的用法/">
+				<i class="fa fa-file"></i>
+				SQLJOIN的用法
+			</a>
+		</li>
+	</ul>
+	
+	<ul style="display: none;">
+		<li class="file">
 			<a href="/2020/02/20/database/mysql使用/">
 				<i class="fa fa-file"></i>
 				mysql使用
@@ -683,48 +692,53 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-05-18</span>
-			<a class="brief-read" href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-03</span>
+			<a class="brief-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/05/18/hadoop/hbase-2.2.4伪分布式/">hbase-2.2.4伪分布式</a>
+					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
 				<div class="brief-digest">
-					tar -zxvf hbase-2.2.4-bin.tar.gz -C ~
-单机Requirements:jdk
-解压后执行bin/start-hbase.sh即可，浏览器访问http://ip:16
+					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-28</span>
-			<a class="brief-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/28/java/ReentrantLock/">ReentrantLock</a>
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
 				<div class="brief-digest">
-					java除了使用关键字synchronized外，还可以使用ReentrantLock实现独占锁的功能。而且ReentrantLock相比synchronized而言功能更加丰富，使用起来更为灵活，也
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
+
+$ useradd -m u
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-07-30</span>
-			<a class="brief-read" href="/2019/07/30/java/date与localDateTime/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-18</span>
+			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/07/30/java/date与localDateTime/">date与localDateTime</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="brief-digest">
-					Java 8中 java.util.Date 类新增了两个方法，分别是from(Instant instant)和toInstant()方法
-// Obtains an instance of Dat
+					Lucene中包含了四种基本数据类型，分别是：
+
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-10</span>
-			<a class="brief-read" href="/2018/12/10/other/git/"> 阅读全文 </span>
+			<span class="brief-date">2020-04-18</span>
+			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/12/10/other/git/">git</a>
+					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
 				<div class="brief-digest">
-					clone相关获取一个url对应的远程git repo, 创建一个本地copy git clone urlclone指定分支 git clone -b 分支名 url , 如：git clone -b
+					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
+模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
 					...
 				</div>
 		</li>
