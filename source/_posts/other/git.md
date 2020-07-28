@@ -27,27 +27,37 @@ git有一个暂存区(staging area), 可以放入新添加的文件或加入新�
 `git diff HEAD` 工作目录中的文件和上次提交之间的改动；  
 `git diff [version tag]` 查看指定版本之后的改动；  
 
-## branch,tag相关
+
+## 查看分支
 
 查看本地分支 `git branch`  
 查看远程分支 `git branch -r`  
 查看所有分支 `git branch -a`  
+
+## 创建拉取合并分支
 
 本地创建新分支 `git branch <branchName>`  
 切换到分支xx `git checkout <branchName>`  
 创建分支的同时切换到该分支上 `git checkout -b <branchName>`  
 合并某分支到当前分支`git merge <branchName>`
 
+## 新分支push
+
 将新分支推送到远程repo上 `git push origin <branchName>`  
+
+## 删除分支
 
 删除本地分支 `git branch -d <branchName>`  
 删除远程分支 `git push origin --delete <branchName>`  
+
+## 删除获取tag
 
 删除远程tag `git push origin --delete tag <tagname>`  
 把本地tag推送到远程`git push --tags`  
 获取远程tag`git fetch origin tag <tagname>`  
 
-**重命名远程分支:**  
+## 重命名远程分支
+
 即先删除远程分支，然后重命名本地分支，再重新提交一个远程分支
 
 ```sh
@@ -56,7 +66,9 @@ git branch -m b1 new_b  #重命名本地分支
 git push origin new_b   #推送本地分支
 ```
 
-**切换分支**如架构调整之类需要将先前代码以一个分支留存继续在此分支开发
+## 切换分支
+
+如架构调整之类需要将先前代码以一个分支留存继续在此分支开发
 
 ```sh
 git branch -m thisBranch oldBranch
@@ -64,18 +76,23 @@ git push origin oldBranch  #留存老版到仓库
 git checkout thisBranch  #切换thisBranch继续开发
 ```
 
-**删除不存在对应远程分支的本地分支:**  
+## 删除不存在对应远程分支的本地分支
+
 使用`git remote show origin`查看分支的状态，看到\<branch>是stale的，使用`git remote prune origin`可以将其从本地版本库中去除
 >更简单的方法是使用`git fetch -p`，它在fetch之后删除掉没有与远程分支对应的本地分支
 
-有时候我们需要**创建一个干净的分支**，其不继承任何提交没有父节点，而上文的 `git checkout xx` 创建的分支xx是有父节点的，包含了历史提交。流程如下：
+## 创建一个干净的分支
+
+其不继承任何提交没有父节点，而上文的 `git checkout xx` 创建的分支xx是有父节点的，包含了历史提交。流程如下：
 1, 创建干净的分支 `git checkout --orphan xx` ；  
 2, 删除工作目录中其他分支存在的内容 `git rm -rf .` ;  
 3, 给分支xx添加内容 `git add file1 file2...` ;  
 4, 提交到本地仓库 `git commit -m "something"` ;  
 5, 推送到远程仓库 `git push origin xx` ;  
 
-**其他分支的某个commit并入本分支**当我们需要将其他分支的某一次提交合入到本地当前分支上，那么就要使用`git cherry-pick commitid`
+## 合并其他分支的某个commit
+
+需要将其他分支的某一次提交合入到本地当前分支上使用`git cherry-pick commitid`
 > 如果在git cherry-pick后加一个分支名，则表示将该分支顶端提交进cherry-pick如：`git cherry-pick <branchname>`
 
 * git cherry-pick ..\<branchname\>和git cherry-pick ^HEAD \<branchname\>
