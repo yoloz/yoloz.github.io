@@ -693,52 +693,42 @@
 		
 		<li class="brief-li">
 			<span class="brief-date">2020-03-10</span>
-			<a class="brief-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
+			<a class="brief-read" href="/2020/03/10/java/javaThreadDump日志分析/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
+					href="/2020/03/10/java/javaThreadDump日志分析/">javaThreadDump日志分析</a>
 				<div class="brief-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
-				<div class="brief-digest">
-					ubuntu该方法ubuntu 18.04失效
-修改配置文件 /etc/network/interfaces
-auto eth0                  #设置自动启动eth0接口
-ifac
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-02-20</span>
-			<a class="brief-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
-				<div class="brief-digest">
-					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
-var obj = &#123;'0':'a','1':'b','2
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-07-17</span>
-			<a class="brief-read" href="/2020/07/17/database/SQLJOIN的用法/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/07/17/database/SQLJOIN的用法/">SQLJOIN的用法</a>
-				<div class="brief-digest">
-					建表table1,table2：
-create table table1(id int,name varchar(10))
-create table table2(id int,score int)
+					jstack dump文件中值得关注的线程状态有：
 
+死锁，Deadlock（重点关注） 
+执行中，Runnable   
+等待资源，Waiting on condition（重点关注） 
+等待获取监
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/09/18/linux/用户及组/">用户及组</a>
+				<div class="brief-digest">
+					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
+$ groupadd gname                         #新建用户组
+
+$ useradd -m u
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2020-04-18</span>
+			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+				<div class="brief-digest">
+					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
+模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
 					...
 				</div>
 		</li>

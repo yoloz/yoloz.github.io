@@ -692,53 +692,57 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-03</span>
-			<a class="brief-read" href="/2018/12/03/hadoop/hbase架构了解/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2018/12/03/hadoop/hbase架构了解/">hbase架构了解</a>
-				<div class="brief-digest">
-					内容和结构主要来自[Carol McDonald的文章](https://mapr.com/blog/in-depth-look-hbase-architecture/#. VdMxvWSqqko)，
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
 			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/linux/用户及组/"> 阅读全文 </span>
+			<a class="brief-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/linux/用户及组/">用户及组</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="brief-digest">
-					创建用户及组sudo权限可以通过用户组或修改/etc/sudoers文件
-$ groupadd gname                         #新建用户组
-
-$ useradd -m u
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-18</span>
-			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+			<span class="brief-date">2019-01-23</span>
+			<a class="brief-read" href="/2019/01/23/kafka/sasl-plaintext-acl/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+					href="/2019/01/23/kafka/sasl-plaintext-acl/">sasl-plaintext-acl</a>
 				<div class="brief-digest">
-					Lucene中包含了四种基本数据类型，分别是：
-
-Index：索引，由很多的Document组成。
-Document：由很多的Field组成，是Index和Search的最小单位。
-Field：由很多
+					准备配置文件kafka_server_jaas.conf
+KafkaServer &#123;
+org.apache.kafka.common.security.plain.PlainLoginMod
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-04-18</span>
-			<a class="brief-read" href="/2020/04/18/security/SSL双向认证实现/"> 阅读全文 </span>
+			<span class="brief-date">2020-02-29</span>
+			<a class="brief-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/04/18/security/SSL双向认证实现/">SSL双向认证实现</a>
+					href="/2020/02/29/linux/DNS/">DNS</a>
 				<div class="brief-digest">
-					用SSL进行双向身份验证意思就是在客户机连接服务器时，连接双方都要对彼此的数字证书进行验证，保证这是经过授权的才能够连接。
-模拟场景：Server端和Client端通信，需要进行授权和身份的验证，即C
+					unknown host error
+确定设置了域名服务器(dns) cat /etc/resolv.conf 
+
+nameserver 119.29.29.29  
+nameserver 182.2
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2018-11-30</span>
+			<a class="brief-read" href="/2018/11/30/linux/ps/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2018/11/30/linux/ps/">ps</a>
+				<div class="brief-digest">
+					查看它的man手册可以看到，ps命令能够给出当前系统中进程的快照。它能捕获系统在某一事件的进程状态。如果你想不断更新查看的这个状态，可以使用top命令。  
+ps命令支持三种使用的语法格式
+
+UNIX
 					...
 				</div>
 		</li>

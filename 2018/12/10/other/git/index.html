@@ -698,27 +698,27 @@
 </blockquote>
 <p><code>git commit -am &quot;something&quot;</code> 只能提交已跟踪过的改动文件, 新文件是untracking file；</p>
 <h2 id="diff相关"><a href="#diff相关" class="headerlink" title="diff相关"></a>diff相关</h2><p><code>git diff</code> 工作目录中的文件和暂存区快照之间的差异，即修改后还没暂存起来(commit)的变化内容；<br><code>git diff --cached</code> 已经暂存起来的文件和上次提交时的快照之间的差异；<br><code>git diff HEAD</code> 工作目录中的文件和上次提交之间的改动；<br><code>git diff [version tag]</code> 查看指定版本之后的改动；  </p>
-<h2 id="branch-tag相关"><a href="#branch-tag相关" class="headerlink" title="branch,tag相关"></a>branch,tag相关</h2><p>查看本地分支 <code>git branch</code><br>查看远程分支 <code>git branch -r</code><br>查看所有分支 <code>git branch -a</code>  </p>
-<p>本地创建新分支 <code>git branch &lt;branchName&gt;</code><br>切换到分支xx <code>git checkout &lt;branchName&gt;</code><br>创建分支的同时切换到该分支上 <code>git checkout -b &lt;branchName&gt;</code><br>合并某分支到当前分支<code>git merge &lt;branchName&gt;</code></p>
-<p>将新分支推送到远程repo上 <code>git push origin &lt;branchName&gt;</code>  </p>
-<p>删除本地分支 <code>git branch -d &lt;branchName&gt;</code><br>删除远程分支 <code>git push origin --delete &lt;branchName&gt;</code>  </p>
-<p>删除远程tag <code>git push origin --delete tag &lt;tagname&gt;</code><br>把本地tag推送到远程<code>git push --tags</code><br>获取远程tag<code>git fetch origin tag &lt;tagname&gt;</code>  </p>
-<p><strong>重命名远程分支:</strong><br>即先删除远程分支，然后重命名本地分支，再重新提交一个远程分支</p>
+<h2 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h2><p>查看本地分支 <code>git branch</code><br>查看远程分支 <code>git branch -r</code><br>查看所有分支 <code>git branch -a</code>  </p>
+<h2 id="创建拉取合并分支"><a href="#创建拉取合并分支" class="headerlink" title="创建拉取合并分支"></a>创建拉取合并分支</h2><p>本地创建新分支 <code>git branch &lt;branchName&gt;</code><br>切换到分支xx <code>git checkout &lt;branchName&gt;</code><br>创建分支的同时切换到该分支上 <code>git checkout -b &lt;branchName&gt;</code><br>合并某分支到当前分支<code>git merge &lt;branchName&gt;</code></p>
+<h2 id="新分支push"><a href="#新分支push" class="headerlink" title="新分支push"></a>新分支push</h2><p>将新分支推送到远程repo上 <code>git push origin &lt;branchName&gt;</code>  </p>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><p>删除本地分支 <code>git branch -d &lt;branchName&gt;</code><br>删除远程分支 <code>git push origin --delete &lt;branchName&gt;</code>  </p>
+<h2 id="删除获取tag"><a href="#删除获取tag" class="headerlink" title="删除获取tag"></a>删除获取tag</h2><p>删除远程tag <code>git push origin --delete tag &lt;tagname&gt;</code><br>把本地tag推送到远程<code>git push --tags</code><br>获取远程tag<code>git fetch origin tag &lt;tagname&gt;</code>  </p>
+<h2 id="重命名远程分支"><a href="#重命名远程分支" class="headerlink" title="重命名远程分支"></a>重命名远程分支</h2><p>即先删除远程分支，然后重命名本地分支，再重新提交一个远程分支</p>
 <pre><code class="highlight sh">git push --delete origin &lt;branchName&gt; <span class="comment">#删除远程分支</span>
 git branch -m b1 new_b  <span class="comment">#重命名本地分支</span>
 git push origin new_b   <span class="comment">#推送本地分支</span></code></pre>
 
-<p><strong>切换分支</strong>如架构调整之类需要将先前代码以一个分支留存继续在此分支开发</p>
+<h2 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h2><p>如架构调整之类需要将先前代码以一个分支留存继续在此分支开发</p>
 <pre><code class="highlight sh">git branch -m thisBranch oldBranch
 git push origin oldBranch  <span class="comment">#留存老版到仓库</span>
 git checkout thisBranch  <span class="comment">#切换thisBranch继续开发</span></code></pre>
 
-<p><strong>删除不存在对应远程分支的本地分支:</strong><br>使用<code>git remote show origin</code>查看分支的状态，看到&lt;branch&gt;是stale的，使用<code>git remote prune origin</code>可以将其从本地版本库中去除</p>
+<h2 id="删除不存在对应远程分支的本地分支"><a href="#删除不存在对应远程分支的本地分支" class="headerlink" title="删除不存在对应远程分支的本地分支"></a>删除不存在对应远程分支的本地分支</h2><p>使用<code>git remote show origin</code>查看分支的状态，看到&lt;branch&gt;是stale的，使用<code>git remote prune origin</code>可以将其从本地版本库中去除</p>
 <blockquote>
 <p>更简单的方法是使用<code>git fetch -p</code>，它在fetch之后删除掉没有与远程分支对应的本地分支</p>
 </blockquote>
-<p>有时候我们需要<strong>创建一个干净的分支</strong>，其不继承任何提交没有父节点，而上文的 <code>git checkout xx</code> 创建的分支xx是有父节点的，包含了历史提交。流程如下：<br>1, 创建干净的分支 <code>git checkout --orphan xx</code> ；<br>2, 删除工作目录中其他分支存在的内容 <code>git rm -rf .</code> ;<br>3, 给分支xx添加内容 <code>git add file1 file2...</code> ;<br>4, 提交到本地仓库 <code>git commit -m &quot;something&quot;</code> ;<br>5, 推送到远程仓库 <code>git push origin xx</code> ;  </p>
-<p><strong>其他分支的某个commit并入本分支</strong>当我们需要将其他分支的某一次提交合入到本地当前分支上，那么就要使用<code>git cherry-pick commitid</code></p>
+<h2 id="创建一个干净的分支"><a href="#创建一个干净的分支" class="headerlink" title="创建一个干净的分支"></a>创建一个干净的分支</h2><p>其不继承任何提交没有父节点，而上文的 <code>git checkout xx</code> 创建的分支xx是有父节点的，包含了历史提交。流程如下：<br>1, 创建干净的分支 <code>git checkout --orphan xx</code> ；<br>2, 删除工作目录中其他分支存在的内容 <code>git rm -rf .</code> ;<br>3, 给分支xx添加内容 <code>git add file1 file2...</code> ;<br>4, 提交到本地仓库 <code>git commit -m &quot;something&quot;</code> ;<br>5, 推送到远程仓库 <code>git push origin xx</code> ;  </p>
+<h2 id="合并其他分支的某个commit"><a href="#合并其他分支的某个commit" class="headerlink" title="合并其他分支的某个commit"></a>合并其他分支的某个commit</h2><p>需要将其他分支的某一次提交合入到本地当前分支上使用<code>git cherry-pick commitid</code></p>
 <blockquote>
 <p>如果在git cherry-pick后加一个分支名，则表示将该分支顶端提交进cherry-pick如：<code>git cherry-pick &lt;branchname&gt;</code></p>
 </blockquote>

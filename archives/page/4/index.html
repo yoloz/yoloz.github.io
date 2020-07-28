@@ -692,49 +692,56 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-11</span>
-			<a class="brief-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-11</span>
+			<a class="brief-read" href="/2018/12/11/kafka/consumerApi/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
+					href="/2018/12/11/kafka/consumerApi/">consumerApi</a>
 				<div class="brief-digest">
-					killallkillall[参数][进程名]
+					如下是kafka消费者java api的订阅(subscribe)流程(v0.10)
+initialize实现类org.apache.kafka.clients.consumer. KafkaCons
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
+				<div class="brief-digest">
+					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
 
--Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-02-23</span>
-			<a class="brief-read" href="/2020/02/23/network/TCPIP常見封包/"> 阅读全文 </span>
+			<span class="brief-date">2020-02-26</span>
+			<a class="brief-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/23/network/TCPIP常見封包/">TCPIP常見封包</a>
+					href="/2020/02/26/linux/ssh/">ssh</a>
 				<div class="brief-digest">
-					測試環境 CentOS7 x86_64
-TCP 3 way handshack所謂的 TCP 三方交握(TCP 3-way handshake) 就是 Server 與 Client 間透過 3 次的
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-27</span>
-			<a class="brief-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-18</span>
+			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
 				<div class="brief-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/02/29/web/npm,nvm,nrm,npx,cnpm/">npm,nvm,nrm,npx,cnpm</a>
-				<div class="brief-digest">
-					Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
-npmnpm 的全称是 Node Package Manager 是 JavaScript 世界的包管理工具,并
+					Lucene中包含了四种基本数据类型，分别是：
+
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>

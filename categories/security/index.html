@@ -692,6 +692,22 @@
 	<ul>
 		
 		<li class="brief-li">
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+				<div class="brief-digest">
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
+
+cp $HIVE_HO
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
 			<span class="brief-date">2020-02-28</span>
 			<a class="brief-read" href="/2020/02/28/java/ReentrantLock/"> 阅读全文 </span>
 				<a class="brief-title"
@@ -703,42 +719,26 @@
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-10</span>
-			<a class="brief-read" href="/2020/03/10/java/JVM调式工具/"> 阅读全文 </span>
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/10/java/JVM调式工具/">JVM调式工具</a>
+					href="/2019/09/18/linux/shell中sh, exec, source, fork的区别/">shell中sh, exec, source, fork的区别</a>
 				<div class="brief-digest">
-					pid在linux环境下，可以通过top命令查看各个进程的cpu使用情况，找出占用较高的pid
-tid找出pid后通过top -Hp pid查看该进程下各个线程的cpu使用情况。任取一个占用cpu较高
+					sh​sh是通过创建子进程(subshell)去执行脚本，父进程无法使用子进程中的变量，而子进程对环境变量的修改也不会影响到父进程。父进程中的局部变量子进程也无法使用，子进程会继承父进程的环境变量;
+
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-14</span>
-			<a class="brief-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-20</span>
+			<a class="brief-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="brief-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
 
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2019-02-18</span>
-			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
-				<div class="brief-digest">
-					Lucene中包含了四种基本数据类型，分别是：
-
-Index：索引，由很多的Document组成。
-Document：由很多的Field组成，是Index和Search的最小单位。
-Field：由很多
+如果能使用props实现，
 					...
 				</div>
 		</li>
