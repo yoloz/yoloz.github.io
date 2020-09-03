@@ -209,7 +209,7 @@ git rebase -i f711d30 #commit标志的前7位
 
 > * `git rebase -i  [startpoint]  [endpoint]` 其中-i的意思是--interactive，即弹出交互式的界面让用户编辑完成合并操作，[startpoint]  [endpoint]则指定了一个编辑区间，如果不指定[endpoint]，则该区间的终点默认是当前分支HEAD所指向的commit(注：该区间指定的是一个前开后闭的区间)。
 > * ^X的^表示ctrl, M-A的M表示alt
-> * 修改后(如将pick换成d), ctrl+x退出, 提示是否保存修改，选择yes, 然后选择alt+b(backup file), 然后enter回车即可
+> * 修改后(如将pick换成d), ctrl+x退出, 提示是否保存修改，选择yes, 然后enter回车即可
 > * 修改conflict，然后push
 
 ## 克隆部分文件
