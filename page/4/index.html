@@ -692,55 +692,56 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-30</span>
-			<a class="brief-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-14</span>
+			<a class="brief-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
 				<div class="brief-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
+什么是 VIR
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/linux/which,whereis,locate,find/"> 阅读全文 </span>
+			<span class="brief-date">2020-03-19</span>
+			<a class="brief-read" href="/2020/03/19/linux/Locale/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/linux/which,whereis,locate,find/">which,whereis,locate,find</a>
+					href="/2020/03/19/linux/Locale/">Locale</a>
 				<div class="brief-digest">
-					which只能寻找可执行文件, 并在PATH变量里面寻找  
-whereis从linux文件数据库（/var/lib/slocate/slocate.db）寻找，有可能找到刚刚删除，或者没有发现新建的
+					Locale是某一个地域内的人们的语言习惯和文化传统和生活习惯，是根据计算机用户所使用的语言，所在国家或者地区，以及当地的文化传统所定义的一个软件运行时的语言环境。 
+Locale是软件在运行时的语言
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-04</span>
-			<a class="brief-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-20</span>
+			<a class="brief-read" href="/2019/02/20/web/javaScript遍历对象、数组/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2019/02/20/web/javaScript遍历对象、数组/">javaScript遍历对象、数组</a>
 				<div class="brief-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					Object使用Object.keys()遍历返回一个数组, 包括对象自身的(不含继承的)所有可枚举属性(不含Symbol属性)。
+var obj = &#123;'0':'a','1':'b','2
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-27</span>
-			<a class="brief-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="brief-date">2018-11-28</span>
+			<a class="brief-read" href="/2018/11/28/java/java,javac,jar命令/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2018/11/28/java/java,javac,jar命令/">java,javac,jar命令</a>
 				<div class="brief-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					简单的jar生成的jar包结构:  
+META-INF  
+Tom.class  
+Hello.class(主类)  
+xxxxx.class
+
+方法步骤:1, 定义Main-Class创建文件夹ME
 					...
 				</div>
 		</li>

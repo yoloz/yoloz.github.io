@@ -693,28 +693,41 @@
 		
 		<li class="brief-li">
 			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+			<a class="brief-read" href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+					href="/2019/09/18/hadoop/hadoop-2.7.3单机搭建/">hadoop-2.7.3单机搭建</a>
 				<div class="brief-digest">
-					Requirements:jdk, hadoop
-tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
-修改配置文件
-hive-env.sh
-
-cp $HIVE_HO
+					Requirements:jdk
+tar -zxvf hadoop-2.7.3.tar.gz -C ~
+创建hadoop文件目录在安装目录下创建4个文件目录, 如下:
+mkdir -p ~/hadoo
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
 			<span class="brief-date">2020-02-26</span>
-			<a class="brief-read" href="/2020/02/26/linux/du,df/"> 阅读全文 </span>
+			<a class="brief-read" href="/2020/02/26/linux/ssh/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/26/linux/du,df/">du,df</a>
+					href="/2020/02/26/linux/ssh/">ssh</a>
 				<div class="brief-digest">
-					dudisk usage,是通过搜索文件来计算每个文件的大小然后累加，du能看到的文件只是一些当前存在的，没有被删除的。他计算的大小就是当前他认为存在的所有文件大小的累加和。
-du -sh  #查看当
+					ssh免密登录
+客户端生成密钥
+
+ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa
+
+生成密钥过程中，建议采用默认值，只需要按三次回车之后，就会在～/.
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-11-13</span>
+			<a class="brief-read" href="/2019/11/13/linux/tcp连接数/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/11/13/linux/tcp连接数/">tcp连接数</a>
+				<div class="brief-digest">
+					在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制（系统为每个TCP连接都要创建一个socket句柄，
 					...
 				</div>
 		</li>

@@ -692,36 +692,26 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-09-18</span>
-			<a class="brief-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
+			<span class="brief-date">2020-02-20</span>
+			<a class="brief-read" href="/2020/02/20/database/mysql使用/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
+					href="/2020/02/20/database/mysql使用/">mysql使用</a>
 				<div class="brief-digest">
-					Requirements:jdk, hadoop
-tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
-修改配置文件
-hive-env.sh
-
-cp $HIVE_HO
+					limit语句select * from "operativeLogs" ORDER BY "sysTimestamp" DESC LIMIT 5 OFFSET 5    #postgresql
+se
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-30</span>
-			<a class="brief-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
+			<span class="brief-date">2019-11-13</span>
+			<a class="brief-read" href="/2019/11/13/linux/ulimit/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/30/linux/vim/">vim</a>
+					href="/2019/11/13/linux/ulimit/">ulimit</a>
 				<div class="brief-digest">
-					vi操作常用快捷方式如下, 非编辑状态下使用：
+					参考ulimit的帮助文档（注意：不是man ulimit，而是help ulimit，前者提供的是C语言的ulimit帮助）：
 
-删除光标所在行 dd
-删除光标所在行以下5行 5dd
-撤销 u
-反撤销 ctrl+r
-跳到文件头 gg
-跳到文件尾 GG 
-查找字符串str :/st
+Modify shell resource limits. Prov
 					...
 				</div>
 		</li>
@@ -741,13 +731,16 @@ $ useradd -m u
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-04</span>
-			<a class="brief-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
+			<span class="brief-date">2018-11-29</span>
+			<a class="brief-read" href="/2018/11/29/web/react-loadable代码分割/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/12/04/linux/编写shell/">编写shell</a>
+					href="/2018/11/29/web/react-loadable代码分割/">react-loadable代码分割</a>
 				<div class="brief-digest">
-					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
-$ ca
+					
+安装依赖 yarn add react-loadable
+根据react-loadable文档提示，我们需要提供一个载入新页面时的Loading组件，同时对加载和超时状态进行区别提示：
+
+impor
 					...
 				</div>
 		</li>

@@ -692,54 +692,61 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-03-11</span>
-			<a class="brief-read" href="/2020/03/11/linux/killall,kill,pkill/"> 阅读全文 </span>
+			<span class="brief-date">2019-01-26</span>
+			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/03/11/linux/killall,kill,pkill/">killall,kill,pkill</a>
+					href="/2019/01/26/kafka/producer/">producer</a>
 				<div class="brief-digest">
-					killallkillall[参数][进程名]
-
--Z 只杀死拥有scontext 的进程-e 要求匹配进程名称-I 忽略小写-g 杀死进程组而不是进程-i 交互模式，杀死进程前先询问用户-l 列出所
+					核心工作流程
+Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
+进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
 			<span class="brief-date">2020-02-29</span>
-			<a class="brief-read" href="/2020/02/29/linux/静态ip地址/"> 阅读全文 </span>
+			<a class="brief-read" href="/2020/02/29/linux/DNS/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/02/29/linux/静态ip地址/">静态ip地址</a>
+					href="/2020/02/29/linux/DNS/">DNS</a>
 				<div class="brief-digest">
-					ubuntu该方法ubuntu 18.04失效
-修改配置文件 /etc/network/interfaces
-auto eth0                  #设置自动启动eth0接口
-ifac
+					unknown host error
+确定设置了域名服务器(dns) cat /etc/resolv.conf 
+
+nameserver 119.29.29.29  
+nameserver 182.2
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-11-27</span>
-			<a class="brief-read" href="/2018/11/27/other/start-hexo/"> 阅读全文 </span>
+			<span class="brief-date">2019-07-24</span>
+			<a class="brief-read" href="/2019/07/24/linux/alternatives/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/11/27/other/start-hexo/">start-hexo</a>
+					href="/2019/07/24/linux/alternatives/">alternatives</a>
 				<div class="brief-digest">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+					alternatives用于存放系统的一些默认打开程序的信息和配置, 比如默认的编辑器、默认的网络浏览器、 默认的图形登陆器、默认的鼠标指针等  
+
+alternatives 和 update-alt
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-02-19</span>
-			<a class="brief-read" href="/2019/02/19/other/yaml格式/"> 阅读全文 </span>
+			<span class="brief-date">2018-11-30</span>
+			<a class="brief-read" href="/2018/11/30/linux/vim/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/02/19/other/yaml格式/">yaml格式</a>
+					href="/2018/11/30/linux/vim/">vim</a>
 				<div class="brief-digest">
-					注释和properties相同，使用#作为注释，YAML中只有行注释
-基本格式要求
-YAML大小写敏感；
-使用缩进代表层级关系；
-缩进只能使用空格，不能使用TAB，不要求空格个数，只需要相同层级左对齐
+					vi操作常用快捷方式如下, 非编辑状态下使用：
+
+删除光标所在行 dd
+删除光标所在行以下5行 5dd
+撤销 u
+反撤销 ctrl+r
+跳到文件头 gg
+跳到文件尾 GG 
+查找字符串str :/st
 					...
 				</div>
 		</li>

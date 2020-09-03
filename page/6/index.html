@@ -692,64 +692,57 @@
 	<ul>
 		
 		<li class="brief-li">
-			<span class="brief-date">2020-04-01</span>
-			<a class="brief-read" href="/2020/04/01/java/CompletableFuture详解/"> 阅读全文 </span>
+			<span class="brief-date">2019-09-18</span>
+			<a class="brief-read" href="/2019/09/18/hadoop/hive-2.1.0单机搭建/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2020/04/01/java/CompletableFuture详解/">CompletableFuture详解</a>
+					href="/2019/09/18/hadoop/hive-2.1.0单机搭建/">hive-2.1.0单机搭建</a>
 				<div class="brief-digest">
-					常用多线程并发，取结果归集的几种实现方案
+					Requirements:jdk, hadoop
+tar -zxvf apache-hive-2.1.0-bin.tar.gz -C ~
+修改配置文件
+hive-env.sh
 
-
-描述
-Future
-FutureTask
-CompletionService
-CompletableFuture
-
-
-
-原理
-Future接口
-接口Run
+cp $HIVE_HO
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2018-12-14</span>
-			<a class="brief-read" href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/"> 阅读全文 </span>
+			<span class="brief-date">2018-12-04</span>
+			<a class="brief-read" href="/2018/12/04/linux/编写shell/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2018/12/14/java/java进程占用virt虚拟内存高的问题研究/">java进程占用virt虚拟内存高的问题研究</a>
+					href="/2018/12/04/linux/编写shell/">编写shell</a>
 				<div class="brief-digest">
-					现象最近发现线上机器 java 8 进程的 VIRT 虚拟内存使用达到了 50G+，如下图所示：  
+					开头有“shebang”脚本第一行以”#!”开头的注释，标明在没有指定解释器的时候默认的解释器，一般如 #!/bin/bash , 解释器有很多，除bash之外可以用命令查看本机支持的解释器
+$ ca
+					...
+				</div>
+		</li>
+		
+		<li class="brief-li">
+			<span class="brief-date">2019-02-18</span>
+			<a class="brief-read" href="/2019/02/18/lucene/Lucene的Index文档模型/"> 阅读全文 </span>
+				<a class="brief-title"
+					href="/2019/02/18/lucene/Lucene的Index文档模型/">Lucene的Index文档模型</a>
+				<div class="brief-digest">
+					Lucene中包含了四种基本数据类型，分别是：
 
-不管用的 -Xmx使用 java 的 -Xmx 去限制堆的使用, 没有什么效果。
-什么是 VIR
+Index：索引，由很多的Document组成。
+Document：由很多的Field组成，是Index和Search的最小单位。
+Field：由很多
 					...
 				</div>
 		</li>
 		
 		<li class="brief-li">
-			<span class="brief-date">2019-01-26</span>
-			<a class="brief-read" href="/2019/01/26/kafka/producer/"> 阅读全文 </span>
+			<span class="brief-date">2019-02-20</span>
+			<a class="brief-read" href="/2019/02/20/web/react组件之间通信/"> 阅读全文 </span>
 				<a class="brief-title"
-					href="/2019/01/26/kafka/producer/">producer</a>
+					href="/2019/02/20/web/react组件之间通信/">react组件之间通信</a>
 				<div class="brief-digest">
-					核心工作流程
-Producer首先使用用户主线程将待发送的消息封装进一个ProducerRecord类实例中。  
-进行序列化后，发送给Partioner，由Partioner确定目标分区后，发送到P
-					...
-				</div>
-		</li>
-		
-		<li class="brief-li">
-			<span class="brief-date">2020-02-23</span>
-			<a class="brief-read" href="/2020/02/23/network/cksum(checksum)incorrect/"> 阅读全文 </span>
-				<a class="brief-title"
-					href="/2020/02/23/network/cksum(checksum)incorrect/">cksum(checksum)incorrect</a>
-				<div class="brief-digest">
-					測試環境為 CentOS x86_64 (虛擬機)
-04:12:03.916512 IP (tos 0x12,ECT(0), ttl 64, id 55822, offset 0, flags [DF
+					在React组件中，props是父组件与子组件的唯一通信方式，但是在某些情况下我们需要在props之外强制修改子组件或DOM元素，这种情况下React提供了Refs解决。
+
+如果能使用props实现，
 					...
 				</div>
 		</li>
